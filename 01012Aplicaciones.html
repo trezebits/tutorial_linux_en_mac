@@ -1,0 +1,1058 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Como instalar linux en nuestro ordenador sin romper nada">
+      
+      
+      
+        <link rel="canonical" href="https://trezebits.github.io/tutorial_linux_en_mac/01012Aplicaciones.html">
+      
+      
+        <link rel="prev" href="01011Configurar.html">
+      
+      
+        <link rel="next" href="01013Espacio.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>📔 Usando Linux - Usando Linux en un Mac</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/estilos.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trabajando-con-linux" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Usando Linux en un Mac" class="md-header__button md-logo" aria-label="Usando Linux en un Mac" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.263 2.177a1.75 1.75 0 0 1 2.474 0l2.586 2.586a1.75 1.75 0 0 1 0 2.474L19.53 10.03l-.012.013L8.69 20.378a1.75 1.75 0 0 1-.699.409l-5.523 1.68a.75.75 0 0 1-.747-.188.75.75 0 0 1-.188-.747l1.673-5.5a1.75 1.75 0 0 1 .466-.756L14.476 4.963ZM4.708 16.361a.26.26 0 0 0-.067.108l-1.264 4.154 4.177-1.271a.25.25 0 0 0 .1-.059l10.273-9.806-2.94-2.939zM19 8.44l2.263-2.262a.25.25 0 0 0 0-.354l-2.586-2.586a.25.25 0 0 0-.354 0L16.061 5.5Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Usando Linux en un Mac
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📔 Usando Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/trezebits/tutorial_linux_en_mac/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Usando Linux en un Mac" class="md-nav__button md-logo" aria-label="Usando Linux en un Mac" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.263 2.177a1.75 1.75 0 0 1 2.474 0l2.586 2.586a1.75 1.75 0 0 1 0 2.474L19.53 10.03l-.012.013L8.69 20.378a1.75 1.75 0 0 1-.699.409l-5.523 1.68a.75.75 0 0 1-.747-.188.75.75 0 0 1-.188-.747l1.673-5.5a1.75 1.75 0 0 1 .466-.756L14.476 4.963ZM4.708 16.361a.26.26 0 0 0-.067.108l-1.264 4.154 4.177-1.271a.25.25 0 0 0 .1-.059l10.273-9.806-2.94-2.939zM19 8.44l2.263-2.262a.25.25 0 0 0 0-.354l-2.586-2.586a.25.25 0 0 0-.354 0L16.061 5.5Z"/></svg>
+
+    </a>
+    Usando Linux en un Mac
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/trezebits/tutorial_linux_en_mac/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01001VMWare.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Máquinas virtuales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01002Sistemas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Sistemas operativos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01003Linux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Acerca de Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01004Escritorios.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Escritorios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01005Seleccion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Obtener Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01006Instalar.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Instalar Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01007Carpetas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Carpetas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01008Terminal.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 El Terminal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01009Comandos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Comandos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01010Repositorios.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Instalar software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01011Configurar.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Configurar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📔 Usando Linux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="01012Aplicaciones.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    📔 Usando Linux
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#office" class="md-nav__link">
+    <span class="md-ellipsis">
+      Office
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegador-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegador web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correo-electronico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correo electrónico
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fotos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photoshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Photoshop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoedicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autoedición
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelado-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelado 3D
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programas-de-dibujo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programas de dibujo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multimedia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimedia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programas-de-utilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programas de utilidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grabador-de-cds-y-dvds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grabador de CDs y DVDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tomar-imagenes-con-la-camara-integrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tomar imágenes con la cámara integrada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videoconferencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Videoconferencia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lector-de-libros-electronicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lector de libros electrónicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programas-de-transferencia-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programas de transferencia de archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones-de-gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicaciones de Gnome
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-coleccion-gnu" class="md-nav__link">
+    <span class="md-ellipsis">
+      La colección GNU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antivirus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Antivirus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#juegos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Juegos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desarrollo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01013Espacio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 El escritorio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01014Dispositivos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Dispositivos externos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://trezebits.github.io" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <br>📚 <b>Indice de cuadernos</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="trabajando-con-linux">Trabajando con Linux<a class="headerlink" href="#trabajando-con-linux" title="Permanent link">&para;</a></h1>
+<p>Una vez instalada y configurada la máquina virtual, vamos a mencionar algunas de las cosas que podemos hacer con ella.</p>
+<h2 id="office">Office<a class="headerlink" href="#office" title="Permanent link">&para;</a></h2>
+<p>Si necesitamos un procesador de textos, una hoja de cálculo, elaborar presentaciones, etc, <em>Libre Office</em> es una completa solución de oficina que proporciona todas estas herramientas. Es más o menos compatible con <em>Microsoft Office</em>. Véase <a href="https://es.libreoffice.org">https://es.libreoffice.org</a> para más información.</p>
+<p><img alt="" class="sombra" src="img/01012LibreOffice.jpeg" /></p>
+<p><em>Libre Office</em> es un software que tiene sus orígenes en un programa comercial de la década de 1980, llamado <em>Star Office</em>. En 1999 fue adquirido por la compañía <em>Sun Microsystems</em>, quien deseaba incorporar a su gama de herramientas un software de proceso de textos y hoja de cálculo. Lo publicaron en dos versiones, una con soporte comercial y otra en formato libre, denominada <em>Open Office</em>, en cuyo desarrollo involucraron a una amplia comunidad de programadores.</p>
+<p>En 2010, <em>Sun Microsystems</em> fue absorbida por <em>Oracle</em>, quien canceló la política <em>open source</em>, por lo que muchos de los que se habían involucrado en el desarrollo abandonaron y se pusieron de acuerdo para dar inicio a un nuevo proyecto. Crearon una organización sin fines de lucro, llamada <em>The Document Foundation</em>, y pusieron en marcha el diseño de <em>LibreOffice</em>, tomando <em>OpenOffice</em> como punto de partida.</p>
+<p><em>Libre Office</em> viene instalado de serie en las distribuciones de <em>Ubuntu</em>, y consta de seis módulos:</p>
+<ul>
+<li>
+<p>Libre Office <em>Writer</em> es el procesador de textos.</p>
+</li>
+<li>
+<p>Libre Office <em>Calc</em>. Hoja de cálculo compatible con Microsoft Excel.</p>
+</li>
+<li>
+<p>Libre Office <em>Impress</em>. Presentaciones.</p>
+</li>
+<li>
+<p>Libre Office <em>Base</em>. Bases de Datos. En algunas distribuciones no suele venir por defecto, por lo que tendremos que instalarlo a mano.</p>
+</li>
+<li>
+<p>Libre Office <em>Math</em>. Es un editor de ecuaciones científicas que luego podemos insertar en nuestros documentos.</p>
+</li>
+<li>
+<p>Libre Office <em>Draw</em>. Editor de imágenes.</p>
+</li>
+</ul>
+<p>Tenemos la documentación del producto en:</p>
+<p><a href="https://documentation.libreoffice.org/es/documentacion-en-espanol/">https://documentation.libreoffice.org/es/documentacion-en-espanol/</a></p>
+<h2 id="navegador-web">Navegador web<a class="headerlink" href="#navegador-web" title="Permanent link">&para;</a></h2>
+<p>Ubuntu incluye de serie el navegador <em>Mozilla Firefox</em>. Su página web es <a href="https://www.mozilla.org/es-ES/firefox/">https://www.mozilla.org/es-ES/firefox/</a>. </p>
+<p><img alt="" class="sombra" src="img/01012Firefox.png" /></p>
+<p>El proyecto Mozilla nació en el año 1998, a raíz de la mala evolución y posterior desaparición de la empresa Netscape, comercializadora del programa <em>Netscape Navigator</em>. La Fundación Mozilla es una organización sin ánimo de lucro presentada en julio de 2003 para garantizar la continuidad del proyecto Mozilla más allá de la participación de voluntarios individuales.</p>
+<p>Otra alternativa que podemos instalar es <a href="https://www.chromium.org">Chromium</a>, el navegador web que utiliza Google como base para desarrollar Chrome. <a href="https://www.opera.com/es">Opera</a> es un navegador alternativo a Firefox, y <a href="https://apps.gnome.org/es/Epiphany/">Epiphany</a> es un sencillo navegador que forma parte de las herramientas Gnome.</p>
+<h2 id="correo-electronico">Correo electrónico<a class="headerlink" href="#correo-electronico" title="Permanent link">&para;</a></h2>
+<p><em>Ubuntu</em> incluye el programa de correo electrónico de <em>Mozilla</em>, llamado <a href="https://www.thunderbird.net">Thunderbird</a>. Al iniciarlo, basta con introducir nuestro correo y contraseña para que <em>Thunderbird</em> se encargue de verificar permanentemente si hay correos nuevos.</p>
+<p><img alt="" class="sombra" src="img/01012Thunderbird.jpg" /></p>
+<p>Como gestor de correo alternativo podemos instalar <a href="https://wiki.gnome.org/Apps/Evolution">Evolution</a>, un gestor de información personal que forma parte de las herramientas GNOME. Incluye correo electrónico, calendario, agenda y lista de tareas.</p>
+<h2 id="fotos">Fotos<a class="headerlink" href="#fotos" title="Permanent link">&para;</a></h2>
+<p>Para visualizar nuestras fotografías, <em>Gnome</em> incluye un programa llamado <a href="https://wiki.gnome.org/Apps/Shotwell">Shotwell Photo Manager</a>:</p>
+<p><img alt="" class="sombra" src="img/01012Shotwell.png" /></p>
+<p>Otras alternativas son:</p>
+<ul>
+<li><a href="https://www.xnview.com/en/xnviewmp/">XnView</a></li>
+<li><a href="https://www.digikam.org/">digiKam</a></li>
+</ul>
+<h2 id="photoshop">Photoshop<a class="headerlink" href="#photoshop" title="Permanent link">&para;</a></h2>
+<p>El equivalente es el célebre programa <em>GIMP</em>. Página web: <a href="https://www.gimp.org/">https://www.gimp.org/</a></p>
+<p><img alt="" class="sombra" src="img/01012Gimp.png" /></p>
+<h2 id="autoedicion">Autoedición<a class="headerlink" href="#autoedicion" title="Permanent link">&para;</a></h2>
+<p>Para componer nuestras publicaciones y otros documentos profesionales, podemos usar <a href="https://www.scribus.net">Scribus</a>.</p>
+<p><img alt="" class="sombra" src="img/01012Scribus.png" /></p>
+<h2 id="modelado-3d">Modelado 3D<a class="headerlink" href="#modelado-3d" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.blender.org">Blender</a> es un programa dedicado al modelado y animación tridimensional.</p>
+<p><img alt="" class="sombra" src="img/01012Blender.jpg" /></p>
+<h2 id="programas-de-dibujo">Programas de dibujo<a class="headerlink" href="#programas-de-dibujo" title="Permanent link">&para;</a></h2>
+<p>Como herramienta de dibujo y gráficos vectoriales podemos usar <a href="https://inkscape.org">Inkscape</a></p>
+<p><img alt="" class="sombra" src="img/01012Inkscape.jpg" /></p>
+<p><a href="https://krita.org/">Krita</a> es otro programa de pintura digital e ilustración. Forma parte de las herramientas KDE:</p>
+<p><img alt="" class="sombra" src="img/01012Krita.png" /></p>
+<p>Nótese que, aunque usemos el escritorio Gnome, no estamos limitados a sus complementos. También podemos usar las aplicaciones que forman parte del proyecto KDE, por ejemplo.</p>
+<p>Otra alternativas de dibujo:</p>
+<ul>
+<li><a href="https://maoschanz.github.io/drawing/">Drawing</a></li>
+<li><a href="https://www.pinta-project.com/">Pinta</a> es un programa de dibujo que emula el popular "Paint" de Microsoft.</li>
+<li><a href="https://mypaint.app/">MyPaint</a></li>
+<li><a href="http://www.kolourpaint.org/">KolourPaint</a> es el programa de dibujo del escritorio KDE.</li>
+</ul>
+<h2 id="multimedia">Multimedia<a class="headerlink" href="#multimedia" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Reproductores de vídeo:</p>
+<ul>
+<li><a href="https://celluloid-player.github.io/">Celluloid</a></li>
+<li><a href="https://www.videolan.org/vlc/">VLC Media Player</a></li>
+</ul>
+</li>
+<li>
+<p>Reproductores de música:</p>
+<ul>
+<li><a href="https://wiki.gnome.org/Apps/Rhythmbox">Rhythmbox</a></li>
+<li><a href="https://open.spotify.com">Spotify</a></li>
+</ul>
+</li>
+<li>
+<p>Para hacer copias de discos:</p>
+<ul>
+<li><a href="https://wiki.gnome.org/Apps/SoundJuicer">Sound Juicer CD Extractor</a> - para copiar CDs</li>
+<li><a href="https://handbrake.fr">Handbrake</a> - para extraer videos de DVD</li>
+</ul>
+</li>
+<li>
+<p>Edición:</p>
+<ul>
+<li><a href="https://www.audacityteam.org/">Audacity</a> - editor de audio</li>
+<li><a href="https://shotcut.org">Shotcut</a> - editor de video</li>
+<li><a href="https://obsproject.com/es">OBS Studio</a> - grabación, edición y transmisión de vídeos en streaming. Permite la emisión de vídeo en directo o videoconferencias, por ejemplo.</li>
+</ul>
+</li>
+</ul>
+<h2 id="programas-de-utilidad">Programas de utilidad<a class="headerlink" href="#programas-de-utilidad" title="Permanent link">&para;</a></h2>
+<p>Además del Terminal y el editor de texto, Ubuntu incluye de serie pequeñas utilidades como:</p>
+<ul>
+<li>Calculadora</li>
+<li>Calendario</li>
+<li>Escaner de documentos</li>
+<li>Visor de documentos</li>
+</ul>
+<h2 id="grabador-de-cds-y-dvds">Grabador de CDs y DVDs<a class="headerlink" href="#grabador-de-cds-y-dvds" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://wiki.gnome.org/Apps/Brasero">Brasero</a> - Graba CD/DVD</li>
+<li><a href="https://userbase.kde.org/K3b">K3B</a> - Otro grabador de CD/DVD</li>
+</ul>
+<h2 id="tomar-imagenes-con-la-camara-integrada">Tomar imágenes con la cámara integrada<a class="headerlink" href="#tomar-imagenes-con-la-camara-integrada" title="Permanent link">&para;</a></h2>
+<p>Ubuntu incluye un programa para visualizar lo que capturamos con la cámara. En el caso de máquinas virtuales, tenemos que asegurarnos que tenemos configurado el acceso a este dispositivo. Ver configuración de la máquina.</p>
+<h2 id="videoconferencia">Videoconferencia<a class="headerlink" href="#videoconferencia" title="Permanent link">&para;</a></h2>
+<p>Muchas aplicaciones de videoconferencia son <em>on line</em>, como es el caso de <a href="https://meet.google.com">Google Meet</a>. Una aplicación de videoconferencia que podemos instalar es <a href="https://www.skype.com/es/">Skype</a>, pero de todas formas, estaremos condicionados por el software del resto de participantes en la reunión.</p>
+<h2 id="lector-de-libros-electronicos">Lector de libros electrónicos<a class="headerlink" href="#lector-de-libros-electronicos" title="Permanent link">&para;</a></h2>
+<p>Uno de los programas más populares es <a href="https://calibre-ebook.com/">Calibre</a>.</p>
+<h2 id="programas-de-transferencia-de-archivos">Programas de transferencia de archivos<a class="headerlink" href="#programas-de-transferencia-de-archivos" title="Permanent link">&para;</a></h2>
+<p>Ubuntu incluye de serie un programa llamado <a href="https://transmissionbt.com">Transmission</a>. Otras opciones que podemos instalar son:</p>
+<ul>
+<li><a href="https://filezilla-project.org/">FileZilla</a> es un programa FTP. Podemos instalar la versión "Cliente" del repositorio, o la versión "Servidor" de la página web.</li>
+<li><a href="https://deluge-torrent.org/">Deluge</a> es un gestor de descargas bitTorrent.</li>
+<li><a href="https://www.dropbox.com/">Dropbox</a> es un programa para gestionar el almacenamiento en la nube</li>
+</ul>
+<h2 id="aplicaciones-de-gnome">Aplicaciones de Gnome<a class="headerlink" href="#aplicaciones-de-gnome" title="Permanent link">&para;</a></h2>
+<p>Ver <a href="https://apps.gnome.org/es/">Lista</a>. De hecho, algunos de ellos vienen preinstalados en los sucesivas  <em>lanzamientos</em> de Ubuntu.</p>
+<p><img alt="" src="img/01012Gnome.png" /></p>
+<h2 id="la-coleccion-gnu">La colección GNU<a class="headerlink" href="#la-coleccion-gnu" title="Permanent link">&para;</a></h2>
+<p>Ya hemos visto que GNU fue en sus inicios un proyecto de sistema operativo libre que ha ido evolucionando hasta convertirse en una amplia colección de software. Encontraremos la lista de programas en su <a href="https://www.gnu.org/software/">página web</a>.</p>
+<h2 id="antivirus">Antivirus<a class="headerlink" href="#antivirus" title="Permanent link">&para;</a></h2>
+<p>Antes de instalar un antivirus, conviene hacer un análisis de los más populares. Los hay gratuitos y de pago. En este cuaderno mencionaré uno bastante popular, <a href="https://www.clamav.net/">Clam AV</a>.</p>
+<h2 id="juegos">Juegos<a class="headerlink" href="#juegos" title="Permanent link">&para;</a></h2>
+<p>El ecosistema <em>Linux</em> cuenta con un repositorio de juegos de libre descarga que muchas veces nada tiene que envidiar a los juegos comerciales. Si abrimos el <em>App Center</em> y pulsamos en la categoría <em>Games</em>, veremos una amplia selección de programas.:</p>
+<p>Tenemos una lista de juegos open source en la <a href="https://en.wikipedia.org/wiki/Open-source_video_game">wikipedia</a>. Alguno de mis favoritos:</p>
+<ul>
+<li><em>0ad</em> es una versión del conocido <em>Age of Empires</em> de Microsoft. <a href="https://play0ad.com/">Página web</a></li>
+<li><em>SGT Puzzles Collection</em> es una entretenida colección de puzzles</li>
+<li><em>Pingus</em> es un clon del famoso juego <em>Lemmings</em>. <a href="https://pingus.seul.org/">Página web</a> </li>
+<li><em>GNOME Reversi</em> <a href="https://wiki.gnome.org/Apps/Reversi">Página web</a></li>
+<li><em>Aisleriot</em> es la colección de solitarios de Gnome. <a href="https://wiki.gnome.org/Apps/Aisleriot">Página web</a></li>
+<li><em>SuperTuxKart</em> es un juego arcade de carreras. <a href="https://supertuxkart.net/es/Main_Page">Página web</a></li>
+<li>la colección de juegos de KDE. <a href="https://apps.kde.org/es/categories/games/">Página web</a></li>
+</ul>
+<h2 id="desarrollo">Desarrollo<a class="headerlink" href="#desarrollo" title="Permanent link">&para;</a></h2>
+<p>Además de las aplicaciones que hemos visto, podemos utilizar nuestro ordenador para desarrollar software. Cada lenguaje de programación es un mundo, pero las distribuciones de Linux suelen proporcionar toda clase de herramientas en sus repositorios, y algunas de ellas vienen instaladas de serie. </p>
+<p>Por ejemplo, si abrimos el Terminal, con el comando apropiado encontraremos una versión del intérprete del lenguaje Python:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>-V
+Python<span class="w"> </span><span class="m">3</span>.10.12
+</code></pre></div>
+
+<p>o del compilador <code>gcc</code>:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gcc<span class="w"> </span>--version
+gcc<span class="w"> </span><span class="m">11</span>.4.0
+</code></pre></div>
+
+<p>Algunas veces me he encontrado con mensajes de error indicando que falta alguna de las piezas básicas. Lo suelo solucionar con el comando:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>--reinstall<span class="w"> </span>build-essential
+</code></pre></div>
+
+<p>El paquete <code>build-esential</code> es un meta-paquete con todas las herramientas esenciales para compilar software. Contiene la <em>GNU compiler collection</em>, <em>GNU debugger</em>, bibliotecas y herramientas.</p>
+<p>En cuanto a la escritura de programas, podemos utilizar el editor básico de nuestra distribución, pero existen otros editores. Uno de los más populares es <a href="https://code.visualstudio.com/">Visual Studio Code</a>, de Microsoft, con versiones para Linux, Mac y Windows. Otro de los clásicos es <a href="https://www.gnu.org/software/emacs/">emacs</a>, que forma parte de la <a href="https://www.gnu.org/software/">colección GNU</a>. Otra alternativa es <a href="https://geany.org">Geany</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="01011Configurar.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 📔 Configurar">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                📔 Configurar
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="01013Espacio.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 📔 El escritorio">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                📔 El escritorio
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "toc.integrate", "navigation.top", "navigation.indexes", "content.code.copy", "content.tooltips", "search.highlight"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="javascripts/tables.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
