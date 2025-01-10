@@ -1261,7 +1261,13 @@ Suspendisse in aliquam nulla.
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>locate<span class="w"> </span>miarchivo
 </code></pre></div>
 
-<p>El comando <code>find</code> tiene más opciones. Básicamente, la sintaxis es:</p>
+<p><code>locate</code> es un comando muy potente, que se basa en el mantenimiento en la sombra de bases de datos para localizar cada archivo. Ubuntu no lo trae de serie, por lo que tendremos que instalarlo o usar en su lugar otros comandos tales como:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>which<span class="w"> </span>miprograma
+$<span class="w"> </span>whereis<span class="w"> </span>miarchivo
+</code></pre></div>
+
+<p>Sin embargo, estos comandos son más limitados en sus posibilidades, y no valen para cualquier tipo de archivo. <code>which</code> busca programas, y <code>whereis</code> busca solo programas y texto en los manuales.</p>
+<p>El comando <code>find</code> es el más potente y versátil. Básicamente, la sintaxis es:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>/<span class="w"> </span>-name<span class="w"> </span>miarchivo
 </code></pre></div>
 
