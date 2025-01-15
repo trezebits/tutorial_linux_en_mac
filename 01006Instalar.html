@@ -460,6 +460,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#el-menu-de-gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      El menú de Gnome
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#teclado" class="md-nav__link">
     <span class="md-ellipsis">
       Teclado
@@ -806,7 +815,7 @@
 </div>
 <p>En este menú de arranque, seleccionamos la primera opción, "<em>Try or Install Ubuntu</em> y pulsamos <span class="keys"><kbd class="key-enter">Enter</kbd></span>. Se carga el sistema operativo desde el DVD virtual. Tras un cierto período de tiempo, se completa la carga y se muestra el escritorio de <em>Gnome</em> y una ventana de selección de idioma:</p>
 <p><img alt="" src="img/01006Instalar008.png" /></p>
-<p>Vamos pulsando en el botón <code>[Siguiente]</code> y aceptando la configuración por defecto. En lo referido a Internet, lo que se nos sugiere como "<em>conexión por cable</em>" es en realidad la conexión simulada por la máquina virtual, que se beneficia de lo que tengamos en la máquina física.</p>
+<p>Vamos pulsando en el botón <code>[Siguiente]</code> y aceptando la configuración por defecto. En lo referido a Internet, se nos sugiere como "<em>conexión por cable</em>". En realidad se trata de la conexión simulada por la máquina virtual, que se beneficia de lo que tengamos en la máquina física, wifi, cable, o lo que sea.</p>
 <p>En uno de los pasos se nos da la opción de completar la instalación de Ubuntu en el disco duro virtual o explorarlo un poco antes de instalar nada. Vamos a optar por esta segunda opción, "probar Ubuntu":</p>
 <p><img alt="" src="img/01006Instalar009.png" /></p>
 <p>Por ahora tenemos un disco virtual vacío, y un sistema operativo cargado desde el DVD virtual. A esto se le llama una sesión "<em>Live</em>". </p>
@@ -827,23 +836,41 @@
 <p>Acudir a la configuración de VMware, según vimos anteriormente, y hacer ajustes en el apartado <em>Pantalla</em>. La opción "ajustar máquina virtual a la pantalla" significa que los contenidos se verán más grandes o más pequeños, pero sin modificar la resolución de la máquina virtual. La opción "cambiar tamaño", por el contrario, modifica la resolución en la máquina virtual cada vez que se modifica el tamaño de la ventana o pasamos a pantalla completa.</p>
 </li>
 <li>
-<p>En el escritorio virtual, acudir a la configuración de Ubuntu y entrar en el apartado "Displays" para seleccionar otra resolución y activarla pulsando en el botón <code>[Apply]</code></p>
+<p>En el escritorio virtual, acudir a la configuración de Ubuntu siguiendo el procedimiento que se describe más adelante. Entrar en el apartado "Displays", seleccionar otra resolución y activarla pulsando en el botón <code>[Apply]</code></p>
 </li>
 </ul>
 <p>Cuando la máquina virtual ocupa toda la pantalla, dejaremos de ver el menú de VMWare. No hay problema. Basta con acercar el ratón al borde superior de la pantalla, y aparecerá el menú.</p>
 <h2 id="explorando-gnome">Explorando Gnome<a class="headerlink" href="#explorando-gnome" title="Permanent link">&para;</a></h2>
-<p>El escritorio de Ubuntu es una versión "<em>tuneada</em>" de Gnome. Destaca por su barra lateral (el <em>Dock</em>) con iconos de las aplicaciones favoritas. En la esquina inferior izquierda tenemos un icono con el logo de Ubuntu:</p>
+<p>El escritorio de Ubuntu es una versión "<em>tuneada</em>" de Gnome. Incorpora una barra lateral (el <em>Dock</em>) con iconos de las aplicaciones favoritas. En la esquina inferior izquierda tenemos un icono con el logo de Ubuntu:</p>
 <p><img alt="" src="img/01006Instalar000.png" style="width:60px;" /></p>
 <p>Pulsando ahí, se despliega una lista de aplicaciones (la "parrilla", o grid), con una caja de búsqueda por texto:</p>
 <p><img alt="" src="img/01006Instalar010.png" /></p>
-<p>En la esquina superior derecha del escritorio tenemos unos iconos de estado. Pulsando ahí, se despliega un menú que nos da acceso a dos iconos interesantes:</p>
+<p>Si hay más iconos que espacio disponible, se agrupan en páginas. En la parte inferior de la parrilla tenemos unos puntos que se pueden pulsar para seleccionar la página siguiente o la anterior. También podemos pasar de página pulsando en los iconos <code>&lt; &gt;</code> en los márgenes izquierdo o derecho.</p>
+<p>En la esquina superior derecha del escritorio tenemos unos iconos de estado. Pulsando ahí, se despliega un menú de sistema que nos da acceso a dos iconos interesantes:</p>
 <ul>
 <li>El de la rueda dentada nos da acceso a la configuración de Ubuntu</li>
 <li>El icono de apagar nos permite finalizar la sesión</li>
 </ul>
 <p><img alt="" src="img/01006Instalar011.png" /></p>
-<p>La ejecución de programas se puede hacer pulsando en la barra izquierda de favoritos, o desplegando la parrilla de aplicaciones. Vamos a probar a pulsar en el icono de <em>Firefox</em>, el navegador web, lo que nos permitirá comprobar nuestra conexión a internet:</p>
+<p>Dependiendo de la configuración de la máquina (en mi caso, una virtual), podemos ver más iconos en este menú:</p>
+<ul>
+<li>bloquear pantalla</li>
+<li>capturar imagen de la pantalla</li>
+<li>control de sonido</li>
+<li>estado de red</li>
+<li>control de energía / estado de batería</li>
+<li>seleccionar modo claro/oscuro</li>
+<li>bluetooth, wifi</li>
+<li>etc.</li>
+</ul>
+<p>La ejecución de programas se puede hacer pulsando en la barra del <em>Dock</em>, o desplegando la parrilla de aplicaciones. Vamos a probar a pulsar en el icono de <em>Firefox</em>, el navegador web, lo que nos permitirá comprobar nuestra conexión a internet:</p>
 <p><img alt="" src="img/01006Instalar012.png" /></p>
+<h2 id="el-menu-de-gnome">El menú de Gnome<a class="headerlink" href="#el-menu-de-gnome" title="Permanent link">&para;</a></h2>
+<p>Las ventanas en el escritorio de Ubuntu suelen tener los tres iconos habituales en la esquina superior derecha; minimizar, maximizar/restaurar y cerrar ventana: </p>
+<p><span style="background-color: LightGray;padding: 5px;"><big><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_ □ ✕</b></big></span></p>
+<p>Muchas aplicaciones Linux suelen mostrar la típica barra de menús en la barra superior de la ventana. En algunas aplicaciones, particularmente en las utilidades Gnome, el menú se suele sustituir por un icono habitual en las tablets o teléfonos móviles:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2.5em;"><b>☰</b></span></p>
+<p>También se suelen mostrar otros iconos que muestran menús desplegables, dependiendo de la aplicación en cuestión.</p>
 <h2 id="teclado">Teclado<a class="headerlink" href="#teclado" title="Permanent link">&para;</a></h2>
 <p>Antes de instalar nada, conviene dejar resueltos los posibles conflictos entre "atajos de teclado" de ambas máquinas, la física y la virtual, aunque esto se puede dejar para más adelante.</p>
 <p>En el menú de <em>VMware</em>, seleccionamos <em>Ajustes &gt; Keyboard</em>:</p>
@@ -888,7 +915,7 @@
 <p>En la lista de aplicaciones, seleccionamos <em>Configuración</em></p>
 </li>
 <li>
-<p>pulsando en los iconos de estado, en la esquina superior derecha del escritorio. En la ventana desplegable, pulsar en el icono de la rueda:</p>
+<p>pulsando en los iconos de estado, en la esquina superior derecha del escritorio. En el menú desplegable, pulsar en el icono de la rueda:</p>
 <p><img alt="" src="img/01006Instalar011.png" /></p>
 </li>
 </ul>
@@ -900,7 +927,7 @@
 <p><img alt="" src="img/01006Instalar017.png" /></p>
 <p>Podemos configurar la minibarra para que se muestre solo cuando acercamos el ratón.</p>
 <h2 id="el-disco-duro-virtual">El disco duro virtual<a class="headerlink" href="#el-disco-duro-virtual" title="Permanent link">&para;</a></h2>
-<p>Cada máquina virtual VMWare se materializa en un único archivo en la máquina física, con extensión <code>.vmwarevm</code>, que "empaqueta" todo tipo de contenidos. Para examinar ese contenido, en los ordenadores Mac podemos buscar el archivo mencionado y pulsar sobre el mismo mientras mantenemos la tecla <span class="keys"><kbd class="key-control">Ctrl</kbd></span>. Esto despliega un menú emergente. Seleccionamos <em>Mostrar contenido del paquete</em>.</p>
+<p>Cada máquina virtual VMWare se materializa en un único archivo en la máquina física, con extensión <code>.vmwarevm</code>, que "empaqueta" todo tipo de contenidos, discos duros, configuración, estado de la máquina, etc. Para examinar ese contenido, en los ordenadores Mac podemos buscar el archivo mencionado y pulsar sobre el mismo mientras mantenemos la tecla <span class="keys"><kbd class="key-control">Ctrl</kbd></span>. Esto despliega un menú emergente. Seleccionamos <em>Mostrar contenido del paquete</em>.</p>
 <h2 id="maquina-virtual-por-defecto">Máquina virtual por defecto<a class="headerlink" href="#maquina-virtual-por-defecto" title="Permanent link">&para;</a></h2>
 <p>Podemos establecer que cuando iniciemos VMWare, arranque determinada máquina virtual sin que tengamos que hacerlo a mano. La seleccionamos, entramos en la configuración de la máquina, y en el apartado <em>General</em>, marcamos la opción <em>Iniciar automáticamente</em>.</p>
 <h2 id="instalar-ubuntu-server">Instalar Ubuntu Server<a class="headerlink" href="#instalar-ubuntu-server" title="Permanent link">&para;</a></h2>
@@ -908,7 +935,7 @@
 <p>Una alternativa de emergencia puede ser instalar Ubuntu Server, que generalmente suele tener versiones para ARM. A primera vista, encontraremos algunas diferencias notables en el proceso de instalación:</p>
 <ul>
 <li>
-<p>el programa de instalación de <em>Ubuntu Server</em> es en modo consola de texto, donde solo funcionan las teclas de flecha, <span class="keys"><kbd class="key-tab">Tab</kbd></span> y <span class="keys"><kbd class="key-enter">Enter</kbd></span>, además de la opción de introducir texto en algunas casillas.</p>
+<p>el programa de instalación de <em>Ubuntu Server</em> es en modo de consola de texto, donde solo funcionan las teclas de flechas <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>, <span class="keys"><kbd class="key-tab">Tab</kbd></span> y <span class="keys"><kbd class="key-enter">Enter</kbd></span>, además de la opción de introducir texto en algunas casillas.</p>
 </li>
 <li>
 <p>el software instalado de serie es el necesario para montar un servidor. Para un uso doméstico, tendremos que instalar otros programas a mano, y algunos de los que vienen por defecto, no los utilizaremos en nuestro día a día.</p>
@@ -917,14 +944,14 @@
 <p>una vez hecha la instalación, el modo de trabajo sigue siendo en forma de consola de texto. Tendremos que instalar a mano el programa de escritorio Gnome (o cualquier otro que sea de nuestro gusto).</p>
 </li>
 </ul>
-<p>Durante el proceso de instalación, usar la tecla <span class="keys"><kbd class="key-tab">Tab</kbd></span> para ir de una casilla a otra, <span class="keys"><kbd class="key-space">Space</kbd></span> para marcar casillas, y <span class="keys"><kbd class="key-enter">Enter</kbd></span> para aceptar.</p>
+<p>Veamos los pasos del proceso de instalación, usar la tecla <span class="keys"><kbd class="key-tab">Tab</kbd></span> para ir de una casilla a otra, <span class="keys"><kbd class="key-space">Space</kbd></span> para marcar casillas, y <span class="keys"><kbd class="key-enter">Enter</kbd></span> para aceptar.</p>
 <p>Selección de Idioma:</p>
 <p><img alt="" src="img/01006Instalar018.png" /></p>
-<p>Selección de teclado. Una vez hecho, ir a <code>[Hecho]</code> con <span class="keys"><kbd class="key-tab">Tab</kbd></span> y pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+<p>Selección de teclado. Una vez hecho, ir a <code>[Hecho]</code> con <span class="keys"><kbd class="key-tab">Tab</kbd></span> (en la parte inferior de la pantalla) y pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
 <p><img alt="" src="img/01006Instalar019.png" /></p>
 <p>Paquetes a instalar. Ir con <span class="keys"><kbd class="key-tab">Tab</kbd></span> a la casilla <em>buscar drivers de terceros</em> y pulsar <span class="keys"><kbd class="key-space">Space</kbd></span> para marcarla. Ir a <code>[Hecho]</code> y pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
 <p><img alt="" src="img/01006Instalar020.png" /></p>
-<p>Selección de interfaz de comunicaciones y proxy. Lo damos por bueno o dejamos en blanco lo que se nos pida.</p>
+<p>Selección de interfaz de comunicaciones y proxy. Lo damos por bueno o dejamos en blanco lo que se nos pida, salvo que queramos configurar la máquina como servidor de red.</p>
 <p><img alt="" src="img/01006Instalar021.png" /></p>
 <p>Selección de fuente de descargas para la instalación. Se resuelve automáticamente:</p>
 <p><img alt="" src="img/01006Instalar022.png" /></p>
@@ -942,11 +969,11 @@
 <p>Introducimos nuestra nombre de usuario y seguidamente se nos pedirá la contraseña. Entramos a una sesión de comandos. </p>
 <p>Más adelante veremos con más detalle como funcionan los comandos de Linux. En resumen, se muestra un <em>prompt</em> <strong><code>$</code></strong> , precedido por información de la sesión. Ese <em>prompt</em>  nos invita a introducir el texto de un comando, que se ejecutará al pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
 <p>Cada comando ejecuta una tarea, que una vez completada, hace que se recupere el <em>prompt</em> <strong><code>$</code></strong> para introducir el siguiente comando.</p>
-<p>Algunos comandos van mostrando información en la pantalla, a medida que avanzan, y ocasionalmente nos hacen alguna pregunta:</p>
+<p>Algunos comandos van mostrando información en la pantalla, a medida que avanzan en su trabajo, y ocasionalmente nos hacen alguna pregunta:</p>
 <div class="codehilite"><pre><span></span><code>Ok to install software? [Y/n]
 </code></pre></div>
 
-<p>En ese caso, tecleamos <span class="keys"><kbd class="key-y">Y</kbd></span> o <span class="keys"><kbd class="key-n">N</kbd></span>. A veces, lo tecleado debe completarse con <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
+<p>En ese caso, tecleamos <span class="keys"><kbd class="key-y">Y</kbd></span> o <span class="keys"><kbd class="key-n">N</kbd></span>. A veces, también hay que pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
 <p>El comando para apagar la máquina virtual es:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>shutdown<span class="w"> </span>now
 </code></pre></div>
@@ -956,7 +983,7 @@
 <p>Para instalar el escritorio gráfico vamos a utilizar los siguientes comandos:</p>
 <ul>
 <li>
-<p>Comenzamos por actualizar la lista de software disponible:</p>
+<p>Comenzamos por actualizar la lista de software disponible en los repositorios de Ubuntu:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
 </code></pre></div>
 
@@ -967,6 +994,7 @@
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>tasksel
 </code></pre></div>
 
+<p>El comando <code>apt install</code> es el que se usa para descargar e instalar un paquete del repositorio.</p>
 </li>
 <li>
 <p>El tercer paso es instalar el escritorio gráfico. Es un proceso largo que tarda un buen rato en ejecutarse, y llena la pantalla de mensajes:</p>

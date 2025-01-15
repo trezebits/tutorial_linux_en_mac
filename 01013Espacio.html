@@ -590,6 +590,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tecla-super" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecla Super
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avisos-y-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avisos y agenda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      El Dock
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -758,8 +785,8 @@ Type=Application
 <p>Los lanzadores son archivos de texto cuyo formato se corresponde con el proyecto <em>Freedesktop.org</em>. Ver <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">especificaciones</a> en la <a href="https://www.freedesktop.org/wiki/">página web</a> del proyecto.</p>
 </div>
 <h2 id="enlaces-a-carpetas">Enlaces a carpetas<a class="headerlink" href="#enlaces-a-carpetas" title="Permanent link">&para;</a></h2>
-<p>Para poner en el escritorio un enlace a una carpeta, ejecutamos el comando:</p>
-<div class="codehilite"><pre><span></span><code>ln -s ~/Imágenes  ~/Escritorio/Imágenes
+<p>Para poner en el escritorio un enlace a una carpeta, abrimos el Terminal y ejecutamos el comando:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>~/Imágenes<span class="w">  </span>~/Escritorio/Imágenes
 </code></pre></div>
 
 <p>En este ejemplo, hemos creado un enlace a la carpeta <code>/home/usuario/Imágenes</code>. Recuérdese que el símbolo <code>~</code> representa el directorio principal de usuario. El comando <code>ln -s</code> crea el enlace. Se le pasa como argumento el archivo o carpeta enlazada, seguido del nombre del enlace, ambos con su ruta.</p>
@@ -774,6 +801,21 @@ Type=Application
 <p>Pasamos de un escritorio a otro con <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> o en sentido contrario, con <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span>. Para utilizar un área de trabajo, desplazarse hacia ella y abrir allí las aplicaciones deseadas. </p>
 <p>Podemos obtener una vista conjunta de todas las áreas, y navegar de una a otra. Para ello, pulsar en el icono "Actividades", en la esquina superior izquierda del escritorio. Podemos arrastrar ventanas de un área a otra.</p>
 <p>Para suprimir un área de trabajo, simplemente cierre todas las ventanas que tenga, o muévalas a otras áreas de trabajo.</p>
+<h2 id="tecla-super">Tecla Super<a class="headerlink" href="#tecla-super" title="Permanent link">&para;</a></h2>
+<p>En los teclados Mac hay una tecla <span class="keys"><kbd class="key-command">Cmd</kbd></span> que Linux toma como tecla <span class="keys"><kbd class="key-super">Super</kbd></span>. En otros teclados puede ser una diferente. Una vez identificada la tecla que sirve como <span class="keys"><kbd class="key-super">Super</kbd></span>, podemos configurar su uso en el apartado de configuración del sistema, apartado <em>Teclado</em>.</p>
+<p>En el escritorio, pulsando en <span class="keys"><kbd class="key-super">Super</kbd></span> se muestra una vista general de ventanas y áreas de trabajo. Podemos usarlo para labores de navegación:</p>
+<p><img alt="" src="img/01013Espacio004.png" /></p>
+<h2 id="avisos-y-agenda">Avisos y agenda<a class="headerlink" href="#avisos-y-agenda" title="Permanent link">&para;</a></h2>
+<p>En el centro de la barra superior del escritorio tenemos un reloj y fecha. Pulsando ahí, se abre una ventana de notificaciones y calendario. Pulsando en uno de los días, se abre una agenda que nos permite programar avisos.</p>
+<p><img alt="" src="img/01013Espacio003.png" /></p>
+<h2 id="el-dock">El Dock<a class="headerlink" href="#el-dock" title="Permanent link">&para;</a></h2>
+<p>Ya hemos visto que la barra lateral del escritorio se denomina <em>Dock</em>, y es un añadido de Ubuntu al escritorio de Gnome. Podemos pulsar en cualquier icono para iniciar la aplicación o para seleccionar una de las ventanas abiertas.</p>
+<p>Cuando un icono muestra uno o varios puntos, significa que hay abiertas una o varias ventanas de la aplicación correspondiente. Pulsando sobre el icono, se muestra la ventana abierta o una vista de todas ellas, si son varias, para seleccionar una de ellas. Podemos abrir nuevas ventanas sobre el icono pulsando con el botón secundario del ratón.</p>
+<p>Para reorganizar los iconos en el Dock, basta con arrastrarlos a su nueva posición. Para quitar un icono del Dock, pulsar con el botón secundario del ratón y seleccionar "<em>quitar</em>".</p>
+<p>El <em>Dock</em> muestra los iconos de aplicaciones favoritas y las que están en ejecución. Para mantener una aplicación en el <em>Dock</em> permanentemente, ejecutarla, pulsar sobre ella en el <em>Dock</em> con el botón secundario del ratón, y seleccionar la opción <em>Pin to Dock</em>. Una vez añadido un icono al <em>Dock</em>, desaparecerá de la parrilla.</p>
+<p>Para organizar los iconos de la parrilla, arrastrarlos. Para crear carpetas con iconos, arrastrar un icono sobre otro. Se unirán los dos en un grupo. Para añadir otros iconos al grupo, arrastrarlos. Para editar el nombre del grupo, pulsar sobre el grupo y, una vez abierto su contenido, editar la cabecera. Para eliminar el grupo, arrastrar los iconos fuera del mismo.</p>
+<p>Para ocultar el <em>Dock</em>, acudir a la configuración del sistema, apartado <em>Escritorio &gt; Dock</em>. También podemos cambiar el tamaño de los iconos, o llevar el <em>Dock</em> al costado derecho o inferior del escritorio.</p>
+<p>Para mostrar u ocultar la papepelera o los dispositivos externos conectados, acudir a la configuración del sistema, apartado <em>Escritorio &gt; Dock &gt; Comportamiento</em>. </p>
 
 
 

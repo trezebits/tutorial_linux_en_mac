@@ -634,15 +634,15 @@
 <h2 id="alternativas">Alternativas<a class="headerlink" href="#alternativas" title="Permanent link">&para;</a></h2>
 <p>Un primer paso es llevar a cabo un análisis de popularidad. <a href="https://distrowatch.com">Distrowatch</a> publica rankings y comparativas de forma periódica, y nos puede dar una idea de por donde van los tiros.</p>
 <p>Hacer una categorización es complejo, ya que hay distribuciones de todo tipo. Centrándonos en la instalación en un ordenador típico de sobremesa, se diría que hay tres grandes distribuciones de referencia, <em>RedHat</em> en el mundo profesional y de las empresas, <em>Ubuntu</em>, más orientada al mercado doméstico, aunque presente en otros ámbitos, y <em>Debian</em>, menos popular por excluir todo tipo de software con licencia, aunque sea la favorita de los defensores del software libre. </p>
-<p>Por supuesto, hay otras muchas alternativas. Un "hacker" de los sistemas Linux apostará por <em>Arch</em> o similares. Y en el extremo opuesto, <em>Mint</em> parece ser una de las distribuciones más amigables y fáciles de utilizar. Desde que apareció, en 2006, siempre se ha mantenido en el top del ranking <em>Distrowatch</em>.</p>
+<p>Por supuesto, hay otras muchas alternativas. Un "hacker" de los sistemas Linux apostará por <em>Arch</em> o similares. Y en el extremo opuesto, <em>Mint</em> parece ser una de las distribuciones más amigables y fáciles de utilizar. Desde que apareció, en 2006, siempre se ha mantenido en el top del ranking <em>Distrowatch</em>. Por algo será.</p>
 <p>En cuanto a los escritorios, si nuestro equipo es de recursos reducidos en cuanto a memoria RAM o capacidad de la CPU, la elección es clara. Debemos decidirnos por un escritorio sencillo y sin grandes alardes gráficos. <em>Xfce</em> es uno de los más populares en este terreno.</p>
 <p>Si nuestro ordenador es de prestaciones medias o altas, KDE Plasma es el escritorio más completo, pero algunas distribuciones no apuestan por él, dada su complejidad de mantenimiento. Como primera opción suele optarse por <em>Gnome</em>, que es el escritorio oficial del proyecto GNU, y de alguna forma, es la referencia. Pero es un escritorio "rarito", alejado del concepto tradicional, y con muchas funcionalidades no incluidas. <em>Ubuntu</em>, por ejemplo, lo distribuye en una versión modificada, a la que han añadido cosas que se echan de menos.</p>
 <h2 id="versiones-para-mac">Versiones para Mac<a class="headerlink" href="#versiones-para-mac" title="Permanent link">&para;</a></h2>
-<p>Para un ordenador Mac, basado en arquitectura ARM, las opciones son más limitadas. Toda distribución se basa en un esfuerzo de recopilación de miles de paquetes de software, y repetir todo el proceso sustituyendo las versiones para procesadores Intel por las ARM, no es tarea trivial. En el momento de escribir esto, no está disponible mi distribución favorita, <em>Linux Mint</em>.</p>
+<p>Para los ordenadores Mac más recientes, basados en arquitectura ARM, las opciones son más limitadas. Toda distribución se basa en un esfuerzo de recopilación de miles de paquetes de software, y repetir todo el proceso sustituyendo las versiones para procesadores Intel por las concebidas para ARM, no es tarea trivial. En el momento de escribir esto, no está disponible mi distribución favorita, <em>Linux Mint</em>.</p>
 <p>Centrándonos en las distribuciones más populares, lo que he encontrado es:</p>
 <ul>
 <li>
-<p>Ubuntu se distribuye en versión doméstica (<em>Desktop</em>) o para servidores (<em>Server</em>). La que nos interesa es la primera, pero no suele estar disponible en la página de descargas. He encontrado versiones <em>Desktop</em> con escritorio <em>Gnome</em> en el siguiente repositorio:</p>
+<p>Ubuntu se distribuye en versión doméstica (<em>Desktop</em>) o para servidores (<em>Server</em>). La que nos interesa es la primera, pero no siempre esta disponible en la página de descargas. He encontrado versiones <em>Desktop</em> con escritorio <em>Gnome</em> en el siguiente repositorio:</p>
 <p><a href="https://cdimage.ubuntu.com/ubuntu/releases/">https://cdimage.ubuntu.com/ubuntu/releases/</a></p>
 </li>
 <li>
@@ -650,13 +650,13 @@
 <p><a href="https://ubuntu.com/download/server/arm">https://ubuntu.com/download/server/arm</a></p>
 <p>... pero tiene tres inconvenientes:</p>
 <ul>
-<li>viene configurada con un software preinstalado concebido para la administración de servidores. Tendremos software que no vamos a utilizar.</li>
+<li>viene configurada con un software concebido para la administración de servidores. Tendremos software que no vamos a utilizar, y una configuración que no es exactamente lo que buscamos.</li>
 <li>habrá que instalar a mano algunas piezas de software para trabajo doméstico que no vienen por defecto.</li>
 <li>se distribuye sin escritorio, de forma que la sesión de trabajo es en modo de consola de texto. Nuestro primer paso será instalar el escritorio Gnome.</li>
 </ul>
 </li>
 <li>
-<p><a href="https://rockylinux.org/">Rocky Linux</a> es una versión RedHat open-source. Se distribuye en versiones para diferentes arquitecturas, AMD/Intel (x86_64), ARM, PowerPC o IBM Z series. Está orientado a la empresa, aunque parece ser una buena elección.</p>
+<p><a href="https://rockylinux.org/">Rocky Linux</a> es una versión RedHat open-source. Se distribuye en versiones para diferentes arquitecturas, AMD/Intel (x86_64), ARM, PowerPC o IBM Z series. No lo he probado, aunque me da la impresión de que está más orientado al uso profesional que al doméstico.</p>
 </li>
 <li>
 <p>En la misma línea tenemos <a href="https://almalinux.org/es/get-almalinux/">AlmaLinux</a></p>
@@ -664,7 +664,7 @@
 <li>
 <p>He encontrado una versión de Fedora con escritorio Gnome en la siguiente dirección web:</p>
 <p><a href="https://dl.fedoraproject.org/pub/fedora/linux/releases/41/Everything/aarch64/iso/">https://dl.fedoraproject.org/pub/fedora/linux/releases/41/Everything/aarch64/iso/</a></p>
-<p>Sin embargo, el proceso de instalación me ha parecido complejo, ya que hay que seleccionar a mano los paquetes de software a instalar.</p>
+<p>Sin embargo veo que se trata de una versión cuyo proceso de instalación es algo complejo, ya que hay que seleccionar a mano los paquetes de software a instalar.</p>
 </li>
 <li>
 <p>La opción doméstica más trabajada parece ser Fedora con escritorio KDE, disponible en:</p>
@@ -672,7 +672,7 @@
 <p>Esta  parece ser una buena elección. Pero debo reconocer que no me gusta mucho el escritorio KDE Plasma. Es muy vistoso y atractivo, pero complejo, y a veces no se integra muy bien con otros paquetes de software, que están concebidos para interactuar con Gnome. Por ejemplo, el intercambio de portapapeles entre máquina física y virtual no va muy bien, en el caso de VMware...</p>
 </li>
 </ul>
-<p>En resumen, aunque mi distribución favorita de toda la vida es <em>Linux Mint</em>, en este cuaderno instalaré <em>Ubuntu</em> con escritorio <em>Gnome</em>. Veremos como hacerlo con las versiones <em>Ubuntu Desktop</em> y <em>Ubuntu Server</em>.</p>
+<p>En resumen, aunque mi distribución favorita de toda la vida es <em>Linux Mint</em>, en este cuaderno instalaré <em>Ubuntu</em> con escritorio <em>Gnome</em>. Veremos como hacerlo con las versiones <em>Desktop</em> y <em>Server</em>.</p>
 <h2 id="acerca-de-ubuntu">Acerca de Ubuntu<a class="headerlink" href="#acerca-de-ubuntu" title="Permanent link">&para;</a></h2>
 <p>Ubuntu publica nuevas versiones cada seis meses, generalmente abril y octubre. El número de versión está formado por el año y mes. Véase <a href="https://en.wikipedia.org/wiki/Ubuntu_version_history">Wikipedia</a>.</p>
 <p>Cada cuatro lanzamientos, lo que ocurre en el segundo trimestre de los años pares, la versión se considera LTS, más estable y con mantenimiento a cinco años, durante los cuales se publican actualizaciones continuamente. El período de soporte para las versiones que no son LTS es de 9 meses.</p>

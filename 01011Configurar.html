@@ -515,9 +515,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configurar-el-sistema" class="md-nav__link">
+  <a href="#montar-y-desmontar-carpetas-compartidas" class="md-nav__link">
     <span class="md-ellipsis">
-      Configurar el sistema
+      Montar y desmontar carpetas compartidas
     </span>
   </a>
   
@@ -753,9 +753,28 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 <p>Compartir carpetas con la máquina física no está exento de riesgos. Los cambios que hagamos en una máquina se reflejarán en la otra, pero puede haber interferencias. Por ejemplo, la papelera de reciclaje de la máquina física no es accesible para la máquina virtual. Si intentamos eliminar un archivo de una carpeta compartida desde la máquina virtual, el borrado será definitivo. Este tipo de operaciones conviene hacerlas desde la máquina física.</p>
 </div>
 <p>En el explorador de archivos <em>Nautilus</em> podemos crear un enlace en la barra lateral para acceder cómodamente a las carpetas compartidas.</p>
-<h2 id="configurar-el-sistema">Configurar el sistema<a class="headerlink" href="#configurar-el-sistema" title="Permanent link">&para;</a></h2>
-<p>Durante la instalación, ya hemos visto la forma de acceder a las opciones de configuración. En el menú desplegable que tenemos en la esquina superior derecha del escritorio, pulsar en el icono de la rueda:</p>
-<p><img alt="" src="img/01006Instalar011.png" /></p>
+<h2 id="montar-y-desmontar-carpetas-compartidas">Montar y desmontar carpetas compartidas<a class="headerlink" href="#montar-y-desmontar-carpetas-compartidas" title="Permanent link">&para;</a></h2>
+<p>Configurar el archivo <code>/etc/fstab</code> para que las carpetas compartidas se monten automáticamente en el directorio <code>/mnt/compartidas</code> puede no ser lo ideal, ya que deja esas carpetas de la máquina física expuestas a las acciones de la máquina virtual.</p>
+<p>Alternativamente, podemos montar y desmontar manualmente las carpetas, solo cuando necesitemos tener acceso a ellas. Para montar todas las carpetas configuradas para ser compartidas, escribimos el comando:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>/usr/bin/vmhgfs-fuse<span class="w"> </span>.host:/<span class="w">  </span>/mnt/compartidas<span class="w">   </span>-o<span class="w"> </span><span class="nv">subtype</span><span class="o">=</span>vmhgfs-fuse,allow_other
+</code></pre></div>
+
+<p>Siendo:</p>
+<ul>
+<li><code>sudo</code> indica ejecutar con permisos de administrador del sistema</li>
+<li><code>/usr/bin/vmhgfs-fuse</code> es el programa que gestiona las carpetas compartidas. Forma parte de <em>VM-Tools</em>.</li>
+<li><code>./host:/</code> indica todas las carpetas compartidas</li>
+<li><code>/mnt/compartidas</code> es el directorio de la máquina virtual donde vamos a acceder al contenido</li>
+<li>el resto son opciones de configuración </li>
+</ul>
+<p>Si queremos montar solo una carpeta física, escribir:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>/usr/bin/vmhgfs-fuse<span class="w"> </span>.host:/micarpeta<span class="w">  </span>/mnt/compartidas/micarpeta<span class="w">   </span>-o<span class="w"> </span><span class="nv">subtype</span><span class="o">=</span>vmhgfs-fuse,allow_other
+</code></pre></div>
+
+<p>para desmontar las carpetas y cortar el acceso a ellas:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>umount<span class="w"> </span>/mnt/compartidas
+</code></pre></div>
+
 <h2 id="personalizar-el-escritorio">Personalizar el escritorio<a class="headerlink" href="#personalizar-el-escritorio" title="Permanent link">&para;</a></h2>
 <p>La configuración del sistema nos permite personalizar el aspecto que tiene el escritorio:</p>
 <ul>
