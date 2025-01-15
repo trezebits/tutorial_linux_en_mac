@@ -573,6 +573,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#un-lanzador-para-montar-y-desmontar-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un lanzador para montar y desmontar carpetas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enlaces-a-carpetas" class="md-nav__link">
     <span class="md-ellipsis">
       Enlaces a carpetas
@@ -784,6 +793,40 @@ Type=Application
 <p class="admonition-title">Especificaciones de los lanzadores</p>
 <p>Los lanzadores son archivos de texto cuyo formato se corresponde con el proyecto <em>Freedesktop.org</em>. Ver <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">especificaciones</a> en la <a href="https://www.freedesktop.org/wiki/">página web</a> del proyecto.</p>
 </div>
+<h2 id="un-lanzador-para-montar-y-desmontar-carpetas">Un lanzador para montar y desmontar carpetas<a class="headerlink" href="#un-lanzador-para-montar-y-desmontar-carpetas" title="Permanent link">&para;</a></h2>
+<p>Ya hemos visto anteriormente que podemos acceder a las carpetas compartidas de la máquina física. Vamos a crear sendos lanzadores para conectar y desconectar esas carpetas, de forma que limitemos el acceso a las mismas, sin necesidad de tenerlas expuestas permanentemente.</p>
+<p>Abrimos el Terminal y nos situamos en el escritorio:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Escritorio
+</code></pre></div>
+
+<p>Creamos el lanzador:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>desmontar.desktop
+</code></pre></div>
+
+<p>Abrimos el archivo en el editor de textos:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gnome-text-editor<span class="w"> </span>desmontar.desktop
+</code></pre></div>
+
+<p>El texto del archivo puede ser algo así como:</p>
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
+Name=Montar compartidas
+Comment=Montar directorios compartidos
+Exec=sudo /usr/bin/vmhgfs-fuse .host:/ /mnt/compartidas -o subtype=vmhgfs-fuse,allow_other
+Terminal=true
+Icon=/usr/share/icons/Humanity/actions/48/gtk-open.svg
+Type=Application
+</code></pre></div>
+<p>Véase que en el apartado <code>Exec</code> ponemos el comando a ejecutar. Como icono hemos seleccionado uno de la carpeta <code>/usr/share/icons</code>.</p>
+<p>Tras pulsar sobre el icono y seleccionar la opción "<em>permitir lanzar</em>", ahora tendremos una forma cómoda de desconectar las carpetas compartidas de la máquina física.</p>
+<p>El texto de un lanzador para montar las carpetas podría ser algo así como:</p>
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
+Name=Montar compartidas
+Comment=Montar directorios compartidos
+Exec=sudo /usr/bin/vmhgfs-fuse .host:/ /mnt/compartidas -o subtype=vmhgfs-fuse,allow_other
+Terminal=true
+Icon=/usr/share/icons/Humanity/actions/48/gtk-open.svg
+Type=Application
+</code></pre></div>
 <h2 id="enlaces-a-carpetas">Enlaces a carpetas<a class="headerlink" href="#enlaces-a-carpetas" title="Permanent link">&para;</a></h2>
 <p>Para poner en el escritorio un enlace a una carpeta, abrimos el Terminal y ejecutamos el comando:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>~/Imágenes<span class="w">  </span>~/Escritorio/Imágenes
