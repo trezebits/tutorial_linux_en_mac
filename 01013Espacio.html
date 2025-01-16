@@ -829,11 +829,15 @@ Icon=/usr/share/icons/Humanity/actions/48/gtk-open.svg
 Type=Application
 </code></pre></div>
 <h2 id="enlaces-a-carpetas">Enlaces a carpetas<a class="headerlink" href="#enlaces-a-carpetas" title="Permanent link">&para;</a></h2>
-<p>Para poner en el escritorio un enlace a una carpeta, abrimos el Terminal y ejecutamos el comando:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>~/Imágenes<span class="w">  </span>~/Escritorio/Imágenes
+<p>Para poner en el escritorio un icono que muestre el contenido de una carpeta, podemos crear un lanzador que abra el gestor de archivos, <em>Nautilus</em>:</p>
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
+Name=Compartida
+Comment=Carpetas compartidas
+Exec=nautilus --new-window /micarpeta
+Icon=org.gnome.Nautilus
+Terminal=false
+Type=Application
 </code></pre></div>
-
-<p>En este ejemplo, hemos creado un enlace a la carpeta <code>/home/usuario/Imágenes</code>. Recuérdese que el símbolo <code>~</code> representa el directorio principal de usuario. El comando <code>ln -s</code> crea el enlace. Se le pasa como argumento el archivo o carpeta enlazada, seguido del nombre del enlace, ambos con su ruta.</p>
 <h2 id="areas-de-trabajo">Áreas de trabajo<a class="headerlink" href="#areas-de-trabajo" title="Permanent link">&para;</a></h2>
 <p>Cuando tenemos varias ventanas de aplicaciones en ejecución, podemos seleccionar una u otra:</p>
 <ul>
