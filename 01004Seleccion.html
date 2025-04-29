@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://trezebits.github.io/tutorial_linux_en_mac/index.html">
+        <link rel="canonical" href="https://trezebits.github.io/tutorial_linux_en_mac/01004Seleccion.html">
       
       
+        <link rel="prev" href="01003Escritorios.html">
       
-        <link rel="next" href="01001Sistemas.html">
+      
+        <link rel="next" href="01005VMWare.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +24,7 @@
     
     
       
-        <title>📔 Introducción - Usando Linux en un Mac</title>
+        <title>📔 Obtener Linux - Usando Linux en un Mac</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mi-guia-personal-para-instalar-y-usar-linux-en-un-macsin-romper-nada" class="md-skip">
+        <a href="#obtener-linux" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              📔 Introducción
+              📔 Obtener Linux
             
           </span>
         </div>
@@ -331,7 +333,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="index.html" class="md-nav__link md-nav__link--active">
+            <a href="index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -342,7 +344,7 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_1" id="__nav_1_label" tabindex="">
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -424,10 +426,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="01004Seleccion.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📔 Obtener Linux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="01004Seleccion.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -436,6 +458,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-proceso-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      El proceso de instalación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparar-medio-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparar medio de instalación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtener-el-archivo-iso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtener el archivo ISO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seleccionar-un-escritorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seleccionar un escritorio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seleccionar-una-distribucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seleccionar una distribución
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versiones-para-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versiones para Mac
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paginas-de-descarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Páginas de descarga
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -696,19 +801,203 @@
   
 
 
-<h1 id="mi-guia-personal-para-instalar-y-usar-linux-en-un-macsin-romper-nada" style="text-align:left"><img src="img/tux.jpg" style="float:right; padding: 20px;" width="300px">Mi guía personal para instalar y usar Linux en un Mac<br>(sin romper nada)<a class="headerlink" href="#mi-guia-personal-para-instalar-y-usar-linux-en-un-macsin-romper-nada" title="Permanent link">&para;</a></h1>
-<hr/>
-
-<p>De vez en cuando me gusta "<em>trastear</em>" con el sistema operativo Linux, pero sin que eso afecte a la configuración de mi ordenador MacBook, ni  modificar el software que viene de fábrica o perder contenidos. A fin de cuentas, nuestra computadora es una inversión que debemos cuidar.</p>
-<p>Mi particular solución consiste en crear una <em>máquina virtual</em>. Dicho de una forma gráfica, se trata de instalar un programa especial que simule un ordenador, visualizando el escritorio virtual en una ventana de la pantalla, y utilizando un enorme archivo de datos como disco duro virtual. Ahí encerraremos todos nuestros experimentos y crearemos un espacio de trabajo aislado, evitando contaminar la máquina física. Llegado el momento, basta con suprimir ese archivo para hacer limpieza general y dejarlo todo como el día que adquirimos la computadora.</p>
-<p>En este cuaderno describiré todo el proceso para tener esa máquina virtual Linux en un ordenador Mac. Se trata de una colección de apuntes personales basados en mi experiencia en tareas domésticas, y en mis lecturas. No soy administrador de grandes sistemas ni nunca he configurado un ordenador como servidor web. Comparto mis notas con  quienes quieren acompañarme en mi exploración del mundo de las computadoras.</p>
-<p>Estas páginas han sido desarrolladas con la ayuda de un software llamado 
-<a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
-, y alojado en 
-<a href="https://pages.github.com">GitHUb Pages</a>. En <a href="https://trezebits.github.io/tutorial_mkdocs/">otro cuaderno</a>
-de mi colección explico como es el desarrollo de mis cuadernos de apuntes.</p>
-<p><br><br></p>
-<p style="text-align:right;color:cadetblue">Fecha última actualización de este cuaderno: 29-abr-2025</p>
+<h1 id="obtener-linux">Obtener Linux<a class="headerlink" href="#obtener-linux" title="Permanent link">&para;</a></h1>
+<p>Una vez aclarado lo que es Linux y las diferentes alternativas, llega el momento de seleccionar una distribución, optar por un escritorio, descargar el software e instalarlo en nuestra máquina.</p>
+<h2 id="el-proceso-de-instalacion">El proceso de instalación<a class="headerlink" href="#el-proceso-de-instalacion" title="Permanent link">&para;</a></h2>
+<p>Para instalar un nuevo sistema operativo Linux en nuestro disco duro tenemos que dar los siguientes pasos:</p>
+<ul>
+<li>
+<p>Conseguir un <em>pendrive</em> USB</p>
+<p><img alt="" src="img/01004pendrive.jpg" style="width:300px;" /></p>
+</li>
+<li>
+<p>Acudir a la página web de nuestra distribución favorita y descargar un archivo de "imagen de disco" en formato ISO. Contiene una descripción binaria de lo que queremos poner en el pendrive.</p>
+</li>
+<li>
+<p>Usar algún programa especial que prepare el <em>pendrive</em> volcando la información del archivo ISO. ¡Ojo! No se trata de copiar el fichero descargado al pendrive, sino de usar su contenido para formatear el dispositivo.</p>
+</li>
+<li>
+<p>Una vez preparado, conectar el pendrive y reiniciar el ordenador. La computadora arrancará con el sistema operativo que hay en el pendrive, ignorando el disco duro. A esto se le llama una sesión "<em>Live</em>".</p>
+</li>
+<li>
+<p>Seguidamente veremos el escritorio de este sistema operativo portátil. En algún lugar tendremos un programa de instalación que tenemos que ejecutar. Algunas distribuciones ponen en marcha este programa automáticamente, y otras nos obligan a hacerlo a mano, permitiendo que exploremos un poco el funcionamiento de Liux antes de instalarlo.</p>
+<p>Tras iniciar el programa de instalación, este reformateará el disco duro de nuestra máquina y copiará el software del pendrive al disco.</p>
+</li>
+<li>
+<p>Una vez completada la instalación, apagamos el ordenador, extraemos el pendrive y reiniciamos la máquina. ¡Ya tenemos un nuevo sistema operativo!</p>
+</li>
+</ul>
+<p>¡Ojo! Antes de realizar el proceso tenemos que hacer una copia de seguridad de todos los documentos que tenemos en el disco duro, ya que vamos a borrarlo completamente para instalar Linux. Como en este cuaderno vamos a crear una máquina virtual, la cosa cambia:</p>
+<ul>
+<li>
+<p>podemos usar el archivo ISO descargado como pendrive virtual. No hace falta preparar un pendrive físico ni necesitamos de un programa que haga esa tarea.</p>
+</li>
+<li>
+<p>lo que se borra y reformatea no es el disco duro físico de la computadora, sino el disco duro virtual, un enorme fichero que el software de máquina virtual utiliza para este propósito.</p>
+</li>
+</ul>
+<p>En el siguiente capítulo veremos como crear una máquina y disco duro virtual.</p>
+<div class="admonition warning">
+<p class="admonition-title">Archivos ISO vs Raw</p>
+<p>Una imagen de disco es un archivo que describe, bit a bit, el contenido de un dispositivo de almacenamiento. El resultado es un fichero bastante voluminoso, por lo que generalmente se utilizan archivos comprimidos en diferentes formatos.</p>
+<p>El formato ISO es una imagen comprimida. Es un formato muy utilizado en la descarga de distribuciones Linux. Alternativamente, podemos encontrar versiones en formato <em>Raw</em>, que son ficheros sin comprimir. Para preparar un pendrive, necesitaremos un software que admita diferentes formatos.</p>
+<p>El uso de archivos ISO como pendrive virtual está muy aceptado por los programas de gestión de máquinas virtuales. El formato <em>raw</em> es menos frecuente de ver.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">¿Pendrive o DVD?</p>
+<p>Antes de la popularización de los pendrives, o memorias flash, se usaban discos extraíbles. Primero fueron los diskettes, luego los CD y finalmente los DVD. Actualmente, todos estos medios están en desuso, pero en muchos procesos de instalación veremos el término DVD para hacer referencia al dispositivo, aunque en realidad sea un pendrive.</p>
+</div>
+<h2 id="preparar-medio-de-instalacion">Preparar medio de instalación<a class="headerlink" href="#preparar-medio-de-instalacion" title="Permanent link">&para;</a></h2>
+<p>Si quisiéramos instalar Linux en la máquina física, descartando nuestro viejo sistema operativo, tenemos que preparar el <em>pendrive</em> de arranque (<em>bootable USB stick</em>) a partir del archivo ISO descargado. Para hacer este volcado de bits, necesitaremos de algún programa especial.</p>
+<p>Dependiendo del sistema operativo de la máquina con la que hagamos la descarga, hay diferentes programas que hacen esta labor. Algunas distribuciones cuentan con un manual que explica como llevar a cabo esta tarea. Por ejemplo:</p>
+<ul>
+<li>
+<p>Ubuntu tiene una <a href="https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick">guía de instalación</a>. </p>
+</li>
+<li>
+<p>Otras guías Ubuntu si nuestra máquina de descargas es:</p>
+<ul>
+<li><a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#1-overview">Windows</a></li>
+<li><a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-macos#1-overview">Mac</a></li>
+<li><a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu#1-overview">Ubuntu</a></li>
+</ul>
+</li>
+<li>
+<p>Fedora proporciona un programa llamado <em>Media Writer</em> que sirve para preparar el pendrive. Tenemos una <a href="https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/#_fedora_media_writer">guía de funcionamiento</a>.</p>
+</li>
+<li>
+<p>SuSE explica como preparar el pendrive de instalación si la máquina de descargas es:</p>
+<ul>
+<li><a href="https://en.opensuse.org/SDB:Create_a_Live_USB_stick_using_Windows">Windows</a></li>
+<li><a href="https://en.opensuse.org/SDB:Live_USB_stick">Linux</a></li>
+<li><a href="https://en.opensuse.org/SDB:Create_a_Live_USB_stick_using_macOS">Mac</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="obtener-el-archivo-iso">Obtener el archivo ISO<a class="headerlink" href="#obtener-el-archivo-iso" title="Permanent link">&para;</a></h2>
+<p>Cada distribución tiene su página de descargas. Las hay de dos tipos:</p>
+<ul>
+<li>
+<p>las que proporcionan un único archivo ISO, que incluyen varios escritorios. Descargamos el conjunto y seleccionaremos un escritorio durante el proceso de instalación.</p>
+</li>
+<li>
+<p>hay distribuciones que ofrecen varios archivos ISO, cada uno con su escritorio. Hay que optar por uno u otro en el momento de la descarga.</p>
+</li>
+</ul>
+<h2 id="seleccionar-un-escritorio">Seleccionar un escritorio<a class="headerlink" href="#seleccionar-un-escritorio" title="Permanent link">&para;</a></h2>
+<p>¿Que escritorio elegir? Un resumen de pros y contras:</p>
+<ul>
+<li>
+<p><strong>Xfce</strong>: si nuestro equipo es de recursos reducidos en cuanto a memoria RAM o capacidad de la CPU, la elección es clara; debemos decidirnos por un escritorio sencillo y sin grandes alardes gráficos, como <em>Xfce</em>.</p>
+<p>Inconvenientes: tiene un aspecto y funcionamiento algo anticuado.</p>
+</li>
+<li>
+<p><strong>KDE Plasma</strong>:</p>
+<ul>
+<li>es el escritorio más completo y potente, con muchas funcionalidades</li>
+<li>tiene un aspecto tradicional, parecido a Windows. </li>
+</ul>
+<p>Inconvenientes:</p>
+<ul>
+<li>es algo complicado de utilizar, dada la cantidad de opciones que tiene</li>
+<li>debido a su complejidad, las nuevas versiones suelen ser propensas a pequeños fallos, que con el tiempo son corregidos por la comunidad que lo mantiene.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cinnamon</strong>: tiene un aspecto tradicional, es amigable, fácil de usar e instalar. </p>
+<p>Inconvenientes:</p>
+<ul>
+<li>es desarrollado por Linux Mint, una comunidad algo reducida</li>
+<li>no todas las distribuciones lo incluyen.</li>
+<li>no he encontrado versiones para Mac</li>
+</ul>
+</li>
+<li>
+<p><strong>Gnome</strong>:</p>
+<ul>
+<li>es el escritorio oficial del proyecto GNU, y de alguna forma, es la referencia</li>
+<li>muchas distribuciones optan por <em>Gnome</em> como escritorio por defecto, aunque admiten otras posibilidades</li>
+<li>tiene un aspecto visual simple y agradable</li>
+<li>es un escritorio minimalista y sencillo de usar</li>
+</ul>
+<p>Inconvenientes:</p>
+<ul>
+<li>
+<p>se sale del concepto de escritorio tradicional, con un aspecto más parecido al de las <em>tablets</em>. Para un usuario habituado a <em>Windows</em>, costará un poco adaptarse.</p>
+</li>
+<li>
+<p>es tan minimalista que carece de muchas funcionalidades presentes en otros escritorios. Por poner algunos ejemplos, en el momento de escribir esto, no cuenta con un menú desplegable de aplicaciones. En su lugar, tenemos una rejilla de iconos en el escritorio, al estilo de los teléfonos móviles. Tampoco permite arrastrar iconos sobre el escritorio, pongamos por caso. </p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Gnome con extensiones</strong></p>
+<p>Podemos solucionar las carencias de Gnome instalado alguna de las <a href="https://extensions.gnome.org">extensiones</a> disponibles.</p>
+<p>Inconvenientes:</p>
+<ul>
+<li>
+<p>Muchas de esas extensiones son contribuciones de terceras personas, pudiendo coincidir en su propósito y competir entre sí. Esto nos obliga a probarlas para ver cual es la que más nos conviene.</p>
+</li>
+<li>
+<p>Algunas extensiones pueden estar desactualizadas, no adaptándose a la versión más reciente del escritorio que tenemos instalado, y generando algunos fallos.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Versión Gnome de Ubuntu</strong>: Ubuntu proporciona un escritorio Gnome mejorado, con extensiones seleccionadas, configuradas y listas para su uso.</p>
+</li>
+</ul>
+<h2 id="seleccionar-una-distribucion">Seleccionar una distribución<a class="headerlink" href="#seleccionar-una-distribucion" title="Permanent link">&para;</a></h2>
+<p>Una vez que tenemos una idea sobre que escritorio elegir, toca optar por una distribución u otra. Un primer paso es llevar a cabo un análisis de popularidad. <a href="https://distrowatch.com">Distrowatch</a> publica rankings y comparativas de forma periódica, y nos puede dar una idea de por donde van los tiros.</p>
+<p>Hacer una categorización es complejo, ya que hay distribuciones de todo tipo. Centrándonos en la instalación en un ordenador típico de sobremesa, se diría que hay dos grandes distribuciones de referencia, <em>Fedora</em> y <em>Debian</em>. De esta última se deriva <em>Ubuntu</em>, que es muy popular, y más orientada al mercado doméstico, aunque presente en otros ámbitos. <em>Debian</em> no tiene tantos adeptos por excluir todo tipo de software con licencia, aunque sea la favorita de los defensores del software libre. </p>
+<p>¿Fedora o Ubuntu? Por supuesto, hay otras alternativas. OpenSuSE ofrece una experiencia muy sólida y amigable. Un "hacker" de los sistemas Linux apostará por <em>Arch</em> o similares. Y en el extremo opuesto, <em>Mint</em> es una de las distribuciones más fáciles de utilizar. Desde que apareció, en 2006, siempre se ha mantenido en el top del ranking <em>Distrowatch</em>. Por algo será.</p>
+<p>Para alguien que de sus primeros pasos en Linux, yo descartaría <em>Debian</em> y <em>Arch</em>, por los motivos explicados. </p>
+<p>Muchas distribuciones suelen venir en dos versiones, <em>desktop</em>, para instalar en computadoras domésticas, y <em>server</em>, con una selección de software orientada a montar un servidor de red. Centraremos nuestra búsqueda en las versiones <em>desktop</em>.</p>
+<h2 id="versiones-para-mac">Versiones para Mac<a class="headerlink" href="#versiones-para-mac" title="Permanent link">&para;</a></h2>
+<p>Se diría que la arquitectura más popular son los chips de Intel de 64 bits, más conocida como <code>amd64</code>, pero para un Mac de última generación, como es mi caso, tendremos que seleccionar Linux para <code>aarm64</code>. Esto nos condiciona bastante las opciones. </p>
+<p>Podemos hacer una búsqueda en la página de <a href="https://distrowatch.com/search.php">Distrowatch</a> y, en las opciones de filtro, seleccionar <code>arquitectura=aarch64</code>.</p>
+<p>Aun así, muchas de las distribuciones que proporcionan versiones ARM priorizan las versiones Intel en su página de descargas, y hay que investigar un poco para encontrar la opción ARM.</p>
+<h2 id="paginas-de-descarga">Páginas de descarga<a class="headerlink" href="#paginas-de-descarga" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://linuxmint.com/download_all.php">Mint</a> es mi distribución favorita. Apuesta por su escritorio estrella, Cinnamon, aunque proporciona versiones con escritorios más ligeros, Mate y Xfce. Es fácil de instalar y utilizar.</p>
+<p>Pero tiene dos desventajas. No incluye los dos escritorios más populares, Gnome y KDE, y en el momento de escribir esto, no he encontrado versiones para los chips ARM de los ordenadores Mac. Mala suerte.</p>
+</li>
+<li>
+<p><a href="https://www.opensuse.org">OpenSuSE</a> proporciona descarga de archivos ISO para varias arquitecturas y tiene un proceso de instalación y selección de software bastante cómodo.</p>
+<p>Se distribuye en dos versiones, Leap, que tiene un período de actualizaciones hasta que lancen la siguiente versión, y Tumbleweed, que se atualiza permanentemente sin que tengamos que reinstalarlo. La descarga incluye varios escritorios. La selección se hace durante el proceso de instalación.</p>
+<p>En el lado negativo, si optamos por el escritorio Gnome, hay que mejorarlo a mano instalando extensiones, y el proceso puede complicarse, como hemos visto.</p>
+</li>
+<li>
+<p><a href="https://fedoraproject.org">Fedora</a> viene con escritorio Gnome por defecto. La página de versiones con otros escritorios se llama <a href="https://fedoraproject.org/spins">Fedora Spins</a></p>
+<p>Como sucede con SuSE, el escritorio Gnome también viene sin instalar extensiones, por lo que habrá que hacerlo a mano.</p>
+<p>Encontraremos versiones para la arquitectura ARM en <a href="https://alt.fedoraproject.org/alt">https://alt.fedoraproject.org/alt</a>. De todas formas, lo que necesitamos descargar es un archivo ISO, y no se por que motivo, me he encontrado que Fedora a veces viene en formato <em>raw</em>, lo que complica las cosas. Alternativamente podemos buscar en:</p>
+<ul>
+<li><a href="https://dl.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/aarch64/iso/">https://dl.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/aarch64/iso/</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://ubuntu.com/desktop">Ubuntu</a> se distribuye con el escritorio Gnome mejorado y configurado para que funcione bien desde el primer momento. También disponemos de versiones con otros escritorios y selección de software, denominadas <a href="https://ubuntu.com/desktop/flavours">Ubuntu flavours</a>:</p>
+<ul>
+<li>Kubuntu, con escritorio KDE</li>
+<li>Xubuntu, con escritorio Xfce</li>
+<li>Ubuntu Cinnamon</li>
+</ul>
+<p>Pero la página de descargas a veces solo muestra opciones para arquitecturas Intel. De todas formas, podemos seguir buscando en:</p>
+<ul>
+<li><a href="https://ubuntu.com/download/">https://ubuntu.com/download/</a></li>
+<li><a href="https://releases.ubuntu.com">https://releases.ubuntu.com</a></li>
+<li><a href="https://cdimage.ubuntu.com/ubuntu/releases/">https://cdimage.ubuntu.com/ubuntu/releases/</a></li>
+</ul>
+</li>
+</ul>
+<p>En resumen, para alguien que quiera dar sus primeros pasos en Linux, mi selección particular sería:</p>
+<ul>
+<li>para ordenadores con chips de Intel, Mint con escritorio Cinnamon</li>
+<li>para ordenadores Mac con chips ARM, si buscamos una experiencia parecida a Windows, yo apostaría por SuSE o Fedora con escritorio KDE</li>
+<li>para ordenadores Mac, buscando un escritorio más minimalista, Ubuntu con Gnome. Es una solución elegante y simple, aunque habrá que acostumbrarse a otra forma de trabajar.</li>
+</ul>
+<p>En este cuaderno apostaremos por la tercera opción. Añadiremos algunas de las extensiones de Gnome, para mejorar las funcionalidades.</p>
 
 
 
@@ -743,15 +1032,31 @@ de mi colección explico como es el desarrollo de mis cuadernos de apuntes.</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
+          
+          <a href="01003Escritorios.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 📔 Escritorios">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                📔 Escritorios
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="01001Sistemas.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 📔 Sistemas operativos">
+          <a href="01005VMWare.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 📔 Máquinas virtuales">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                📔 Sistemas operativos
+                📔 Máquinas virtuales
               </div>
             </div>
             <div class="md-footer__button md-icon">

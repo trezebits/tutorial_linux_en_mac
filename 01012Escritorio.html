@@ -1,0 +1,1426 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Como instalar linux en nuestro ordenador sin romper nada">
+      
+      
+      
+        <link rel="canonical" href="https://trezebits.github.io/tutorial_linux_en_mac/01012Escritorio.html">
+      
+      
+        <link rel="prev" href="01011Configurar.html">
+      
+      
+        <link rel="next" href="01013Dispositivos.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>📔 El escritorio - Usando Linux en un Mac</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/estilos.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-escritorio-de-ubuntu" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="Usando Linux en un Mac" class="md-header__button md-logo" aria-label="Usando Linux en un Mac" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.263 2.177a1.75 1.75 0 0 1 2.474 0l2.586 2.586a1.75 1.75 0 0 1 0 2.474L19.53 10.03l-.012.013L8.69 20.378a1.75 1.75 0 0 1-.699.409l-5.523 1.68a.75.75 0 0 1-.747-.188.75.75 0 0 1-.188-.747l1.673-5.5a1.75 1.75 0 0 1 .466-.756L14.476 4.963ZM4.708 16.361a.26.26 0 0 0-.067.108l-1.264 4.154 4.177-1.271a.25.25 0 0 0 .1-.059l10.273-9.806-2.94-2.939zM19 8.44l2.263-2.262a.25.25 0 0 0 0-.354l-2.586-2.586a.25.25 0 0 0-.354 0L16.061 5.5Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Usando Linux en un Mac
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📔 El escritorio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/trezebits/tutorial_linux_en_mac/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+    
+  
+  Indice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://trezebits.github.io" class="md-tabs__link">
+        
+  
+    
+  
+  Otros cuadernos
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Usando Linux en un Mac" class="md-nav__button md-logo" aria-label="Usando Linux en un Mac" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.263 2.177a1.75 1.75 0 0 1 2.474 0l2.586 2.586a1.75 1.75 0 0 1 0 2.474L19.53 10.03l-.012.013L8.69 20.378a1.75 1.75 0 0 1-.699.409l-5.523 1.68a.75.75 0 0 1-.747-.188.75.75 0 0 1-.188-.747l1.673-5.5a1.75 1.75 0 0 1 .466-.756L14.476 4.963ZM4.708 16.361a.26.26 0 0 0-.067.108l-1.264 4.154 4.177-1.271a.25.25 0 0 0 .1-.059l10.273-9.806-2.94-2.939zM19 8.44l2.263-2.262a.25.25 0 0 0 0-.354l-2.586-2.586a.25.25 0 0 0-.354 0L16.061 5.5Z"/></svg>
+
+    </a>
+    Usando Linux en un Mac
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/trezebits/tutorial_linux_en_mac/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Indice
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Indice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01001Sistemas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Sistemas operativos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01002Linux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Acerca de Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01003Escritorios.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Escritorios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01004Seleccion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Obtener Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01005VMWare.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Máquinas virtuales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01006Instalar.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Instalar Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01007Carpetas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Carpetas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01008Terminal.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 El Terminal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01009Comandos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Comandos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01010Repositorios.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Instalar software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01011Configurar.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Configurar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📔 El escritorio
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="01012Escritorio.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    📔 El escritorio
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#el-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      El Dock
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-parrilla-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      La parrilla (grid)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturar-pantalla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capturar pantalla
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiples-escritorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Múltiples escritorios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-barra-dash" class="md-nav__link">
+    <span class="md-ellipsis">
+      La barra Dash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecla-super" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecla Super
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avisos-y-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avisos y agenda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalizar-el-escritorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalizar el escritorio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mostrar-icono-de-carpeta-personal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar icono de carpeta personal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnome-tweaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gnome Tweaks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensiones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iconos-en-el-escritorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iconos en el escritorio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lanzadores-en-el-escritorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lanzadores en el escritorio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-lanzador-para-montar-y-desmontar-carpetas-compartidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un lanzador para montar y desmontar carpetas compartidas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces-a-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlaces a carpetas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01013Dispositivos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Dispositivos externos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01014Aplicaciones.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📔 Usando Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://trezebits.github.io" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Otros cuadernos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="el-escritorio-de-ubuntu">El escritorio de Ubuntu<a class="headerlink" href="#el-escritorio-de-ubuntu" title="Permanent link">&para;</a></h1>
+<p>A lo largo de este cuaderno ya hemos ido viendo el funcionamiento del escritorio de Ubuntu. Ahora haremos un repaso de algunas de sus características. Tenemos la guía de uso <a href="https://help.ubuntu.com/stable/ubuntu-help/index.html.es">en este enlace</a>.</p>
+<h2 id="el-dock">El Dock<a class="headerlink" href="#el-dock" title="Permanent link">&para;</a></h2>
+<p>La barra lateral del escritorio se denomina <em>Dock</em>, y es un añadido de Ubuntu al escritorio de Gnome. Podemos pulsar en cualquier icono del <em>Dock</em> para iniciar la aplicación correspondiente o para seleccionar una de las ventanas abiertas.</p>
+<p>El <em>Dock</em> muestra los iconos de las aplicaciones favoritas y las que están en ejecución. Para mantener permanentemente una aplicación en el <em>Dock</em>, ejecutarla, pulsar con el botón secundario del ratón sobre el icono del <em>Dock</em> , y seleccionar la opción <em>Pin to Dock</em>. Una vez añadida la aplicación al <em>Dock</em>, desaparecerá de la parrilla. Alternativamente, la operación <em>Pin to Dock</em> también está disponible visualizando la parrilla de aplicaciones y pulsando sobre la elegida con el botón secundario del ratón. </p>
+<p>Cuando un icono del <em>Dock</em> muestra uno o varios puntos, significa que hay abiertas una o varias ventanas de esa aplicación. Pulsando sobre el icono con el botón secundario del ratón, se muestra la lista de ventanas para seleccionar una de ellas o abrir una nueva.</p>
+<p>Podemos reorganizar los iconos en el Dock. Basta con arrastrarlos a su nueva posición. Para quitar un icono del Dock, pulsar con el botón secundario del ratón y seleccionar "<em>quitar</em>".</p>
+<p>Para ocultar el <em>Dock</em>, acudir a la configuración del sistema, apartado <em>Escritorio &gt; Dock</em>. Podemos hacer que se oculte o muestre cuando acercamos el puntero del ratón al borde de la pantalla. También podemos cambiar el tamaño de los iconos, o llevar el <em>Dock</em> al costado derecho o inferior del escritorio.</p>
+<p>La papelera y los dispositivos externos conectados se incluyen automáticamente en el extremo de la barra. Su visualización se puede activar o desactivar acudiendo a la configuración del sistema, apartado <em>Escritorio &gt; Dock &gt; Comportamiento</em>. </p>
+<h2 id="la-parrilla-grid">La parrilla (grid)<a class="headerlink" href="#la-parrilla-grid" title="Permanent link">&para;</a></h2>
+<p>La parrilla de aplicaciones es complementaria del Dock. Podemos organizar los iconos de la parrilla arrastrándolos para ordenarlos a nuestro gusto. </p>
+<p>No todas las aplicaciones instaladas se muestran el la parrilla. Ubuntu selecciona solo las que considera más importantes, y de esa selección, excluye las incorporadas al <em>Dock</em>.</p>
+<p>Para incorporar manualmente una aplicación a la parrilla, tenemos que crear un <em>lanzador</em> (un icono de escritorio). Los lanzadores son archivos que se explican más adelante. Son ficheros de texto con especificaciones, y cuyo nombre lleva la extensión <code>.desktop</code>. Ubuntu acude a unos directorios especiales que contienen los lanzadores a incluir en la parrilla. Estos directorios son:</p>
+<ul>
+<li>
+<p>a nivel de usuario:</p>
+<div class="codehilite"><pre><span></span><code>~/.local/share/applications
+</code></pre></div>
+
+</li>
+<li>
+<p>a nivel global:</p>
+<div class="codehilite"><pre><span></span><code>/usr/share/applications
+</code></pre></div>
+
+</li>
+</ul>
+<p>Podemos agrupar los iconos de la parrilla en forma de carpetas. Para crear una carpeta con dos iconos, arrastrar uno sobre el otro. Se unirán los dos en un grupo. Para añadir otros iconos al grupo, arrastrarlos a esa carpeta. </p>
+<p>Para editar el nombre de un grupo, pulsar sobre el mismo y, una vez abierto su contenido, editar la cabecera.</p>
+<p>Para eliminar un grupo, arrastrar los iconos fuera del mismo.</p>
+<h2 id="capturar-pantalla">Capturar pantalla<a class="headerlink" href="#capturar-pantalla" title="Permanent link">&para;</a></h2>
+<p>Pulsando la tecla <span class="keys"><kbd class="key-print-screen">Print Screen</kbd></span> podemos abrir la aplicación de Captura de Pantalla:</p>
+<p><img alt="" src="img/01012Escritorio001.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Teclados Mac</p>
+<p>Como lo que tenemos en este cuaderno es un teclado <em>Mac</em>, nos encontraremos con que no hay tecla <span class="keys"><kbd class="key-print-screen">Print Screen</kbd></span>. Podemos simular una pulsación de  esta tecla mediante el menú de VMWare, <em>máquina virtual &gt; enviar tecla &gt; Impr Pant</em>. Tendremos un mejor acceso a esta función si activamos la visualización de la minibarra, como se explicó en el apartado dedicado a la instalación del sistema.</p>
+</div>
+<p>También podemos iniciar la <em>Captura de Pantalla</em> desde el menú desplegable del sistema, donde encontraremos un icono al lado del de configuración:</p>
+<p><img alt="" src="img/01006Instalar011.png" /></p>
+<p>Al ejecutarse la captura de pantalla, muestra un recuadro con seis iconos:</p>
+<p><img alt="" src="img/01012Escritorio002.png" /></p>
+<p>cuyo significado de izquierda a derecha y de arriba abajo es:</p>
+<ul>
+<li>capturar el área seleccionada con el ratón</li>
+<li>capturar la pantalla completa</li>
+<li>capturar la ventana activa</li>
+<li>seleccionar entre capturar imagen o grabar video</li>
+<li>botón para hacer la captura</li>
+<li>mostrar puntero en la captura (si/no)</li>
+</ul>
+<p>Al pulsar en el botón <em>Capturar</em>, se guarda una imagen en la carpeta <code>/Imagenes/Capturas de pantalla</code>.</p>
+<p>Como alternativa de la aplicación de captura de pantalla, podemos instalar otros programas similares acudiendo al <em>Centro de Aplicaciones</em>. Por ejemplo, podemos instalar <a href="https://apps.kde.org/es/spectacle/">spectacle</a>, que forma parte del escritorio Plasma de KDE. </p>
+<h2 id="multiples-escritorios">Múltiples escritorios<a class="headerlink" href="#multiples-escritorios" title="Permanent link">&para;</a></h2>
+<p>Cuando tenemos varias ventanas de aplicaciones en ejecución, podemos seleccionar una u otra:</p>
+<ul>
+<li>pulsando en la ventana correspondiente</li>
+<li>pulsando en el icono de la aplicación en la barra lateral (el <em>Dock</em>)</li>
+<li>recorriendo la lista de aplicaciones con la combinación de teclas <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span></li>
+</ul>
+<p>Si tenemos muchas aplicaciones abiertas, podemos utilizar varios escritorios (áreas de trabajo), y poner las aplicaciones en uno u otro. De forma predeterminada, Gnome tiene dos espacios de trabajo disponibles, el original y uno adicional vacío. A medida que vayamos utilizándolos, se añadirá automáticamente uno vacío. </p>
+<p>Si cerramos ventanas y vaciamos un escritorio, las áreas de trabajo sobrantes se suprimirán, manteniendo siempre un único escritorio vacío.</p>
+<p>Para pasar de un escritorio a otro, pulsar <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> o, para hacerlo en sentido contrario, <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span>. Para utilizar un área de trabajo, desplazarse hacia ella y abrir allí las aplicaciones deseadas. </p>
+<p>Podemos obtener una vista conjunta de todas las áreas, y navegar de una a otra. Para ello, pulsar en el icono "Actividades", en la esquina superior izquierda del escritorio. Podemos arrastrar ventanas de un área a otra.</p>
+<p><img alt="" src="img/01012Escritorio008.png" /></p>
+<h2 id="la-barra-dash">La barra <em>Dash</em><a class="headerlink" href="#la-barra-dash" title="Permanent link">&para;</a></h2>
+<p>El escritorio Gnome original, sin los añadidos de <em>Ubuntu</em>, no tiene una barra <em>Dock</em> de aplicaciones favoritas. En su lugar, al pulsar en el botón de <em>Actividades</em>, en la esquina superior izquierda, se visualizan las áreas de trabajo y una barra inferior de <em>favoritos</em>, llamada <em>Dash</em>, que incluye un icono para visualizar la parrilla de aplicaciones.</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/9/97/GNOME_Shell.png" /></p>
+<h2 id="tecla-super">Tecla Super<a class="headerlink" href="#tecla-super" title="Permanent link">&para;</a></h2>
+<p>En los teclados Mac hay una tecla <span class="keys"><kbd class="key-command">Cmd</kbd></span> que Linux toma como tecla <span class="keys"><kbd class="key-super">Super</kbd></span>. En otros teclados puede ser la tecla <span class="keys"><kbd class="key-windows">Win</kbd></span> u otra diferente, en todo caso, según tengamos configurado <em>WMware</em>. Una vez identificada la tecla que sirve como <span class="keys"><kbd class="key-super">Super</kbd></span>, podemos configurar su uso en el apartado de configuración del sistema, apartado <em>Teclado</em>.</p>
+<p>En el escritorio, pulsando en <span class="keys"><kbd class="key-super">Super</kbd></span> se muestra la vista general de ventanas y áreas de trabajo:</p>
+<p><img alt="" src="img/01012Escritorio004.png" /></p>
+<h2 id="avisos-y-agenda">Avisos y agenda<a class="headerlink" href="#avisos-y-agenda" title="Permanent link">&para;</a></h2>
+<p>En el centro de la barra superior del escritorio tenemos un reloj y fecha. Pulsando ahí, se abre una ventana de notificaciones y calendario. Pulsando en uno de los días, se abre una agenda que nos permite programar avisos.</p>
+<p><img alt="" src="img/01012Escritorio003.png" /></p>
+<h2 id="personalizar-el-escritorio">Personalizar el escritorio<a class="headerlink" href="#personalizar-el-escritorio" title="Permanent link">&para;</a></h2>
+<p>La configuración del sistema nos permite personalizar el aspecto que tiene el escritorio:</p>
+<ul>
+<li>
+<p>Para cambiar la imagen del fondo, descargamos algún fondo de escritorio que nos guste (por ejemplo, desde <a href="https://pixabay.com">Pixabay</a> o desde <a href="https://www.pexels.com/es-es/">Pexels</a>), y en la aplicación "Configuración del Sistema" buscamos el apartado <em>Apariencia &gt; Fondos de Escritorio &gt; Añadir imagen</em>. Tomamos la imagen de la carpeta de <em>Descargas</em>, añadiéndola a los fondos de escritorio, y la seleccionamos como fondo.</p>
+</li>
+<li>
+<p>En el apartado <em>Apariencia &gt; Estilo</em> seleccionar un color para iconos, ventanas, etc.</p>
+</li>
+</ul>
+<h2 id="mostrar-icono-de-carpeta-personal">Mostrar icono de carpeta personal<a class="headerlink" href="#mostrar-icono-de-carpeta-personal" title="Permanent link">&para;</a></h2>
+<p>Para ocultar o mostrar el acceso a la carpeta personal en el escritorio, ir a la <em>Configuración &gt; Iconos &gt; Mostrar carpeta personal</em>.</p>
+<h2 id="gnome-tweaks">Gnome Tweaks<a class="headerlink" href="#gnome-tweaks" title="Permanent link">&para;</a></h2>
+<p>Más allá de las opciones estándar de personalización del escritorio, contamos con una utilidad llamada <a href="https://gitlab.gnome.org/GNOME/gnome-tweaks">GNOME Tweaks</a> (retoques de GNOME), que proporciona opciones añadidas de configuración, tipografías, cambiar el juego de iconos, las áreas de trabajo, el comportamiento del ratón, etc.</p>
+<p>Esta aplicación se instala abriendo el terminal y ejecutando el comando:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gnome-tweaks
+</code></pre></div>
+
+<p>Para ejecutarla, introducir el comando:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gnome-tweaks
+</code></pre></div>
+
+<p>o bien, en la rejilla de aplicaciones, buscar una llamada "<em>retoques</em>".</p>
+<p>Podemos usarlo, por ejemplo, para cambiar el juego de iconos (menú <em>Apariencia &gt; Estilos</em>).</p>
+<h2 id="extensiones">Extensiones<a class="headerlink" href="#extensiones" title="Permanent link">&para;</a></h2>
+<p>Gnome es un escritorio excesivamente minimalista, pero podemos ampliar sus funcionalidades con extensiones. El proyecto oficial da soporte a muchas de ellas en la página web <a href="https://extensions.gnome.org">https://extensions.gnome.org</a>.</p>
+<p>De hecho, Ubuntu trae de serie algunas de esas extensiones ya instaladas. Podemos hacer nuestros propios añadidos para personalizar la experiencia. Para descargar e instalar extensiones, tenemos que instalar el programa gestor de extensiones con el comando:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gnome-shell-extension-manager
+</code></pre></div>
+
+<p>lo que dejará en la rejilla de aplicaciones una nueva aplicación "Extensiones".</p>
+<p>Al ponerlo en marcha, vemos las que trae Ubuntu por defecto:</p>
+<p><img alt="" src="img/01012Escritorio005.png" /></p>
+<p>Veamos algunas extensiones para mejorar el escritorio de Ubuntu. Vamos a instalar:</p>
+<ul>
+<li>
+<p><em>Dash to panel</em>. Sustituye la barra del <em>Dock</em> de Ubuntu por una barra <em>Dash</em> mejorada en el borde inferior del escritorio, con más funcionalidades. Integra la barra superior de Gnome:</p>
+<p><img alt="" src="img/01012Escritorio006.png" /></p>
+<p>Como podemos ver, muestra un funcionamiento más cercano a los escritorios tradicionales. Pero no integra, por defecto, el botón de actividades que teníamos en la esquina superior izquierda. Podemos activar su visualización entrando en la configuración de la extensión.</p>
+<div class="admonition info">
+<p class="admonition-title">Configurar extensiones</p>
+<p>Las extensiones se configuran seleccionando cada una de ellas en el gestor de extensiones, y pulsando en el icono de configurar (rueda dentada <big><b>⚙</b></big> ) si está disponible.</p>
+</div>
+</li>
+<li>
+<p><em>Apps Menu</em>. Añade un menú desplegable de aplicaciones, que convive con la rejilla de Gnome:</p>
+<p><img alt="" src="img/01012Escritorio007.png" /></p>
+</li>
+<li>
+<p><em>Places Status Indicator</em>. Añade un menú desplegable con las principales carpetas de usuario. En la barra <em>Dash</em> se muestra como "<em>Lugares</em>"</p>
+</li>
+<li>
+<p><em>Clipboard indicator</em>. Añade un pequeño icono a la barra de indicadores, mostrando el contenido del portapapeles al pulsar sobre el mismo</p>
+</li>
+<li>
+<p><em>Removable Drive menu</em>. Añade un pequeño icono a la barra de indicadores, mostrando los dispositivos externos conectados (pendrives, etc) y permitiendo expulsarlos.</p>
+</li>
+<li>
+<p><em>Show desktop button</em>. Añade un pequeño icono a la barra de indicadores, permitiendo minimizar todas las ventanas o volver a mostrarlas.</p>
+</li>
+</ul>
+<h2 id="iconos-en-el-escritorio">Iconos en el escritorio<a class="headerlink" href="#iconos-en-el-escritorio" title="Permanent link">&para;</a></h2>
+<p>Gnome no proporciona la posibilidad de poner iconos de aplicaciones y archivos en el escritorio, pero Ubuntu añade esta opción mediante la extensión <em>Desktop Icons</em>.</p>
+<p>Para arrastrar un documento o carpeta al escritorio, basta con hacerlo desde el Gestor de archivos. Si pulsamos la tecla <span class="keys"><kbd class="key-control">Ctrl</kbd></span> al mismo tiempo, en lugar de arrastrar, haremos una copia del documento o carpeta.</p>
+<p>El contenido del escritorio es en realidad un reflejo de la carpeta <code>/home/usuario/Escritorio</code>, por lo que si abrimos esta en el <em>Gestor de Archivos</em>, también podemos gestionar el contenido del escritorio añadiendo o suprimiendo elementos.</p>
+<h2 id="lanzadores-en-el-escritorio">Lanzadores en el escritorio<a class="headerlink" href="#lanzadores-en-el-escritorio" title="Permanent link">&para;</a></h2>
+<p>En líneas generales, los programas se pueden ejecutar:</p>
+<ul>
+<li>pulsando en los iconos de la barra lateral, el <em>dock</em></li>
+<li>buscando en los iconos de la parrilla de programas </li>
+<li>desde el terminal de comandos, introduciendo el nombre del programa.</li>
+</ul>
+<p>Una cuarta opción es crear "<em>lanzadores</em>" en el escritorio. Son iconos sobre los que podemos pulsar para ejecutar una acción.</p>
+<p>Veamos un ejemplo. Crearemos un lanzador para la calculadora. Lo primero es ejecutarla y abrir el programa <em>Monitor del Sistema</em>. Descubrimos que la calculadora es en realidad un programa llamado <em>gnome-calculator</em>.</p>
+<p>Cerramos la calculadora. Abrimos un terminal de comandos y comprobamos el comando a ejecutar:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gnome-calculator
+</code></pre></div>
+
+<p>Esto debería abrir la calculadora en otra ventana. La cerramos.</p>
+<p>Lo siguiente es situarnos en la carpeta de escritorio:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Escritorio
+</code></pre></div>
+
+<p>Los lanzadores son archivos de texto con la extensión <code>.desktop</code>. Creamos uno con:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>calculadora.desktop
+</code></pre></div>
+
+<p>Vamos a editar el contenido:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gnome-text-editor<span class="w"> </span>calculadora.desktop
+</code></pre></div>
+
+<p>El texto serán las especificaciones técnicas del lanzador:</p>
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
+Name=Calculadora
+Comment=La calculadora de Gnome
+Exec=gnome-calculator
+Terminal=false
+Icon=/home/usuario/Images/iconoPrograma
+Type=Application
+</code></pre></div>
+<p>Todo esto son las directrices que necesita un lanzador. En el ejemplo, vemos una línea con el comando a ejecutar para iniciar el programa:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">Exec</span><span class="o">=</span><span class="nv">gnome</span><span class="o">-</span><span class="nv">calculator</span>
+</code></pre></div>
+
+<p>El tipo de lanzador se indica en la línea:</p>
+<div class="codehilite"><pre><span></span><code>Type=Application
+</code></pre></div>
+
+<p>El nombre que se mostrará bajo el icono:</p>
+<div class="codehilite"><pre><span></span><code>Name=Calculadora
+</code></pre></div>
+
+<p>Guardamos el contenido del archivo. Seguidamente, tenemos que asignarle permisos de ejecución:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>~/Escritorio/calculadora.desktop
+</code></pre></div>
+
+<p>Finalmente, tenemos que hacer que el lanzador sea "de confianza". Pulsar con el botón secundario del ratón sobre el nuevo icono del escritorio y seleccionar la opción "<em>permitir lanzar</em>".</p>
+<p>En realidad hay una forma más cómoda de hacer todo esto. Podemos copiar los lanzadores ya existentes (los que se utilizan para ser mostrados en la parrilla de aplicaciones, por ejemplo). Para ello, examinar la carpeta <code>/usr/share/applications</code>. El lanzador de la calculadora es un archivo llamado <code>org.gnome.Calculator.desktop</code>. Podemos copiarlo a la carpeta <code>~/Escritorio</code>, pero tendremos que repetir la maniobra de "<em>permitir lanzar</em>" en el icono del escritorio.</p>
+<div class="admonition info">
+<p class="admonition-title">Especificaciones de los lanzadores</p>
+<p>Los lanzadores son archivos de texto cuyo formato se corresponde con el proyecto <em>Freedesktop.org</em>. Ver <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">especificaciones</a> en la <a href="https://www.freedesktop.org/wiki/">página web</a> del proyecto.</p>
+</div>
+<h2 id="un-lanzador-para-montar-y-desmontar-carpetas-compartidas">Un lanzador para montar y desmontar carpetas compartidas<a class="headerlink" href="#un-lanzador-para-montar-y-desmontar-carpetas-compartidas" title="Permanent link">&para;</a></h2>
+<p>Vamos a crear un lanzador que ejecute un script para conectar y desconectar el acceso a carpetas compartidas de la máquina física, de forma que limitemos su visibilidad sin necesidad de tenerlas expuestas permanentemente.</p>
+<p>Abrimos el Terminal y nos situamos en la carpeta principal del usuario:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span>
+</code></pre></div>
+
+<p>Creamos el scrip:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>montar_compartidas.sh
+</code></pre></div>
+
+<p>Los scripts son pequeños programas consistentes en una lista de comandos a ejecutar. Lo de ponerles la extensión <code>.sh</code> es optativo. Es la abreviatura de "shell".</p>
+<p>Abrimos el archivo con el editor de textos:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gnome-text-editor<span class="w"> </span>montar_compartidas.sh
+</code></pre></div>
+
+<p>El texto del archivo puede ser algo así como:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">montar_compartidas.sh</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Montar/desmontar carpetas de la máquina física</span>
+<span class="c1"># compartidas con la virtual</span>
+<span class="c1">#</span>
+<span class="c1"># La variable RUTA hace referencia al punto de</span>
+<span class="c1"># montaje en la máquina virtual</span>
+<span class="c1">#</span>
+<span class="c1"># Las carpetas a compartir se establecen en la</span>
+<span class="c1"># configuración de VMware de la máquina virtual</span>
+
+<span class="nv">RUTA</span><span class="o">=</span>/mnt/compartidas
+
+<span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>clear
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Acceso a carpetas compartidas de la máquina host.&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Carpetas actualmente montadas y accesibles:&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span>ls<span class="w"> </span>/mnt/compartidas/*<span class="w"> </span>-d1<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<span class="w">    </span><span class="nv">estado</span><span class="o">=</span><span class="nv">$?</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$estado</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;    no hay carpetas compartidas&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Seleccione:&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   M. Montar carpetas&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   D. Desmontar carpetas&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   S. Salir&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Introduzca opción M/D/S seguida de Intro: &quot;</span><span class="w"> </span>opcion
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------&quot;</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$opcion</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="o">[</span>Mm<span class="o">]</span>$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Montar carpetas.&quot;</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Se intentará con las establecidas en la configuración VMware de la máquina virtual&quot;</span>
+<span class="w">            </span>sudo<span class="w"> </span>/usr/bin/vmhgfs-fuse<span class="w"> </span>.host:/<span class="w"> </span><span class="nv">$RUTA</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">subtype</span><span class="o">=</span>vmhgfs-fuse,allow_other<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+<span class="w">            </span><span class="nv">estado</span><span class="o">=</span><span class="nv">$?</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$estado</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>
+<span class="w">                </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Error montando carpetas. Pulse Intro para continuar.&quot;</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Operación realizada. Pulse Intro para continuar&quot;</span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">continue</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$opcion</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="o">[</span>Dd<span class="o">]</span>$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Desmontando carpetas&quot;</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Se intentará desmontar todas las carpetas en </span><span class="nv">$RUTA</span><span class="s2">&quot;</span>
+<span class="w">            </span>sudo<span class="w"> </span>umount<span class="w"> </span><span class="nv">$RUTA</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
+<span class="w">            </span><span class="nv">estado</span><span class="o">=</span><span class="nv">$?</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$estado</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>
+<span class="w">                </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Error desmontando carpetas. Pulse Intro para continuar&quot;</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Operación realizada.&quot;</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Si observa que siguen montadas, probablemente se debe a que&quot;</span><span class="w"> </span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;el dispositivo está ocupado. Reintente la operación.&quot;</span>
+<span class="w">                </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Pulse Intro para continuar&quot;</span><span class="w">                </span>
+<span class="w">            </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">continue</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$opcion</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="o">[</span>Ss<span class="o">]</span>$<span class="w">  </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="k">break</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Entrada inválida.&quot;</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Pulse Intro para volver a intentarlo.&quot;</span>
+
+<span class="k">done</span>
+</code></pre></div></td></tr></table></div>
+<p>Ya hemos hablado del intérprete de comando <em>bash</em>. Cuenta con todo lo necesario para convertirse en todo un lenguaje de programación, y a este tipo de archivos con comandos a ejecutar se les llama <em>scripts</em>.</p>
+<p>En realidad, no hace falta que entendamos muy bien el texto de este archivo. Basta con copiar y pegarlo (los números de línea que se muestran aquí no forman parte del texto). Algunas observaciones:</p>
+<ul>
+<li>las líneas que comienzan con <code>#</code> son "comentarios". Se insertan en el script a efectos de documentación.</li>
+<li>la primera línea ha de ser: <code>#!/bin/bash</code>, para que el sistema operativo lo identifique como script a ejecutar</li>
+<li>
+<p>tenemos que revisar la línea 12:</p>
+<div class="codehilite"><pre><span></span><code>RUTA=/mnt/compartidas
+</code></pre></div>
+
+<p>sustituyendo la ruta <code>/mnt/compartidas</code> por la que corresponda. Debe tratarse de una carpeta ya existente, donde se van a montar las carpetas compartidas. Si no existe, podemos crearla con la siguiente secuencia de comandos:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/mnt
+$<span class="w"> </span>mkdir<span class="w"> </span>compartidas
+</code></pre></div>
+
+<p><code>mkdir</code> es el comando que  crea nuevos directorios en la carpeta actual ("<em>make directory</em>").</p>
+</li>
+</ul>
+<p>Guardamos el texto del archivo y cerramos el editor. Damos permisos de ejecución al script con el comando:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>+x<span class="w"> </span>~/montar_compartidas.sh
+</code></pre></div>
+
+<p>Lo ejecutamos desde el terminal de comandos, para verificar su correcto funcionamiento:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span>
+$<span class="w"> </span>./montar_compartidas.sh
+</code></pre></div>
+
+<p>Esto muestra las carpetas actualmente compartidas, y un menú de opciones:</p>
+<div class="highlight"><pre><span></span><code>Acceso a carpetas compartidas de la máquina host.
+
+Carpetas actualmente montadas y accesibles:
+
+    no hay carpetas compartidas
+
+---------------------------------------------------
+Seleccione:
+
+   M. Montar carpetas
+   D. Desmontar carpetas
+   S. Salir
+
+Introduzca opción M/D/S seguida de Intro: 
+</code></pre></div>
+<p>Pulsamos <code>M</code> para montar las carpetas, <code>D</code> para desmontarlas, o <code>S</code> para finalizar la ejecución del script, seguido de <span class="keys"><kbd class="key-enter">Enter</kbd></span>. La primera vez que montemos o desmontemos las carpetas, se nos pedirá la contraseña de usuario:</p>
+<div class="highlight"><pre><span></span><code>Montar carpetas.
+Se intentará con las establecidas en la configuración VMware de la máquina virtual
+[sudo] contraseña para usuario: 
+</code></pre></div>
+<p>Al intentar desmontar una carpeta, se mostrará un mensaje de error si cualquier programa está haciendo uso de ella.</p>
+<p>Este script puede ejecutarse desde el terminal de comandos, pero lo que nos interesa es crear un lanzador en el escritorio. Nos situamos en la carpeta <code>~/Escritorio</code>:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Escritorio
+</code></pre></div>
+
+<p>Creamos el lanzador:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>montar_compartidas.desktop
+</code></pre></div>
+
+<p>Es un archivo de texto. Editamos su contenido:</p>
+<div class="highlight"><span class="filename">montar_compartidas.desktop</span><pre><span></span><code>[Desktop Entry]
+Name=Montar compartidas
+Comment=Montar/desmontar directorios compartidos
+Exec=/home/usuario/montar_compartidas.sh
+Terminal=true
+Icon=/usr/share/icons/Humanity/actions/48/gtk-open.svg
+Type=Application
+</code></pre></div>
+<p>Véase que en el apartado <code>Exec</code> ponemos el script a ejecutar. Como icono hemos seleccionado uno de la carpeta <code>/usr/share/icons</code>.</p>
+<p>Tras pulsar sobre el icono en el escritorio y seleccionar la opción "<em>permitir lanzar</em>", ahora tendremos una forma cómoda de desconectar las carpetas compartidas de la máquina física.</p>
+<h2 id="enlaces-a-carpetas">Enlaces a carpetas<a class="headerlink" href="#enlaces-a-carpetas" title="Permanent link">&para;</a></h2>
+<p>Para poner en el escritorio un icono que muestre el contenido de una carpeta, podemos crear un lanzador que abra el gestor de archivos, <em>Nautilus</em>:</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Escritorio
+$<span class="w"> </span>touch<span class="w"> </span>carpetas_compartidas.desktop
+</code></pre></div>
+
+<p>Editamos el contenido del fichero:</p>
+<div class="highlight"><span class="filename">carpetas_compartidas.desktop</span><pre><span></span><code>[Desktop Entry]
+Name=Compartida
+Comment=Carpetas compartidas
+Path=/mnt/compartidas/micarpeta
+Exec=nautilus --new-window /mnt/compartidas/micarpeta
+Icon=org.gnome.Nautilus
+Terminal=false
+Type=Application
+</code></pre></div>
+<p>El apartado <code>Exec</code> establece que se ejecute <em>Nautilus</em>, en una nueva ventana si ya está abierto, y mostrando la carpeta especificada. El apartado <code>Path</code> establece cual es la carpeta de trabajo. Si no está montada, la pulsación sobre el lanzador no tendrá efecto.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="01011Configurar.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 📔 Configurar">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                📔 Configurar
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="01013Dispositivos.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 📔 Dispositivos externos">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                📔 Dispositivos externos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "navigation.tabs", "toc.integrate", "navigation.top", "navigation.indexes", "content.code.copy", "content.tooltips", "search.highlight"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="javascripts/tables.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
