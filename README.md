@@ -1,4 +1,4 @@
-# Guia para usar Linux en un MacBook
+# Guia para instalar y usar Linux en un MacBook
 
 Un pequeño tutorial para instalar linux en un MacBook sin romper nada.
 
