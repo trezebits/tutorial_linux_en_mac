@@ -775,82 +775,136 @@
 
 
 <h1 id="sistemas-operativos">Sistemas operativos<a class="headerlink" href="#sistemas-operativos" title="Permanent link">&para;</a></h1>
-<p>Ya que vamos a instalar un sistema operativo Linux, comencemos por explorar algunos conceptos. ¿Que es un sistema operativo? ¿Y un kernel? ¿Que es un shell?</p>
+<p>Ya que vamos a instalar Linux, comencemos por explorar 
+algunos conceptos. ¿Que es un sistema operativo? ¿Y un kernel? ¿Que es un shell?</p>
 <h2 id="que-es-un-sistema-operativo">¿Que es un sistema operativo?<a class="headerlink" href="#que-es-un-sistema-operativo" title="Permanent link">&para;</a></h2>
-<p>Cuando adquirimos un nuevo ordenador, suele venir de serie con una colección de programas que podemos ampliar instalando nuevos paquetes de software. A grandes rasgos, estos programas preinstalados se dividen en:</p>
+<p>Cuando adquirimos un ordenador nuevo, este suele venir de serie con una 
+colección de programas preinstalados que podemos ampliar con nuevos paquetes 
+de software. 
+A grandes rasgos, y sin ánimo de ser dogmáticos, a todo este conjunto de 
+programas básicos se le llama <em>sistema operativo</em>. Se divide en cinco grandes
+piezas:</p>
 <ul>
-<li>un programa de arranque, que es lo primero que se ejecuta cuando encendemos la computadora. El ordenador lo buscará automáticamente en el disco duro (o en el pendrive que tengamos conectado).</li>
-<li>un conjunto de programas básicos de gestión de recursos y procesos, conocido como el "<em><strong>kernel</strong></em>" o núcleo del sistema. Los pone en marcha el programa de arranque.</li>
-<li>un programa que nos permita interaccionar con la máquina, llamado "escritorio", también conocido como "<em><strong>shell</strong></em>". Esta palabra significa, en inglés, <em>caparazón</em>, y  se llama así porque es la parte "visible" del sistema operativo, algo así como el <em>envoltorio</em>. </li>
-<li>programas para controlar accesos, usuarios, contraseñas, etc.</li>
-<li>todo ello acompañado del una colección de programas de utilidad: navegador web, explorador de ficheros, gestor de correo, etc.</li>
+<li>un programa de arranque, que es lo primero que se ejecuta cuando encendemos 
+la computadora. El ordenador lo buscará automáticamente en el disco duro (o en 
+el pendrive que tengamos conectado).</li>
+<li>un conjunto de programas básicos de gestión de recursos y procesos, conocido 
+como el "<em><strong>kernel</strong></em>" o núcleo del sistema. Los pone en marcha el programa de 
+arranque y se están ejecutando "en la sombra" hasta que apaguemos la computadora.</li>
+<li>
+<p>un programa que nos permita interaccionar con la máquina, llamado 
+"escritorio", y también conocido como "<em><strong>shell</strong></em>". 
+Esta palabra significa, en inglés, <em>caparazón</em>, y  se llama así porque es la 
+parte "visible" del sistema operativo, algo así como el <em>envoltorio</em>. </p>
+<p>Ambos paquetes, el <em>kernel</em> y el <em>shell</em>, se ponen en marcha automáticamente.</p>
+</li>
+<li>
+<p>programas para controlar accesos, usuarios, contraseñas, etc.</p>
+</li>
+<li>todo ello acompañado del una colección de programas de utilidad: 
+navegador web, explorador de ficheros, gestor de correo, etc.</li>
 </ul>
-<p>Sin ánimo de ser dogmáticos, a todo este conjunto de programas básicos se le llama <em>sistema operativo</em>. En la siguiente imagen tenemos un ejemplo de escritorio:</p>
-<ul>
-<li>con dos programas ejecutándose en sendas ventanas</li>
-<li>al fondo, el programa de escritorio</li>
-<li>ejecutándose "en la sombra", y sin mostrar nada en pantalla, los programas de gestión de recursos del kernel.</li>
-</ul>
-<p><img alt="" src="img/01001Escritorio.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">El concepto de sistema operativo</p>
-<p>Siendo puristas, la definición de sistema operativo debería limitarse al kernel, considerando todo lo demás como complementos. En este cuaderno dejaré ese debate aparte.</p>
+<p>Siendo puristas, la definición de sistema operativo debería limitarse al 
+kernel, considerando todo lo demás como complementos. En este cuaderno 
+dejaremos ese debate aparte.</p>
 </div>
 <h2 id="monitorizando-procesos">Monitorizando procesos<a class="headerlink" href="#monitorizando-procesos" title="Permanent link">&para;</a></h2>
-<p>¿Cuales son esas tareas de intendencia que se ejecutan en segundo plano? Muchos sistemas suelen contar con algún programa de utilidad que muestra la lista de procesos en ejecución. Este programa suele tener diferentes nombres, monitor del sistema, administrador de tareas... En Windows, por ejemplo, se inicia pulsando <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-escape">Esc</kbd></span>. </p>
-<p>En la siguiente imagen tenemos un monitor del sistema ejecutándose en una ventana sobre el escritorio de Linux. Podemos ver la lista de procesos, los recursos consumidos por cada uno, y en caso de que la máquina se quede bloqueada, detectar cual es el programa que está acaparando el tiempo de la CPU.</p>
+<p>Supongamos un escritorio con el siguiente aspecto:</p>
+<p><img alt="" src="img/01001Escritorio.png" /></p>
+<p>En el ejemplo tenemos:</p>
+<ul>
+<li>al fondo, el programa de escritorio</li>
+<li>dos programas ejecutándose en sendas ventanas, el navegador web y una 
+    calculadora</li>
+</ul>
+<p>Pero hay otros programas ejecutándose en la sombra, sin mostrar nada en 
+la pantalla. Son los programas de gestión de recursos que forman el <em>kernel</em>.
+Por ejemplo:</p>
+<ul>
+<li>El programa que gestiona las conexiones de red. </li>
+<li>El programa para controlar los accesos a disco que hacen las aplicaciones 
+(procesador de textos, gestor de imágenes, etc), y evitar conflictos al reclamar 
+espacio para almacenar datos.</li>
+<li>El portapapeles, que permite copiar y pegar de una aplicación a otra.</li>
+<li>Y un largo etcétera.</li>
+</ul>
+<p>¿Como podemos averiguar cuales son esas tareas de intendencia que se ejecutan 
+en segundo plano? 
+Muchos sistemas suelen contar con algún programa de utilidad que muestra la 
+lista de procesos en ejecución. Este programa suele tener diferentes nombres, 
+monitor del sistema, administrador de tareas... En Windows, por ejemplo, 
+se inicia pulsando la combinación de teclas <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-escape">Esc</kbd></span>. </p>
+<p>En la siguiente imagen tenemos un monitor del sistema ejecutándose en una 
+ventana sobre un escritorio de Linux. Podemos ver la lista de procesos, 
+los recursos consumidos por cada uno, y en caso de que la máquina se quede 
+bloqueada, detectar cual es el programa que está acaparando el tiempo de la CPU.</p>
 <p><img alt="" src="img/01001Procesos.png" /></p>
-<p>¿Quien ha dado la orden de ejecutar los programas de esta lista? La mayoría se ponen en marcha automáticamente al iniciar la computadora. Veamos algunos ejemplos. </p>
-<ul>
-<li>
-<p>Cuando navegamos por Internet, tenemos dos programas en ejecución:</p>
-<ul>
-<li>el navegador web, que descarga páginas y las muestra en pantalla</li>
-<li>el programa que  gestiona la conexión a la red, que no se muestra en una ventana, pero se ejecuta en segundo plano y, dependiendo de como tengamos configurado nuestro sistema, muchas veces muestra un indicador en la barra superior o inferior de la pantalla, indicando la calidad de la señal wifi.</li>
-</ul>
-<p>Este segundo programa sirve "de soporte" al navegador web, al correo electrónico, a los programas de chat, de descargas, y en resumen, a todos aquellos que hagan uso de la conexión a la red. Una computadora no mantiene varias conexiones en paralelo, una por cada aplicación. Todos los programas se apoyan en el servicio de conexión proporcionado por el sistema. </p>
-</li>
-<li>
-<p>Veamos otro ejemplo. Supongamos que estamos trabajando con un procesador de textos y en un momento determinado pulsamos en el menú <em>Archivo &gt; Guardar</em>. Para llevar a cabo esta operación hay que controlar que parte del disco está ocupada por otros archivos, si ya hay otro archivo con el mismo nombre, como están organizadas las carpetas, y un montón de cosas más. Todo este trabajo lo hace un programa de gestión de almacenamiento en disco, que se pone en marcha al iniciarse la computadora y se mantiene en ejecución hasta que la apaguemos. El procesador de textos, y el resto de programas en general, se benefician de los servicios que proporciona el programa de gestión de archivos.</p>
-</li>
-<li>
-<p>Un tercer ejemplo. Estamos navegando por Internet, seleccionamos parte del contenido de una página web y hacemos una operación de <em>copiar y pegar</em> al procesador de textos. ¿Como es posible que el navegador web y el editor de textos se pongan de acuerdo para colaborar entre ellos? Son programas independientes el uno del otro, creados por personas que seguramente no se conocen. Pero el sistema operativo de nuestro ordenador es quien se encarga de hacer de intermediario gracias a un programa especial llamado <em>portapapeles</em>, que está ejecutándose en la sombra en todo momento.</p>
-</li>
-<li>
-<p>Otro ejemplo más. Imaginemos que estamos utilizando un programa que muestra un texto en la pantalla. Cada letra del alfabeto es un trazo formado por puntitos. Necesitamos un programa que se encargue de dibujar los caracteres de acuerdo a la resolución de pantalla que tengamos configurada, encargándose de las tareas de visualización y dando servicio a nuestras aplicaciones.</p>
-</li>
-</ul>
-<p>En todo momento tendremos unos cuantos procesos ejecutándose en segundo plano sin que seamos conscientes de ello: gestión de recursos, controladores de dispositivos, almacenamiento en discos, comunicaciones de red, e incluso algún que otro virus probablemente...</p>
+<p>¿Quien ha dado la orden de ejecutar los programas de esta lista? La mayoría se 
+ponen en marcha automáticamente al iniciar la computadora, y sirven para 
+gestionar los recursos que utiliza el ordenador.</p>
 <h2 id="el-shell">El Shell<a class="headerlink" href="#el-shell" title="Permanent link">&para;</a></h2>
-<p>En dos palabras, un <em>shell</em> es el programa que utilizamos para interaccionar con la computadora. En la prehistoria de la informática los ordenadores no contaban con pantallas. Los puestos de trabajo consistían en un teclado y una impresora:</p>
+<p>La parte visible de cualquier sistema operativo suele ser el escritorio,
+es decir, el programa que usamos para interaccionar con la máquina. Este tipo
+de programas son conocidos como "<em>shell</em>". y han ido evolucionando desde 
+la prehistoria de la informática. En los primeros tiempos, los ordenadores no 
+contaban con pantallas. Los puestos de trabajo consistían en un teclado y una 
+impresora:</p>
 <p><img alt="" src="img/01001teletipo.jpg" style="width:300px;" /></p>
-<p>El usuario tecleaba comandos a ejecutar, y el ordenador respondía mostrando la información en papel. Con el paso de los años, estas primitivas consolas fueron sustituidas por pantallas donde la información se mostraba en forma de texto, que se iba desplazando hacia arriba a medida que se llenaba la pantalla:</p>
+<p>El usuario tecleaba comandos a ejecutar, y el ordenador respondía mostrando la 
+información en papel. El <em>shell</em> era el programa que permitía este diálogo. </p>
+<p>Con el paso de los años, estas primitivas consolas fueron sustituidas por 
+pantallas donde la información se mostraba en forma de texto, que se iba 
+desplazando hacia arriba a medida que se llenaba la pantalla:</p>
 <p><img alt="" src="img/01001pcTexto.jpg" style="width:300px;" /></p>
-<p>La década de 1980 fue testigo de la aparición de los primeros escritorios gráficos. En lugar de teclear comandos, había que pulsar con el ratón sobre los elementos de la pantalla:</p>
+<p>La década de 1980 fue testigo de la aparición de los primeros escritorios 
+gráficos. En lugar de teclear comandos, había que pulsar con el ratón sobre los 
+elementos de la pantalla:</p>
 <p><img alt="" src="img/01003xerox.jpg" style="width:300px;" /></p>
-<p>A partir de ese momento se fue imponiendo el uso de shells cada vez más sofisticados. Actualmente se habla de usar <em>shells gráficos</em> o <em>shells de texto</em>. Los sistemas operativos modernos suelen incluir un programa llamado "Terminal", que simula un shell de texto en una ventana:</p>
+<p>A partir de ese momento se fue imponiendo el uso de shells cada vez más 
+sofisticados. Actualmente se habla de usar <em>shells gráficos</em> o <em>shells de texto</em>. 
+Los sistemas operativos modernos suelen incluir un programa llamado "Terminal", 
+que simula un shell de texto en una ventana:</p>
 <p><img alt="" src="img/01001Terminal.png" /></p>
-<p>¿Como funciona? Al iniciar el Terminal, se muestra un <em>prompt</em> que nos invita a teclear algún texto:</p>
-<div class="codehilite"><pre><span></span><code>&gt;
-</code></pre></div>
-
-<p>El prompt suele estar precedido por algo de información. Por ejemplo, en Windows se mostrará la carpeta actual:</p>
-<div class="codehilite"><pre><span></span><code>C:\ &gt;
-</code></pre></div>
-
-<p>La configuración del prompt depende del sistema operativo. En muchos sistemas Linux es frecuente utilizar el carácter <code>$</code>. Algunas veces puede ser otro carácter, como <code>#</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">$</span>
-</code></pre></div>
-
-<p>Tras el prompt, teclearemos algún un comando, que se ejecutará al pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>. En un capítulo posterior haremos un repaso básico del funcionamiento del terminal de comandos en el sistema operativo Linux.</p>
-<p>¿Para que sirve el Terminal? El usuario medio de un ordenador doméstico lo utilizará en contadas ocasiones, pero hay situaciones en las que resulta de gran utilidad, especialmente para tareas de administración y configuración del sistema. </p>
+<p>¿Como funciona? Tecleando comandos en la ventana de trabajo y observando 
+las respuestas del ordenador. 
+En un capítulo posterior haremos un repaso básico de los comandos 
+que son propios de Linux.</p>
+<p>¿Para que sirve el Terminal? El usuario medio de un ordenador doméstico lo 
+utilizará en contadas ocasiones, pero hay situaciones en las que resulta de 
+gran utilidad, especialmente para tareas de administración y configuración del 
+sistema. </p>
 <h2 id="sistemas-operativos-mas-populares">Sistemas operativos más populares<a class="headerlink" href="#sistemas-operativos-mas-populares" title="Permanent link">&para;</a></h2>
-<p>En la prehistoria de la informática, cada fabricante de ordenadores tenía su propio sistema operativo. Esto era un planteamiento bastante ineficiente, porque los programas que utilizamos se apoyan en los servicios proporcionados por el kernel, como ya hemos visto. En aquellos primeros años, esto suponía que si una empresa cambiaba de computadora y adquiría un nuevo modelo más avanzado de otra marca, tenía que prescindir de todos sus programas y volver a comenzar desde cero. </p>
-<p>En la década de 1960 comenzaron a surgir algunas iniciativas para crear sistemas operativos universales, algo que, en la actualidad se encuentra bastante extendido. Hoy en día, dos de los sistemas más populares son "Windows" y "Android". Las ordenadores de la marca Apple tienen su propio sistema operativo, "MacOS".</p>
-<p>En el mundo de los servidores corporativos, el sistema de referencia es "UNIX", que se remonta a la década de 1970. En los años noventa surgió una versión para ordenadores personales denominada "Linux", que hoy en día es desarrollada de forma comunitaria, y es el sistema preferido por los defensores del software libre. Incluso ha ido  sustituyendo de forma progresiva a su antecesor Unix en muchos servidores.</p>
-<p>Otra alternativa es "ChromeOS", diseñado por Google y orientado a máquinas donde las aplicaciones y los datos de los usuarios residan en la nube.</p>
-<p>MS-DOS fue el sistema operativo de Microsoft en la década de 1980, superado en 1992 por el lanzamiento de Windows 3, y aparcado definitivamente en 1995 tras la presentación de Windows 95.</p>
-<p>¿Cuantos sistemas operativos existen? Considerando los de cierta relevancia, cientos. Véase <a href="https://en.wikipedia.org/wiki/List_of_operating_systems">lista en la wikipedia</a>. </p>
+<p>En resumen, un sistema operativo es un software formado por un Kernel, un Shell 
+y otros programas de utilidad. 
+En los primeros años de la informática, cada fabricante de ordenadores tenía su 
+propio sistema operativo. Esto era un planteamiento bastante ineficiente, porque 
+los programas que utilizamos se apoyan en los servicios proporcionados por el 
+kernel, como ya hemos visto. En aquellos primeros años, esto suponía que si una 
+empresa cambiaba de computadora y adquiría un nuevo modelo más avanzado de otra 
+marca, tenía que prescindir de todos sus programas, que se convertían en
+incompatibles con la nueva máquina,  y había que volver a comenzar desde 
+cero. </p>
+<p>En la década de 1960 comenzaron a surgir algunas iniciativas para crear sistemas 
+operativos universales, algo que, en la actualidad se encuentra bastante 
+extendido. Hoy en día, dos de los sistemas más populares son "Windows" y 
+"Android". Las ordenadores de la marca Apple tienen su propio sistema operativo, 
+"MacOS".</p>
+<p>En el mundo de los servidores corporativos, el sistema de referencia es "UNIX", 
+que se remonta a la década de 1970. En los años noventa surgió una versión para 
+ordenadores personales denominada "Linux", que hoy en día es desarrollada de 
+forma comunitaria, y es el sistema preferido por los defensores del software 
+libre. Incluso ha ido  sustituyendo de forma progresiva a su antecesor Unix en 
+muchos servidores.</p>
+<p>Otra alternativa es "ChromeOS", diseñado por Google y orientado a máquinas donde 
+las aplicaciones y los datos de los usuarios residan en la nube.</p>
+<p>MS-DOS fue el sistema operativo de Microsoft en la década de 1980, superado en 
+1992 por el lanzamiento de Windows 3, y aparcado definitivamente en 1995 tras 
+la presentación de Windows 95.</p>
+<p>¿Cuantos sistemas operativos existen? Considerando los de cierta relevancia, 
+cientos. Véase 
+<a href="https://en.wikipedia.org/wiki/List_of_operating_systems">lista en la wikipedia</a>. </p>
 <p>En este cuaderno describiremos la instalación de un sistema operativo Linux.</p>
 
 

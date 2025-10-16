@@ -785,28 +785,72 @@
 
 <h1 id="dispositivos-externos">Dispositivos externos<a class="headerlink" href="#dispositivos-externos" title="Permanent link">&para;</a></h1>
 <h2 id="conexion-usb">Conexión USB<a class="headerlink" href="#conexion-usb" title="Permanent link">&para;</a></h2>
-<p>Hoy en día, la mayoría de dispositivos que podemos conectar a nuestro ordenador, discos duros externos, impresoras, etc, suelen enchufarse a un puerto USB. Si tenemos una máquina virtual en marcha, al conectar un dispositivo, VMWare nos preguntará a que máquina se debe asignar, si a la física o a la virtual:</p>
+<p>Hoy en día, la mayoría de dispositivos que podemos conectar a nuestro ordenador, 
+discos duros externos, impresoras, etc, suelen enchufarse a un puerto USB. Si 
+tenemos una máquina virtual en marcha, al conectar un dispositivo, VMWare nos 
+preguntará a que máquina se debe asignar, si a la física o a la virtual:</p>
 <p><img alt="" src="img/01013Dispositivos001.png" style="width:600px;" /></p>
-<p>Si por ejemplo conectamos un pendrive, su contenido será accesible desde la máquina seleccionada.</p>
+<p>Si por ejemplo conectamos un pendrive, su contenido será accesible desde la 
+máquina seleccionada.</p>
 <h2 id="unidades-de-almacenamiento">Unidades de almacenamiento<a class="headerlink" href="#unidades-de-almacenamiento" title="Permanent link">&para;</a></h2>
-<p>Tratándose de un disco duro externo, una unidad de almacenamiento pendrive o similar, una vez hecha la conexión tendremos acceso a sus carpetas y ficheros. Dependiendo de la distribución de Linux y la configuración que hayamos establecido, el montaje de la unidad suele ser automático.</p>
-<p>Si abrimos el explorador de archivos, veremos un nuevo enlace en el apartado <em>Dispositivos</em> de la barra lateral (el <em>Dock</em>). Pulsando sobre ese enlace, accedemos a los contenidos como lo haríamos con cualquier otro directorio. Pulsando con el botón secundario del ratón, tenemos un menú emergente con varios operaciones que podemos realizar, entre ellas, la operación de <em>Expulsar</em>.</p>
-<p>Haciendo doble clic sobre el icono en el <em>Dock</em>, se abrirá el contenido del pendrive en el <em>Gestor de Archivos</em>, y podremos ver la carpeta asociada. Dependiendo de la distribución, suele ser una subcarpeta  montada en  <code>/media</code> o en <code>/mount</code>.</p>
-<p><strong>¡Muy importante!</strong> Antes de extraer el dispositivo, pulsar sobre la opción "Expulsar". Esto desmontará la unidad (deshará la asociación con el directorio asignado) y evitará que perdamos datos.</p>
+<p>Tratándose de un disco duro externo, una unidad de almacenamiento pendrive o 
+similar, una vez hecha la conexión tendremos acceso a sus carpetas y ficheros. 
+Dependiendo de la distribución de Linux y la configuración que hayamos 
+establecido, el montaje de la unidad suele ser automático.</p>
+<p>Si abrimos el explorador de archivos, veremos un nuevo enlace en el apartado 
+<em>Dispositivos</em> de la barra lateral (el <em>Dock</em>). Pulsando sobre ese enlace, 
+accedemos a los contenidos como lo haríamos con cualquier otro directorio. 
+Pulsando con el botón secundario del ratón, tenemos un menú emergente con varios 
+operaciones que podemos realizar, entre ellas, la operación de <em>Expulsar</em>.</p>
+<p>Haciendo doble clic sobre el icono en el <em>Dock</em>, se abrirá el contenido del 
+pendrive en el <em>Gestor de Archivos</em>, y podremos ver la carpeta asociada. 
+Dependiendo de la distribución, suele ser una subcarpeta  montada en  <code>/media</code> o 
+en <code>/mount</code>.</p>
+<p><strong>¡Muy importante!</strong> Antes de extraer el dispositivo, pulsar sobre la opción 
+"Expulsar". Esto desmontará la unidad (deshará la asociación con el directorio 
+asignado) y evitará que perdamos datos.</p>
 <h2 id="por-que-hay-que-expulsar-los-discos-antes-de-extraerlos-del-puerto-usb">¿Por que hay que expulsar los discos antes de extraerlos del puerto USB?<a class="headerlink" href="#por-que-hay-que-expulsar-los-discos-antes-de-extraerlos-del-puerto-usb" title="Permanent link">&para;</a></h2>
-<p>Los ordenadores están diseñados para transferir datos entre dispositivos lo más rápido posible. Uno de los impedimentos a la velocidad del sistema son los dispositivos lentos. </p>
-<p>Las impresoras son un buen ejemplo. Incluso la más rápida es extremadamente lenta para los estándares de cualquier computadora. En la prehistoria de la informática, esto era un problema, ya que si estabas imprimiendo un documento, el ordenador se bloqueaba hasta finalizar la impresión. Se solucionó reservando un espacio de la memoria RAM, denominado "buffer de impresora". Los programas envían los datos a este <em>buffer</em>, y a continuación se desentienden de la impresión. El sistema operativo comprueba, en segundo plano, que hay datos en el <em>buffer</em>, y los envía a la impresora.</p>
-<p>El concepto de buffer se ha generalizado para todos los dispositivos, incluso los aparentemente más rápidos. Con frecuencia, los datos destinados a ser guardados en disco se van acumulando en un buffer de memoria y, de vez en cuando, el sistema operativo escribirá dichos datos en el dispositivo físico.</p>
-<p>La operación de desmontar/expulsar un dispositivo incluye completar todas las operaciones pendientes, liberando el <em>buffer</em> de su contenido, de forma que el aparato pueda ser retirado con seguridad. Si se retira sin desmontarlo, existe la posibilidad de que haya operaciones de almacenamiento de datos pendientes de ejecutar. En algunos casos, puede incluir actualizaciones críticas de directorios, lo que causará una corrupción de todo el sistema de archivos, una de las peores cosas que le puede ocurrir a un ordenador, ya que dejaría todo el disco irrecuperable.</p>
+<p>Los ordenadores están diseñados para transferir datos entre dispositivos lo más 
+rápido posible. Uno de los impedimentos a la velocidad del sistema son los 
+dispositivos lentos. </p>
+<p>Las impresoras son un buen ejemplo. Incluso la más rápida es extremadamente 
+lenta para los estándares de cualquier computadora. En la prehistoria de la 
+informática, esto era un problema, ya que si estabas imprimiendo un documento, 
+el ordenador se bloqueaba hasta finalizar la impresión. Se solucionó reservando 
+un espacio de la memoria RAM, denominado "buffer de impresora". Los programas 
+envían los datos a este <em>buffer</em>, y a continuación se desentienden de la 
+impresión. El sistema operativo comprueba, en segundo plano, que hay datos en el 
+<em>buffer</em>, y los envía a la impresora.</p>
+<p>El concepto de buffer se ha generalizado para todos los dispositivos, incluso 
+los aparentemente más rápidos. Con frecuencia, los datos destinados a ser 
+guardados en disco se van acumulando en un buffer de memoria y, de vez en 
+cuando, el sistema operativo escribirá dichos datos en el dispositivo físico.</p>
+<p>La operación de desmontar/expulsar un dispositivo incluye completar todas las 
+operaciones pendientes, liberando el <em>buffer</em> de su contenido, de forma que el 
+aparato pueda ser retirado con seguridad. Si se retira sin desmontarlo, existe 
+la posibilidad de que haya operaciones de almacenamiento de datos pendientes de 
+ejecutar. En algunos casos, puede incluir actualizaciones críticas de 
+directorios, lo que causará una corrupción de todo el sistema de archivos, una 
+de las peores cosas que le puede ocurrir a un ordenador, ya que dejaría todo el 
+disco irrecuperable.</p>
 <h2 id="impresoras">Impresoras<a class="headerlink" href="#impresoras" title="Permanent link">&para;</a></h2>
-<p>Como sucede con los discos externos, al conectar una impresora a un puerto USB, esta será detectada en el momento de conectarla y encenderla. Se nos preguntará si queremos conectar la impresora como dispositivo de la máquina física o la virtual:</p>
+<p>Como sucede con los discos externos, al conectar una impresora a un puerto USB, 
+esta será detectada en el momento de conectarla y encenderla. Se nos preguntará 
+si queremos conectar la impresora como dispositivo de la máquina física o la 
+virtual:</p>
 <p><img alt="" src="img/01013Dispositivos002.png" style="width:600px;" /></p>
-<p>Pulsando en <em>Configuración</em>, apartado <em>Impresoras</em>, podemos ver el estado de la impresora, y desconectarla, llegado el caso.</p>
+<p>Pulsando en <em>Configuración</em>, apartado <em>Impresoras</em>, podemos ver el estado de la 
+impresora, y desconectarla, llegado el caso.</p>
 <p><img alt="" src="img/01013Dispositivos003.png" /></p>
 <h2 id="escanear-documentos">Escanear documentos<a class="headerlink" href="#escanear-documentos" title="Permanent link">&para;</a></h2>
-<p>Muchas impresoras son multifunción, e incorporan la posibilidad de escanear documentos. Si hemos conectado el dispositivo, para usarlo como escaner debemos iniciar el programa <em>Escaner de documentos</em>, en el menú de aplicaciones. Comienza detectando los dispositivos conectados, y seguidamente muestra el espacio de trabajo:</p>
+<p>Muchas impresoras son multifunción, e incorporan la posibilidad de escanear 
+documentos. Si hemos conectado el dispositivo, para usarlo como escaner debemos 
+iniciar el programa <em>Escaner de documentos</em>, en el menú de aplicaciones. 
+Comienza detectando los dispositivos conectados, y seguidamente muestra el 
+espacio de trabajo:</p>
 <p><img alt="" src="img/01013Dispositivos004.png" /></p>
-<p>Pulsando en el botón <em>Escanear</em> se lleva a cabo el escaneo. Pulsando en el botón de la rueda, ajustamos las opciones.</p>
+<p>Pulsando en el botón <em>Escanear</em> se lleva a cabo el escaneo. Pulsando en el botón 
+de la rueda, ajustamos las opciones.</p>
 
 
 

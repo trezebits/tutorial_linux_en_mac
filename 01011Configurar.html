@@ -693,6 +693,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vmware-y-el-sonido" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware y el sonido
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -811,44 +820,76 @@
 
 
 <h1 id="ajustes">Ajustes<a class="headerlink" href="#ajustes" title="Permanent link">&para;</a></h1>
-<p>Una vez instalado Linux, y tras explorarlo un poco, vamos a configurarlo a nuestro gusto. </p>
+<p>Una vez instalado Linux, y tras explorarlo un poco, vamos a configurarlo a 
+nuestro gusto. </p>
 <h2 id="vmware-tools">VMWare Tools<a class="headerlink" href="#vmware-tools" title="Permanent link">&para;</a></h2>
-<p>El sistema operativo Linux no es consciente de estar ejecutándose en una máquina virtual, por lo que algunas opciones proporcionadas por VMWare no funcionarán, por falta de respuesta de la máquina Linux.</p>
-<p>Para solucionar esto, tenemos que instalar en la máquina virtual un programa llamado "<em>VMWare Tools</em>", que nos proporciona funciones tales como:</p>
+<p>El sistema operativo Linux no es consciente de estar ejecutándose en una máquina 
+virtual, por lo que algunas características proporcionadas por VMWare no 
+funcionarán, por falta de respuesta de la máquina Linux.</p>
+<p>Para solucionar esto, tenemos que instalar en esa máquina virtual Linux un 
+programa llamado "<em>VMWare Tools</em>", que nos proporciona funciones tales como:</p>
 <ul>
 <li>Carpetas compartidas entre el host y el guest</li>
 <li>Copiar y pegar entre la máquina virtual y el escritorio del host</li>
-<li>Sincronización del reloj de la máquina virtual con el reloj del escritorio del host o del cliente</li>
+<li>Sincronización del reloj de la máquina virtual con el reloj del escritorio 
+del host o del cliente</li>
 <li>Integración del ratón</li>
 <li>Mejora del rendimiento</li>
 </ul>
-<p>Muchas distribuciones Linux incorporan un programa alternativo llamado <em>Open-VM-Tools</em>, que suele estar más adaptado a esa distribución en particular. Lo podemos encontrar en el repositorio de programas. Abrimos Synaptic, y buscamos el paquete <em>Open-VM-Tools</em>. Si ya viene instalado de serie, no hay que hacer nada. Si no es así, instalarlo desde Synaptic, o bien mediante el comando <code>apt</code>:</p>
+<p>Muchas distribuciones Linux (incluyendo Ubunu) incorporan en sus repositorios
+de software un programa alternativo llamado <em>Open-VM-Tools</em>, que suele estar 
+más adaptado a esa distribución en particular. Abrimos Synaptic, y buscamos el 
+paquete <em>Open-VM-Tools</em>. Si ya viene instalado de serie, no hay que hacer nada. 
+Si no es así, instalarlo desde Synaptic, o bien mediante el comando <code>apt</code>. Son
+dos paquetes:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>open-vm-tools
 $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>open-vm-tools-desktop
 </code></pre></div>
 
 <p>Para que tenga efecto, habrá que reiniciar la máquina virtual.</p>
 <h2 id="carpetas-compartidas">Carpetas compartidas<a class="headerlink" href="#carpetas-compartidas" title="Permanent link">&para;</a></h2>
-<p>Una vez comprobado que tenemos instalado <em>VMWare Tools</em>, podemos establecer determinadas carpetas a compartir entre ambas máquinas, la física y la virtual. Hay que que acudir a la configuración de la máquina virtual y seleccionar el apartado <em>Compartir</em>:</p>
+<p>Una vez comprobado que tenemos instalado <em>VMWare Tools</em>, podemos establecer 
+determinadas carpetas a compartir entre ambas máquinas, la física y la virtual. 
+Hay que que acudir a la configuración de la máquina virtual y seleccionar el 
+apartado <em>Compartir</em>:</p>
 <p><img alt="" src="img/01011Configurar001.png" style="width:600px;" /></p>
-<p>Podemos añadir o quitar carpetas de la lista pulsando los botones <code>+</code> o <code>-</code>. Podemos ponerlas como de solo lectura (para la máquina virtual) o bien, de lectura y escritura.</p>
-<p>Para acceder desde la máquina Linux tenemos que asociar esa carpeta compartida a una carpeta en la estructura de directorios de Linux, lo que actuará como "punto de montaje". Véase más información en el siguiente artículo:</p>
+<p>Podemos añadir o quitar carpetas de la lista pulsando los botones <code>+</code> o <code>-</code>. 
+Podemos ponerlas como de solo lectura (para la máquina virtual) o bien, de 
+lectura y escritura.</p>
+<p>Para acceder desde la máquina Linux tenemos que asociar esa carpeta compartida 
+a una carpeta en la estructura de directorios de Linux, lo que actuará como 
+"punto de montaje". Véase más información en el siguiente artículo:</p>
 <p><a href="https://kb.vmware.com/s/article/60262">https://kb.vmware.com/s/article/60262</a></p>
-<p>La versión <em>Open-VM-Tools</em> no monta automáticamente las carpetas compartidas, y tenemos que hacerlo a mano cada vez que iniciamos la máquina virtual Linux. Esto resulta más seguro, ya que limita la exposición de nuestra máquina <em>host</em>, pero puede ser un incordio. Para automatizar el montaje de una carpeta, vamos a modificar el archivo de configuración de puntos de montaje, <code>/etc/fstab</code>.</p>
+<p>La versión <em>Open-VM-Tools</em> no monta automáticamente las carpetas compartidas, y 
+tenemos que hacerlo a mano cada vez que iniciamos la máquina virtual Linux. 
+Esto resulta más seguro, ya que limita la exposición de nuestra máquina <em>host</em>, 
+pero puede ser un incordio. Para automatizar el montaje de una carpeta, 
+vamos a modificar el archivo de configuración de puntos de montaje, <code>/etc/fstab</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Puntos de montaje</p>
-<p>Todos los discos conectados se asocian a una carpeta dentro de la estructura general de directorios. El archivo <code>/etc/fstab</code> contiene la lista de puntos de montaje. Cada entrada de la lista representa un disco. En la máquina virtual, las carpetas compartidas de la máquina <em>Host</em> se visualizan como discos externos, accediendo como haríamos con un DVD, por ejemplo.</p>
+<p>Todos los discos conectados se asocian a una carpeta dentro de la estructura 
+general de directorios. El archivo <code>/etc/fstab</code> contiene la lista de puntos 
+de montaje. Cada entrada de la lista representa un disco. 
+En la máquina virtual, las carpetas compartidas de la máquina <em>Host</em> se 
+visualizan como discos externos, accediendo como haríamos con un DVD, 
+por ejemplo.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">¡Cuidado!</p>
-<p>Modificar manualmente la configuración del sistema tiene sus riesgos. En este caso, si cambiamos los puntos de montaje de los discos, puede que la máquina virtual deje de funcionar por no ser capaz de acceder a ningún disco.</p>
-<p>Puede ser una buena idea hacer previamente un <em>snapshot</em> de la máquina virtual, como se explicaba en un capítulo anterior.</p>
+<p>Modificar manualmente la configuración del sistema tiene sus riesgos. 
+En este caso, si cambiamos los puntos de montaje de los discos, puede que 
+a máquina virtual deje de funcionar por no ser capaz de acceder a ningún 
+disco.</p>
+<p>Puede ser una buena idea hacer previamente un <em>snapshot</em> de la máquina 
+virtual, como se explicaba en un capítulo anterior.</p>
 </div>
-<p>Abrimos el terminal de comandos e iniciamos el editor de textos con privilegios de administrador activados. El comando es:</p>
+<p>Abrimos el terminal de comandos e iniciamos el editor de textos con privilegios 
+de administrador activados. El comando es:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>gnome-text-editor<span class="w"> </span>/etc/fstab
 </code></pre></div>
 
-<p>Al editor de textos le estamos pasando como argumento el fichero a modificar. El texto del fichero es algo así como:</p>
+<p>Al editor de textos le estamos pasando como argumento el fichero a modificar. 
+El texto del fichero es algo así como:</p>
 <div class="highlight"><pre><span></span><code># /etc/fstab: static file system information.
 #
 # Use &#39;blkid&#39; to print the universally unique identifier for a
@@ -865,41 +906,65 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 /dev/disk/by-uuid/41F5-383E /boot/efi vfat defaults 0 1
 /swap.img   none    swap    sw  0   0
 </code></pre></div>
-<p>Bien. Esto es un poco técnico. Cada línea de este archivo describe un punto de montaje, y las líneas que  comienzan con <code>#</code> serán ignoradas. Se usan como documentación. Las líneas en blanco tampoco tienen efecto.</p>
+<p>Bien. Esto es un poco técnico. Cada línea de este archivo describe un punto de 
+montaje, y las líneas que  comienzan con <code>#</code> serán ignoradas. 
+Se usan como documentación. Las líneas en blanco tampoco tienen efecto.</p>
 <p>Añadimos la siguiente línea al final del texto del archivo:</p>
 <div class="codehilite"><pre><span></span><code>vmhgfs-fuse    /mnt/compartidas    fuse    defaults,allow_other    0    0
 </code></pre></div>
 
 <p>Lo que estamos especificando con esta línea añadida es:</p>
 <ul>
-<li>que tenemos un dispositivo llamado <code>vmhgfs-fuse</code>. Es el nombre que VMWare usa para referirse a las carpetas compartidas.</li>
+<li>que tenemos un dispositivo llamado <code>vmhgfs-fuse</code>. Es el nombre que VMWare 
+usa para referirse a las carpetas compartidas.</li>
 <li>que lo queremos montar en el directorio <code>/mnt/compartidas</code></li>
 <li>que el tipo de disco es <code>fuse</code>, algo propio de VMWare</li>
 <li>el resto de parámetros son opciones de montaje</li>
 </ul>
-<p>Típicamente, el directorio <code>/mnt</code> se usa para montar dispositivos externos, aunque para DVDs y cosas así se utiliza <code>/media</code>. El sistema creará automáticamente una nueva carpeta <code>/mnt/compartidas</code>, donde tendremos acceso a las carpetas compartidas con la máquina física. Es decir, si compartimos dos carpetas de la máquina física, <code>carpeta1</code> y <code>carpeta2</code>, el acceso será mediante:</p>
+<p>Típicamente, el directorio <code>/mnt</code> se usa para montar dispositivos externos, 
+aunque para DVDs y cosas así se utiliza <code>/media</code>. </p>
+<p>Para que todo esto funcione, hay que reiniciar la máquina. 
+El sistema resolverá estos puntos de montaje y,
+la primera vez, creará automáticamente una nueva carpeta <code>/mnt/compartidas</code>, 
+donde tendremos acceso a las carpetas compartidas con la máquina física. </p>
+<p>Es decir, si compartimos 
+dos carpetas de la máquina física, <code>carpeta1</code> y <code>carpeta2</code>, el acceso 
+será mediante:</p>
 <div class="codehilite"><pre><span></span><code>/mnt/compartidas/carpeta1
 /mnt/compartidas/carpeta2
 </code></pre></div>
 
-<p>Para que todo esto funcione, hay que reiniciar la máquina. Seguidamente comprobamos el acceso a esas carpetas abriendo el explorador de archivos, e introduciendo la ruta <code>/mnt</code>.</p>
 <div class="admonition error">
 <p class="admonition-title">Nota importante</p>
-<p>Compartir carpetas con la máquina física no está exento de riesgos. Los cambios que hagamos en una máquina se reflejarán en la otra, pero puede haber interferencias. Por ejemplo, la papelera de reciclaje de la máquina física no es accesible para la máquina virtual. Si intentamos eliminar un archivo de una carpeta compartida desde la máquina virtual, el borrado será definitivo. Este tipo de operaciones conviene hacerlas desde la máquina física.</p>
+<p>Compartir carpetas con la máquina física no está exento de riesgos. 
+Los cambios que hagamos en una máquina se reflejarán en la otra, 
+pero puede haber interferencias. Por ejemplo, la papelera de reciclaje de 
+la máquina física no es accesible para la máquina virtual. 
+Si intentamos eliminar un archivo de una carpeta compartida desde la 
+máquina virtual, el borrado será definitivo. Este tipo de operaciones 
+conviene hacerlas desde la máquina física.</p>
 </div>
-<p>En el explorador de archivos <em>Nautilus</em> podemos crear un enlace en la barra lateral para acceder cómodamente a las carpetas compartidas.</p>
+<p>En el explorador de archivos <em>Nautilus</em> podemos crear un enlace en la barra 
+lateral para acceder cómodamente a las carpetas compartidas.</p>
 <h2 id="montar-y-desmontar-carpetas-compartidas">Montar y desmontar carpetas compartidas<a class="headerlink" href="#montar-y-desmontar-carpetas-compartidas" title="Permanent link">&para;</a></h2>
-<p>Configurar el archivo <code>/etc/fstab</code> para que las carpetas compartidas se monten automáticamente en el directorio <code>/mnt/compartidas</code> puede no ser lo ideal, ya que deja esas carpetas de la máquina física expuestas a las acciones de la máquina virtual.</p>
-<p>Alternativamente, podemos montar y desmontar manualmente las carpetas, solo cuando necesitemos tener acceso a ellas. Para montar todas las carpetas configuradas para ser compartidas, escribimos el comando:</p>
+<p>Configurar el archivo <code>/etc/fstab</code> para que las carpetas compartidas se monten 
+automáticamente en el directorio <code>/mnt/compartidas</code> puede no ser lo ideal, ya 
+que deja esas carpetas de la máquina física expuestas a las acciones de la 
+máquina virtual.</p>
+<p>Alternativamente, podemos montar y desmontar manualmente las carpetas, 
+solo cuando necesitemos tener acceso a ellas. Para montar todas las carpetas 
+configuradas para ser compartidas, escribimos el comando:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>/usr/bin/vmhgfs-fuse<span class="w"> </span>.host:/<span class="w">  </span>/mnt/compartidas<span class="w">   </span>-o<span class="w"> </span><span class="nv">subtype</span><span class="o">=</span>vmhgfs-fuse,allow_other
 </code></pre></div>
 
 <p>Siendo:</p>
 <ul>
 <li><code>sudo</code> indica ejecutar con permisos de administrador del sistema</li>
-<li><code>/usr/bin/vmhgfs-fuse</code> es el programa que gestiona las carpetas compartidas. Forma parte del paquete <em>VM-Tools</em>.</li>
+<li><code>/usr/bin/vmhgfs-fuse</code> es el programa que gestiona las carpetas compartidas. 
+    Forma parte del paquete <em>VM-Tools</em>.</li>
 <li><code>./host:/</code> indica todas las carpetas compartidas</li>
-<li><code>/mnt/compartidas</code> es el directorio de la máquina virtual donde vamos a acceder al contenido</li>
+<li><code>/mnt/compartidas</code> es el directorio de la máquina virtual donde vamos a 
+    acceder al contenido</li>
 <li>el resto son opciones de configuración </li>
 </ul>
 <p>Si queremos montar solo una carpeta física, añadir su nombre a <code>./host:/</code></p>
@@ -910,42 +975,38 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>umount<span class="w"> </span>/mnt/compartidas
 </code></pre></div>
 
-<p>Si no queremos estar tecleando comandos continuamente, podemos crear un script de comandos, y un lanzador en el escritorio (un icono) para ejecutarlo. Lo veremos más adelante, en el capítulo dedicado al escritorio.</p>
+<p>Si no queremos estar tecleando comandos continuamente, podemos crear un script 
+de comandos, y un lanzador en el escritorio (un icono) para ejecutarlo. 
+Lo veremos más adelante, en el capítulo dedicado al escritorio.</p>
 <h2 id="bloqueo-de-pantalla">Bloqueo de pantalla<a class="headerlink" href="#bloqueo-de-pantalla" title="Permanent link">&para;</a></h2>
-<p>En el caso de inactividad, la pantalla se bloquea y nos obliga a introducir la contraseña para desbloquearla. Tratándose de una máquina virtual, esta  opción ya la tenemos en la física. Para desactivar los bloqueos, en la configuración del sistema, ir a la configuración de Ubuntu, apartado <em>Privacidad y Seguridad &gt; Retardo para apagar la pantalla = Nunca</em>.</p>
+<p>En el caso de inactividad, la pantalla se bloquea y nos obliga a introducir la 
+contraseña para desbloquearla. Tratándose de una máquina virtual, esta  opción 
+ya la tenemos en la física. Para desactivar los bloqueos, en la configuración 
+del sistema, ir a la configuración de Ubuntu, apartado 
+<em>Privacidad y Seguridad &gt; Retardo para apagar la pantalla = Nunca</em>.</p>
 <h2 id="gestion-de-usuarios">Gestión de usuarios<a class="headerlink" href="#gestion-de-usuarios" title="Permanent link">&para;</a></h2>
-<p>Podemos cambiar nuestra password, crear y eliminar usuarios, o cambiar la forma de inicio de sesión (automático o con contraseña). Para estas labores, ir a la configuración de Ubuntu, apartado <em>Sistema &gt; Usuarios</em>.</p>
+<p>Podemos cambiar nuestra password, crear y eliminar usuarios, o cambiar la forma 
+de inicio de sesión (automático o con contraseña). Para estas labores, ir a la 
+configuración de Ubuntu, apartado <em>Sistema &gt; Usuarios</em>.</p>
+<p>Algunas de estas opciones estarán bloqueadas hasta que pulsemos en el botón 
+[Desbloquear] e introduzcamos nuestra contraseña.</p>
 <h2 id="cambios-en-el-terminal">Cambios en el Terminal<a class="headerlink" href="#cambios-en-el-terminal" title="Permanent link">&para;</a></h2>
-<p>Cada escritorio proporciona su propia emulación de Terminal, y Ubuntu toma prestado el Terminal de Gnome. Muestra una ventana en cuya barra superior se muestra un icono <big><b>☰</b></big> para desplegar un menú. La opción <em>Preferencias</em> permite configurar el funcionamiento del terminal.</p>
-<p>Podemos configurar los atajos de teclado con la opción <em>Global &gt; Atajos</em>.</p>
-<p>Además de la configuración general, podemos tener varias configuraciones personalizadas. Cada una de ellas es un "Perfil". En principio hay uno llamado "Sin nombre", y podemos añadir nuevos perfiles pulsando en el icono <code>+</code>. </p>
-<p>Tras seleccionar un perfil, podemos configurarlo:</p>
-<ul>
-<li>
-<p>Aspecto del texto. Inicialmente el Terminal se configura con un tamaño de 80 columnas y 24 líneas, tipo de letra monospace. El cursor puede mostrarse como bloque o subrayado, bajo el carácter actual, o como linea vertical entre dos caracteres.</p>
-<p>El sonido de alerta se puede activar o silenciar.</p>
-</li>
-<li>
-<p>Colores. Pueden ser los del sistema, usados en todas las aplicaciones, o los que deseemos, personalizando el aspecto del Terminal</p>
-</li>
-<li>
-<p>Podemos configurar el desplazamiento del texto hacia arriba, de forma que la información no se pierda al añadir más texto en las líneas inferiores del terminal</p>
-</li>
-<li>
-<p>Podemos configurar el programa que se ejecuta inicialmente dentro de la ventana de Terminal. Por defecto es el intérprete de comandos.</p>
-</li>
-<li>
-<p>Compatibilidad. Por defecto se usa la codificación UTF-8, lo que permite toda clase de caracteres, la eñe, vocales acentuadas, y todo tipo de símbolos, emojis, etc.</p>
-</li>
-</ul>
-<p>Ver <a href="https://help.gnome.org/users/gnome-terminal/stable/index.html.es">Manual del Terminal de Gnome</a>.</p>
+<p>Cada escritorio proporciona su propia emulación de Terminal. La de Ubuntu 
+muestra una ventana en cuya barra superior se muestra un icono <big><b>☰</b></big> 
+para desplegar un menú. La opción <em>Preferencias</em> permite configurar el 
+funcionamiento del terminal.</p>
 <h2 id="modificando-el-prompt-de-comandos">Modificando el prompt de comandos<a class="headerlink" href="#modificando-el-prompt-de-comandos" title="Permanent link">&para;</a></h2>
 <p>Personalmente, hay una cosa que no me gusta del Terminal de comandos: el <em>prompt</em>. </p>
-<p>Si por ejemplo estamos en una carpeta <code>/home/usuario/documentos/archivos_recientes/</code>, el prompt será algo así como:</p>
+<p>Si por ejemplo estamos en una carpeta 
+<code>/home/usuario/documentos/archivos_recientes/</code>, el prompt será algo así como:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">nombreusuario</span><span class="nv">@nombremaquina</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">usuario</span><span class="o">/</span><span class="n">documentos</span><span class="o">/</span><span class="n">archivos_recientes</span><span class="err">$</span>
 </code></pre></div>
 
-<p>Esto recorta bastante espacio para el comando a introducir, y es una información que generalmente no resulta necesario tenerla presente continuamente. Generalmente se muestra en la barra de título de la ventana, y de todas formas, podemos averiguar la información mediante comandos. La carpeta actual se obtiene con el comando <em>print working directory</em>:</p>
+<p>Esto recorta bastante espacio para el comando a introducir, y es una información 
+que generalmente no resulta necesario tenerla presente continuamente. 
+Generalmente se muestra en la barra de título de la ventana, y de todas formas, 
+podemos averiguar la información mediante comandos. La carpeta actual se obtiene 
+con el comando <em>print working directory</em>:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">pwd</span>
 </code></pre></div>
 
@@ -953,18 +1014,31 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>whoami
 </code></pre></div>
 
-<p>Podemos averiguar información del sistema con el comando <code>uname</code> seguido del parámetro <code>-a</code> (all):</p>
+<p>Podemos averiguar información del sistema con el comando <code>uname</code> seguido del 
+parámetro <code>-a</code> (all):</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>uname<span class="w"> </span>-a
 </code></pre></div>
 
 <p>La información mostrada incluye el sistema operativo y el nombre de la máquina.</p>
-<p>Podemos ahorrar espacio si cambiamos el aspecto del <em>prompt</em>. A mi me gusta que solo refleje la carpeta actual, eliminando el nombre de usuario y la máquina. </p>
-<p>En Ubuntu, la configuración del <em>prompt</em> se establece en el archivo <code>~/.bashrc</code>. Recordemos que el directorio <code>~</code> es la carpeta raíz del usuario. El archivo <code>.bashrc</code> lleva un punto como prefijo, lo que en sistemas tipo Unix indica un fichero oculto.</p>
-<p>Comenzamos por abrir el explorador de Archivos, nos situamos en la carpeta raíz del usuario y pulsamos en la opción de menú <em>Mostrar archivos ocultos</em>. Aparecerá un archivo <code>.bashrc</code>. Con ese archivo seleccionado, pulsamos con el botón secundario del ratón, y en el menú desplegable seleccionamos <em>Copiar</em>. Hacemos una copia del archivo en la misma carpeta.</p>
-<p>Ahora tenemos dos archivos, <code>.bashrc</code> y <code>.bashrc (copia)</code>. Este segundo nos servirá de respaldo si rompemos algo. En  caso de apuro, borraremos el <code>.bashrc</code> y renombraremos <code>.bashrc (copia)</code> para que vuelva a  llamase <code>.bashrc</code>.</p>
-<p>Hacemos doble clic sobre <code>.bashrc</code>. Es un archivo de texto que se abrirá en el editor de textos:</p>
+<p>Podemos ahorrar espacio si cambiamos el aspecto del <em>prompt</em>. A mi me gusta que 
+solo refleje la carpeta actual, eliminando el nombre de usuario y la máquina. </p>
+<p>En Ubuntu, la configuración del <em>prompt</em> se establece en el archivo <code>~/.bashrc</code>. 
+Recordemos que el directorio <code>~</code> es la carpeta raíz del usuario. 
+El archivo <code>.bashrc</code> lleva un punto como prefijo, lo que en sistemas tipo Unix 
+indica un fichero oculto.</p>
+<p>Comenzamos por abrir el explorador de Archivos, nos situamos en la carpeta raíz 
+del usuario y pulsamos en la opción de menú <em>Mostrar archivos ocultos</em>. 
+Aparecerá un archivo <code>.bashrc</code>. Con ese archivo seleccionado, pulsamos con el 
+botón secundario del ratón, y en el menú desplegable seleccionamos <em>Copiar</em>. 
+Hacemos una copia del archivo en la misma carpeta.</p>
+<p>Ahora tenemos dos archivos, <code>.bashrc</code> y <code>.bashrc (copia)</code>. Este segundo nos 
+servirá de respaldo si rompemos algo. En  caso de apuro, borraremos el <code>.bashrc</code> 
+y renombraremos <code>.bashrc (copia)</code> para que vuelva a  llamase <code>.bashrc</code>.</p>
+<p>Hacemos doble clic sobre <code>.bashrc</code>. Es un archivo de texto que se abrirá en el 
+editor de textos:</p>
 <p><img alt="" src="img/01011Configurar002.png" /></p>
-<p>Esto resulta bastante técnico, pero ¿quien dijo miedo? Comenzamos por localizar las líneas de texto que configuran el <em>prompt</em>:</p>
+<p>Esto resulta bastante técnico, pero ¿quien dijo miedo? Comenzamos por localizar 
+las líneas de texto que configuran el <em>prompt</em>:</p>
 <div class="highlight"><pre><span></span><code>if [ &quot;$color_prompt&quot; = yes ]; then
     PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;
 else
@@ -974,8 +1048,10 @@ fi
 <p>La que tiene efecto es la segunda línea, ya que el terminal admite coloreado:</p>
 <div class="highlight"><pre><span></span><code>PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;
 </code></pre></div>
-<p>Esta secuencia de parámetros indican al Terminal los datos a mostrar en el <em>prompt</em> y los códigos de color a aplicar. </p>
-<p>Anteponemos un carácter <code>#</code> a esa línea, para anularla, y escribimos debajo como queremos que quede:</p>
+<p>Esta secuencia de parámetros indican al Terminal los datos a mostrar en el 
+<em>prompt</em> y los códigos de color a aplicar. </p>
+<p>Anteponemos un carácter <code>#</code> a esa línea, para anularla, y escribimos debajo como 
+queremos que quede:</p>
 <div class="highlight"><pre><span></span><code>PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\w\[\033[00m\]\$ &#39;
 </code></pre></div>
 <p>Con lo que el bloque queda así:</p>
@@ -986,36 +1062,45 @@ else
     PS1=&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;
 fi
 </code></pre></div>
-<p>Guardamos los cambios, cerramos la ventana del Terminal (si la teníamos abierta) y volvemos abrirla. El <em>prompt</em> debería mostrarse con la nueva configuración:</p>
+<p>Guardamos los cambios, cerramos la ventana del Terminal (si la teníamos abierta) 
+y volvemos abrirla. El <em>prompt</em> debería mostrarse con la nueva configuración:</p>
 <div class="codehilite"><pre><span></span><code>~<span class="p">$</span>
 </code></pre></div>
 
 <h2 id="explicacion-del-prompt">Explicación del <em>prompt</em><a class="headerlink" href="#explicacion-del-prompt" title="Permanent link">&para;</a></h2>
-<p>Si tenemos curiosidad por analizar los cambios introducidos en el <em>prompt</em>, vamos a "destripar" la línea:</p>
+<p>Si tenemos curiosidad por analizar los cambios introducidos en el <em>prompt</em>, 
+vamos a "destripar" la línea:</p>
 <div class="highlight"><pre><span></span><code>PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;
 </code></pre></div>
-<p><strong>PS1</strong> es una variable del sistema. Lo que estamos haciendo es asignarle un valor:</p>
+<p><strong>PS1</strong> es una variable del sistema. Lo que estamos haciendo es asignarle un 
+valor:</p>
 <div class="codehilite"><pre><span></span><code>PS1=&#39;especificaciones&#39;
 </code></pre></div>
 
 <p>Los parámetros que nos interesan son:</p>
 <ul>
 <li>
-<p><code>\u</code> muestra el usuario (user). Va seguido de un carácter <code>@</code> a mostrar tal cual. Es decir, si el usuario es <em>Luis</em>,  <code>\u@</code> se sustituirá por <code>Luis@</code></p>
+<p><code>\u</code> muestra el usuario (user). Va seguido de un carácter <code>@</code> a mostrar tal 
+cual. Es decir, si el usuario es <em>Luis</em>,  <code>\u@</code> se sustituirá por <code>Luis@</code></p>
 </li>
 <li>
-<p><code>\h</code> muestra el nombre de máquina (host). Va seguido de un código de color <code>[\033[00m\]</code> y los dos puntos <code>:</code> a mostrar</p>
+<p><code>\h</code> muestra el nombre de máquina (host). Va seguido de un código de color 
+<code>[\033[00m\]</code> y los dos puntos <code>:</code> a mostrar</p>
 </li>
 <li><code>\w</code> muestra el directorio de trabajo (working directory) </li>
-<li><code>\$</code> muestra el carácter <code>$</code> a mostrar. Va seguido de un espacio en blanco, que también se mostrará.</li>
+<li><code>\$</code> muestra el carácter <code>$</code> a mostrar. Va seguido de un espacio en blanco, 
+que también se mostrará.</li>
 </ul>
-<p>Las secuencias intermedias como <code>\[\033[01;33m\]</code> establecen los colores de cada elemento del prompt:</p>
+<p>Las secuencias intermedias como <code>\[\033[01;33m\]</code> establecen los colores de cada 
+elemento del prompt:</p>
 <ul>
 <li>
-<p>la que precede a <code>\u</code> es este caso es <code>\[\033[00;31m\]</code>, que indica un color verde. Cambiando <code>00</code> por <code>01</code> se muestra en verde intenso.</p>
+<p>la que precede a <code>\u</code> es este caso es <code>\[\033[00;31m\]</code>, 
+    que indica un color verde. Cambiando <code>00</code> por <code>01</code> se muestra en verde intenso.</p>
 </li>
 <li>
-<p>la secuencia que precede a <code>\w</code> es <code>\[\033[01;34m\]</code>, que especifica un color azul. </p>
+<p>la secuencia que precede a <code>\w</code> es <code>\[\033[01;34m\]</code>, que especifica un color 
+    azul. </p>
 </li>
 <li>
 <p>para recuperar el color por defecto se usa la secuencia <code>\[\033[00m\]</code></p>
@@ -1032,7 +1117,8 @@ fi
 <li><code>\033[0;36m\]</code> - Cyan </li>
 <li><code>\033[0;37m\]</code> - Light gray</li>
 </ul>
-<p>Véase que los códigos van de 30 a 37. Cambiando el 0 por un 1, tendremos colores más intensos:</p>
+<p>Véase que los códigos van de 30 a 37. Cambiando el 0 por un 1, tendremos colores 
+más intensos:</p>
 <ul>
 <li><code>\033[1;30m\]</code> - Dark gray </li>
 <li><code>\033[1;31m\]</code> - Light red </li>
@@ -1043,11 +1129,13 @@ fi
 <li><code>\033[1;36m\]</code> - Light cyan </li>
 <li><code>\033[1;37m\]</code> - White</li>
 </ul>
-<p>La primera parte del <em>prompt</em> solo tiene efecto en situaciones muy especiales, y la dejaremos tal cual:</p>
+<p>La primera parte del <em>prompt</em> solo tiene efecto en situaciones muy especiales, 
+y la dejaremos tal cual:</p>
 <div class="codehilite"><pre><span></span><code><span class="cp">${</span><span class="n">debian_chroot</span><span class="p">:</span><span class="o">+</span><span class="p">(</span><span class="err">$</span><span class="n">debian_chroot</span><span class="p">)</span><span class="cp">}</span>
 </code></pre></div>
 
-<p>Suprimimos la visualización del nombre de usuario, que va precedida por los códigos de color y muestra un <code>@</code> añadido:</p>
+<p>Suprimimos la visualización del nombre de usuario, que va precedida por los 
+códigos de color y muestra un <code>@</code> añadido:</p>
 <div class="codehilite"><pre><span></span><code>\[\033[01;32m\]\u@
 </code></pre></div>
 
@@ -1065,6 +1153,82 @@ fi
 
 <p>Con lo que la cosa queda así:</p>
 <div class="codehilite"><pre><span></span><code>PS1=&#39;<span class="cp">${</span><span class="n">debian_chroot</span><span class="p">:</span><span class="o">+</span><span class="p">(</span><span class="err">$</span><span class="n">debian_chroot</span><span class="p">)</span><span class="cp">}</span>\[\033[01;32m\]\w\[\033[00m\]\$<span class="w"> </span>&#39;
+</code></pre></div>
+
+<h2 id="vmware-y-el-sonido">VMware y el sonido<a class="headerlink" href="#vmware-y-el-sonido" title="Permanent link">&para;</a></h2>
+<p>Uno de los motivos por los que prefiero VMWare sobre VirtualBox es por su mejor
+rendimiento. Pero últimamente el sonido no me va muy bien con 
+ninguna de las dos opciones. Suena entrecortado.</p>
+<p>El caso es que, buscando en Internet he encontrado debates varios sobre el 
+tema y, supuestas soluciones que a mi no me funcionan. Pero descubrí una forma
+de resolver el problema.
+En resumen, parece que hay un software llamado 
+<a href="https://en.wikipedia.org/wiki/PipeWire">PipeWire</a> que gestiona el sonido en 
+segundo plano, y que es el que da problemas. Nació en 2017 y ha ido sustituyendo
+a otro programa muy popular, 
+<a href="https://en.wikipedia.org/wiki/PulseAudio">PulseAudio</a>.</p>
+<p>Así que, hasta que se solucione el problema, lo que podemos hacer, usando el 
+terminal de comandos, es sustituir PipeWire por PulseAudio:</p>
+<ul>
+<li>
+<p>Paso 1: Descargar PulseAudio con el comando:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt install pulseaudio
+</code></pre></div>
+
+</li>
+<li>
+<p>Paso 2: Usar el comando <code>systemctl</code>, que sirve para gestionar los servicios 
+    del sistema, y desactivar <code>pipewire</code> a nivel de usuario. 
+    Son seis comandos a ejecutar:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">systemctl</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">pipewire</span><span class="p">.</span><span class="n">socket</span>
+<span class="n">systemctl</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">pipewire</span><span class="p">.</span><span class="n">service</span>
+<span class="n">systemctl</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="k">disable</span><span class="w"> </span><span class="n">pipewire</span><span class="p">.</span><span class="n">socket</span>
+<span class="n">systemctl</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="k">disable</span><span class="w"> </span><span class="n">pipewire</span><span class="p">.</span><span class="n">service</span>
+<span class="n">systemctl</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="n">pipewire</span><span class="p">.</span><span class="n">socket</span>
+<span class="n">systemctl</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="n">pipewire</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Paso 3: Con el mismo comando <code>systemctl</code>, activar <code>pulseaudio</code> como gestor
+    de audio:</p>
+<div class="codehilite"><pre><span></span><code>systemctl --user unmask pulseaudio
+systemctl --user unmask pulseaudio.socket
+systemctl --user enable pulseaudio.service
+</code></pre></div>
+
+</li>
+<li>
+<p>Paso 4: Ahora que ya tenemos configurado <code>pulseaudio</code> como gestor, tenemos
+    que ponerlo en marcha:</p>
+<div class="codehilite"><pre><span></span><code>systemctl --user start pulseaudio.service
+</code></pre></div>
+
+<p>Esto tendremos que hacerlo cada vez que encendemos la máquina. Veremos
+a continuación como automatizar este paso.</p>
+</li>
+<li>
+<p>Paso 5: Comprobar que <code>pulseaudio</code> está trabajando con el comando: </p>
+<div class="codehilite"><pre><span></span><code>pactl info
+</code></pre></div>
+
+</li>
+<li>
+<p>Paso 6: Probar el sonido con alguna aplicación, por ejemplo, entrando en 
+    Youtube con el navegador web Firefox.</p>
+</li>
+</ul>
+<p>Tenemos que ejecutar el paso 4 (comando start)
+cada vez que iniciemos la máquina virtual. 
+Podemos establecer que ciertos comandos se ejecuten automáticamente 
+al iniciar el sistema. Para ello, tenemos que editar el
+archivo <code>.profile</code> (fichero oculto) que hay en la carpeta principal del usuario.
+Abrimos el editor de textos con el comando:</p>
+<div class="codehilite"><pre><span></span><code>gnome-text-editor ~/.profile
+</code></pre></div>
+
+<p>y al texto le añadimos la siguiente línea:</p>
+<div class="codehilite"><pre><span></span><code>systemctl --user start pulseaudio.service
 </code></pre></div>
 
 

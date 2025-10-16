@@ -820,33 +820,76 @@
 
 
 <h1 id="instalar-software">Instalar software<a class="headerlink" href="#instalar-software" title="Permanent link">&para;</a></h1>
-<p>Una nueva instalación de Ubuntu deja en nuestra máquina una extensa colección de programas, que se puede ampliar acudiendo a los repositorios de la distribución para descargar e instalar todo tipo de paquetes de software. Para realizar esta labor contamos con varias herramientas que examinaremos en este capítulo.</p>
-<p>Pero ¡cuidado! Es posible que, al añadir programas o hacer cambios en la configuración de nuestro ordenador, posteriormente queramos echar "marcha atrás". Conviene guardar previamente una "instantánea" del sistema, algo que se conoce como un <em>snapshot</em>, y que nos permite recuperar el estado de la máquina.</p>
+<p>Una nueva instalación de Ubuntu deja en nuestra máquina una extensa colección de 
+programas, que se puede ampliar acudiendo a los repositorios de la distribución 
+para descargar e instalar todo tipo de paquetes de software. Para realizar esta 
+labor contamos con varias herramientas que examinaremos en este capítulo.</p>
+<p>Pero ¡cuidado! Es posible que, al añadir programas o hacer cambios en la 
+configuración de nuestro ordenador, posteriormente queramos echar "marcha atrás". 
+Conviene guardar previamente una "instantánea" del sistema, algo que se conoce 
+como un <em>snapshot</em>, y que nos permite recuperar el estado de la máquina.</p>
 <h2 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Permanent link">&para;</a></h2>
-<p>Un snapshot es una "foto" del ordenador que refleja su estado en un momento determinado, la memoria RAM, procesos que se están ejecutando, contenido del disco, etcétera. Podemos usarlo en el futuro para descartar todos los cambios que se hayan producido durante el tiempo transcurrido. Resulta útil, por ejemplo, cuando vayamos a efectuar cambios que no sabemos como deshacer, o de cuyas consecuencias no estamos seguros.</p>
-<p><em>VMware</em> cuenta con una utilidad de snapshots, que guarda el estado completo de la máquina virtual en el momento de crearlo. Para mostrar la lista de snapshots, pulsar en el menú de VMware <em>Máquina Virtual &gt; Snapshots</em>. Veremos todos los estados de la máquina que hemos ido guardando, y el estado actual. Para tomar un nuevo snapshot, seleccionar el estado actual, y en el menú emergente que se muestra tras pulsar con el botón secundario del ratón, pulsar sobre <em>Realizar Snapshot</em>:</p>
+<p>Un snapshot es una "foto" del ordenador que refleja su estado en un momento 
+determinado, la memoria RAM, procesos que se están ejecutando, contenido del 
+disco, etcétera. Podemos usarlo en el futuro para descartar todos los cambios 
+que se hayan producido durante el tiempo transcurrido. Resulta útil, por ejemplo, 
+cuando vayamos a efectuar cambios que no sabemos como deshacer, o de cuyas 
+consecuencias no estamos seguros.</p>
+<p><em>VMware</em> cuenta con una utilidad de snapshots, que guarda el estado completo de 
+la máquina virtual en el momento de crearlo. Para mostrar la lista de snapshots, 
+pulsar en el menú de VMware <em>Máquina Virtual &gt; Snapshots</em>. Veremos todos los 
+estados de la máquina que hemos ido guardando, y el estado actual. Para tomar un 
+nuevo snapshot, seleccionar el estado actual, y en el menú emergente que se
+muestra tras pulsar con el botón secundario del ratón, pulsar sobre <em>Realizar 
+Snapshot</em>:</p>
 <p><img alt="" class="sombra" src="img/01010Repositorios001.png" /></p>
-<p>Para recuperar el estado anterior de la máquina, seleccionar el Snapshot deseado y pulsar en <em>Restablecer</em>, en el menú emergente. Se nos dará la opción de guardar el estado actual de la máquina antes de restablecerla, creando un nuevo Snapshot.</p>
+<p>Para recuperar el estado anterior de la máquina, seleccionar el Snapshot deseado 
+y pulsar en <em>Restablecer</em>, en el menú emergente. Se nos dará la opción de guardar 
+el estado actual de la máquina antes de restablecerla, creando un nuevo Snapshot.</p>
 <p>Los Snapshot se pueden eliminar siguiendo estos mismos procedimientos.</p>
 <h2 id="dependencias">Dependencias<a class="headerlink" href="#dependencias" title="Permanent link">&para;</a></h2>
-<p>Una vez hecha una copia del estado de nuestra máquina virtual, podemos proceder a instalar los programas que deseemos. Pero la ejecución de muchos de estos programas puede depender de la existencia de otros complementos en nuestro equipo. La descarga de un paquete requiere, con frecuencia, que obtengamos otros necesarios, si no los tenemos ya.</p>
-<p>Una de las fases de la instalación de una nueva aplicación es la comprobación de dependencias y la descarga de ese software complementario. Las herramientas que vamos a utilizar pueden resolver la instalación de dependencias de forma automática.</p>
+<p>Una vez hecha una copia del estado de nuestra máquina virtual, podemos proceder 
+a instalar los programas que deseemos. Pero la ejecución de muchos de estos 
+programas puede depender de la existencia de otros complementos en nuestro 
+equipo. La descarga de un paquete requiere, con frecuencia, que obtengamos 
+otros necesarios, si no los tenemos ya.</p>
+<p>Una de las fases de la instalación de una nueva aplicación es la comprobación 
+de dependencias y la descarga de ese software complementario. Las herramientas 
+que vamos a utilizar pueden resolver la instalación de dependencias de forma 
+automática.</p>
 <h2 id="formatos">Formatos<a class="headerlink" href="#formatos" title="Permanent link">&para;</a></h2>
-<p>La forma más simple de distribuir un paquete de software es reuniendo todos sus componentes en un archivo <code>.zip</code>. Tras su descarga, extraeremos los ficheros que lo integran y los dejaremos en alguna carpeta de nuestro equipo. Pero esto no resuelve dependencias ni configura el software. Las distribuciones Linux suelen contar con mecanismos para automatizar el proceso completo.</p>
-<p>Una solución bastante potente, implementada por <em>Debian</em>, <em>Ubuntu</em> y otras distribuciones derivadas, consiste en "empaquetar" la aplicación y toda su información en un fichero <code>.deb</code>, y gestionar la instalación con un programa que descargue, configurare el software, y controle las dependencias.</p>
-<p>RedHat, Fedora y derivados siguen un planteamiento similar, utilizando un formato propio en forma de archivos <code>.rpm</code></p>
+<p>La forma más simple de distribuir un paquete de software es reuniendo todos sus 
+componentes en un archivo <code>.zip</code>. Tras su descarga, extraeremos los ficheros que 
+lo integran y los dejaremos en alguna carpeta de nuestro equipo. Pero esto no 
+resuelve dependencias ni configura el software. Las distribuciones Linux suelen 
+contar con mecanismos para automatizar el proceso completo.</p>
+<p>Una solución bastante potente, implementada por <em>Debian</em>, <em>Ubuntu</em> y otras 
+distribuciones derivadas, consiste en "empaquetar" la aplicación y toda su 
+información en un fichero <code>.deb</code>, y gestionar la instalación con un programa 
+que descargue, configurare el software, y controle las dependencias.</p>
+<p>RedHat, Fedora y derivados siguen un planteamiento similar, utilizando un 
+formato propio en forma de archivos <code>.rpm</code></p>
 <h2 id="instalar-paquetes-desde-el-terminal-de-comandos">Instalar paquetes desde el terminal de comandos<a class="headerlink" href="#instalar-paquetes-desde-el-terminal-de-comandos" title="Permanent link">&para;</a></h2>
-<p>La forma más técnica de instalar software es usar el terminal de comandos. Supongamos, por ejemplo, que queremos instalar el reproductor de vídeo <a href="https://www.videolan.org/vlc/index.es.html">VLC</a>. Vamos a utilizar el comando <code>apt</code>, <em>Advanced Packaging Tool</em>. Se usa en el caso de paquetes con formato tipo <em>Debian</em>.</p>
+<p>La forma más técnica de instalar software es usar el terminal de comandos. 
+Supongamos, por ejemplo, que queremos instalar el reproductor de vídeo
+<a href="https://www.videolan.org/vlc/index.es.html">VLC</a>. 
+Vamos a utilizar el comando <code>apt</code>, <em>Advanced Packaging Tool</em>. 
+Se usa en el caso de paquetes con formato tipo <em>Debian</em>.</p>
 <p>El primer paso es hacer una búsqueda en el repositorio. El comando será:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>apt-cache<span class="w"> </span>search<span class="w"> </span>vlc
 </code></pre></div>
 
-<p>La orden apt-cache permite hacer búsquedas en la base de datos de nuestro equipo. Cuando instalamos Linux, no se descarga todo el repositorio, pero sí un índice de lo que hay en él.</p>
-<p>Este comando mostrará una lista de paquetes con ese texto en el nombre o en la descripción. Si la lista es muy extensa, podemos redirigir la salida al comando <code>less</code>:</p>
+<p>La orden apt-cache permite hacer búsquedas en la base de datos de nuestro equipo. 
+Cuando instalamos Linux, no se descarga todo el repositorio, pero sí un índice 
+de lo que hay en él.</p>
+<p>Este comando mostrará una lista de paquetes con ese texto en el nombre o en la 
+descripción. Si la lista es muy extensa, podemos redirigir la salida al comando 
+<code>less</code>:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>apt-cache<span class="w"> </span>search<span class="w"> </span>vlc<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
 </code></pre></div>
 
-<p>El comando <code>less</code> permite desplazar el texto  por la pantalla con las teclas <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> y <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>. Se sale con la tecla <span class="keys"><kbd class="key-q">Q</kbd></span> (abreviatura de quit).</p>
+<p>El comando <code>less</code> permite desplazar el texto  por la pantalla con las teclas 
+<span class="keys"><kbd class="key-arrow-up">Up</kbd></span> y <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>. Se sale con la tecla <span class="keys"><kbd class="key-q">Q</kbd></span> (abreviatura de quit).</p>
 <p>Examinando la lista, veremos una entrada que dice:</p>
 <div class="codehilite"><pre><span></span><code>vlc - reproductor multimedia y de flujo
 </code></pre></div>
@@ -855,46 +898,79 @@
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vlc
 </code></pre></div>
 
-<p>Véase que se necesita permisos de administrador, por lo que anteponemos la palabra <code>sudo</code>. Una vez completada la operación, ya tendremos VLC entre las aplicaciones.</p>
-<p>Esta forma de hacer las cosas automatiza todo el proceso, gestionando las dependencias. Pero está limitado a paquetes <code>.deb</code>.</p>
-<p>El comando <code>apt</code> tiene una versión más antigua, llamada <code>apt-get</code>, con menos opciones de búsqueda y administración de paquetes. En cualquier caso, los dos comandos siguientes hacen lo mismo:</p>
+<p>Véase que se necesita permisos de administrador, por lo que anteponemos la 
+palabra <code>sudo</code>. Una vez completada la operación, ya tendremos VLC entre 
+las aplicaciones.</p>
+<p>Esta forma de hacer las cosas automatiza todo el proceso, gestionando las 
+dependencias. Pero está limitado a paquetes <code>.deb</code>.</p>
+<p>El comando <code>apt</code> tiene una versión más antigua, llamada <code>apt-get</code>, con menos 
+opciones de búsqueda y administración de paquetes. En cualquier caso, los
+dos comandos siguientes hacen lo mismo:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>vlc
 $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vlc
 </code></pre></div>
 
 <div class="admonition note">
 <p class="admonition-title">Sistemas derivados de <em>RedHat</em></p>
-<p>Aunque aquí se describe el funcionamiento de <em>Ubuntu</em>, veremos que cada distribución tiene sus propias herramientas de configuración y administración. En sistemas tipo <em>RedHat</em>, como es el caso de <em>Fedora</em>, el comando equivalente a <code>apt</code> es <code>dnf</code>:</p>
+<p>Aunque aquí se describe el funcionamiento de <em>Ubuntu</em>, veremos que cada 
+distribución tiene sus propias herramientas de configuración y 
+administración. En sistemas tipo <em>RedHat</em>, como es el caso de <em>Fedora</em>, 
+el comando equivalente a <code>apt</code> es <code>dnf</code>:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>vlc
 </code></pre></div>
 
 </div>
 <h2 id="suprimir-paquetes">Suprimir paquetes<a class="headerlink" href="#suprimir-paquetes" title="Permanent link">&para;</a></h2>
-<p>El comando para eliminar una aplicación consiste en sustituir la palabra <code>install</code> por <code>remove</code>:</p>
+<p>El comando para eliminar una aplicación consiste en sustituir la palabra 
+<code>install</code> por <code>remove</code>:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>vlc
 </code></pre></div>
 
 <h2 id="synaptic">Synaptic<a class="headerlink" href="#synaptic" title="Permanent link">&para;</a></h2>
-<p>Si no queremos depender del Terminal de comandos, <em>Synaptic</em> es la versión gráfica del comando <code>apt</code>. Como sucede con este, se limita a paquetes en formato <code>.deb</code>.</p>
-<p>Lo encontraremos en el menú de aplicaciones, apartado <em>Administración</em>, con el nombre de <em>Gestor de paquetes Synaptic</em>. Si se da el caso de que nuestra distribución no lo incluye de serie, podemos instalarlo con:</p>
+<p>Si no queremos depender del Terminal de comandos, <em>Synaptic</em> es la versión 
+gráfica del comando <code>apt</code>. Como sucede con este, se limita a paquetes en formato 
+<code>.deb</code>.</p>
+<p>Lo encontraremos en el menú de aplicaciones, apartado <em>Administración</em>, con el 
+nombre de <em>Gestor de paquetes Synaptic</em>. Si se da el caso de que nuestra 
+distribución no lo incluye de serie, podemos instalarlo con:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>synaptic
 </code></pre></div>
 
-<p>Al ejecutarlo, se muestra un navegador de paquetes. Los marcados son los que ya tenemos instalados:</p>
+<p>Al ejecutarlo, se muestra un navegador de paquetes. Los marcados son los que ya 
+tenemos instalados:</p>
 <p><img alt="" src="img/01010Repositorios002.png" /></p>
-<p>Pulsando en el menú <em>Ayuda &gt; Leyenda de iconos</em>, obtenemos el significado de cada marca:</p>
+<p>Pulsando en el menú <em>Ayuda &gt; Leyenda de iconos</em>, obtenemos el significado de 
+cada marca:</p>
 <p><img alt="" src="img/01010Repositorios003.png" /></p>
-<p>Pulsando en el botón <em>Buscar</em>, podemos filtrar los paquetes por nombre. Pulsando sobre un paquete, se muestra información del mismo. Pulsando sobre la casilla que hay a la izquierda de cada paquete, lo marcamos para instalar o desinstalar.</p>
-<p>Una vez marcados los paquetes deseados, los instalamos pulsando en el icono "Aplicar". Si se da el caso, se nos preguntará si queremos instalar también las dependencias.</p>
+<p>Pulsando en el botón <em>Buscar</em>, podemos filtrar los paquetes por nombre. Pulsando 
+sobre un paquete, se muestra información del mismo. Pulsando sobre la casilla 
+que hay a la izquierda de cada paquete, lo marcamos para instalar o desinstalar.</p>
+<p>Una vez marcados los paquetes deseados, los instalamos pulsando en el icono 
+"Aplicar". Si se da el caso, se nos preguntará si queremos instalar también 
+las dependencias.</p>
 <h2 id="el-gestor-de-software">El gestor de software<a class="headerlink" href="#el-gestor-de-software" title="Permanent link">&para;</a></h2>
-<p>La forma más simple de instalar software, reuniendo en un solo programa los repositorios de Debian y Ubuntu es mediante un programa llamado <em>Centro de aplicaciones</em>. Lo encontraremos entre los programas de Ubuntu:</p>
+<p>La forma más simple de instalar software, reuniendo en un solo programa los 
+repositorios de Debian y Ubuntu es mediante un programa llamado <em>Centro de 
+aplicaciones</em>. Lo encontraremos entre los programas de Ubuntu:</p>
 <p><img alt="" src="img/01008Terminal002.png" /></p>
-<p>Podemos navegar por una estructura de categorías, o hacer búsquedas por nombre. Una vez seleccionado un paquete, pulsamos sobre el mismo para obtener información e instalarlo.</p>
-<p>Nótese que, al mostrar los resultados de búsqueda, se nos da opción a seleccionar la versión entre los paquetes del repositorio Debian, o los de la <em>tienda de snaps</em>.</p>
+<p>Podemos navegar por una estructura de categorías, o hacer búsquedas por nombre. 
+Una vez seleccionado un paquete, pulsamos sobre el mismo para obtener 
+información e instalarlo.</p>
+<p>Nótese que, al mostrar los resultados de búsqueda, se nos da opción a 
+seleccionar la versión entre los paquetes del repositorio Debian, o los de 
+la <em>tienda de snaps</em>.</p>
 <h2 id="la-tienda-de-snaps">La tienda de <em>Snaps</em><a class="headerlink" href="#la-tienda-de-snaps" title="Permanent link">&para;</a></h2>
-<p>Ubuntu tiene su propia versión de empaquetamiento, con el nombre de <em>Snaps</em>. Se trata de un sistema de gestión de paquetes universal, que pretende ser independiente de la distribución. Canonical, la empresa que distribuye <em>Ubuntu</em>, ha creado con este sistema una especie de <em>Linux Store</em>. Ver <a href="https://snapcraft.io">https://snapcraft.io</a></p>
-<p>De todas formas, la "Tienda de Snaps" tiene sus detractores. Existe otra alternativa de empaquetamiento, popular en otras distribuciones, llamada <em>Flatpack</em>. Ver <a href="https://flathub.org">https://flathub.org</a></p>
-<p>Ya hemos visto que, en el caso de paquetes Debian, podemos usar el comando <code>apt</code> para instalar software, como alternativa al uso del <em>Centro de Aplicaciones</em>. La tienda de Snaps también es accesible mediante comandos:</p>
+<p>Ubuntu tiene su propia versión de empaquetamiento, con el nombre de <em>Snaps</em>. 
+Se trata de un sistema de gestión de paquetes universal, que pretende ser 
+independiente de la distribución. Canonical, la empresa que distribuye <em>Ubuntu</em>, 
+ha creado con este sistema una especie de <em>Linux Store</em>. 
+Ver <a href="https://snapcraft.io">https://snapcraft.io</a></p>
+<p>De todas formas, la "Tienda de Snaps" tiene sus detractores. Existe otra 
+alternativa de empaquetamiento, popular en otras distribuciones, 
+llamada <em>Flatpack</em>. Ver <a href="https://flathub.org">https://flathub.org</a></p>
+<p>Ya hemos visto que, en el caso de paquetes Debian, podemos usar el comando <code>apt</code> 
+para instalar software, como alternativa al uso del <em>Centro de Aplicaciones</em>. 
+La tienda de Snaps también es accesible mediante comandos:</p>
 <ul>
 <li>
 <p>para ver las aplicaciones instaladas:</p>
@@ -928,24 +1004,39 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 </li>
 </ul>
 <h2 id="instalar-a-partir-de-descargas">Instalar a partir de descargas<a class="headerlink" href="#instalar-a-partir-de-descargas" title="Permanent link">&para;</a></h2>
-<p>Programas como <em>Synaptic</em>, el <em>Centro de aplicaciones</em> o el comando <em>apt</em> nos dan acceso a los repositorios de Ubuntu, y resuelven automáticamente las dependencias, descargando el software complementario que pudiera ser necesario para el buen funcionamiento del paquete a instalar.</p>
-<p>Pero si queremos obtener un programa cuya versión en los repositorios no es la más reciente, o que no está incluido, tenemos que acudir a la página web del programa en cuestión. Suele haber diferentes opciones de descarga:</p>
+<p>Programas como <em>Synaptic</em>, el <em>Centro de aplicaciones</em> o el comando <em>apt</em> nos 
+dan acceso a los repositorios de Ubuntu, y resuelven automáticamente las 
+dependencias, descargando el software complementario que pudiera ser necesario 
+para el buen funcionamiento del paquete a instalar.</p>
+<p>Pero si queremos obtener un programa cuya versión en los repositorios no es 
+la más reciente, o que no está incluido, tenemos que acudir a la página web 
+del programa en cuestión. Suele haber diferentes opciones de descarga:</p>
 <ul>
 <li>un programa instalador que resuelva de forma automática todo el proceso</li>
-<li>un archivo comprimido del que podemos extraer su contenido y copiarlo al disco duro. Pero esto no resuelve la gestión de dependencias</li>
-<li>un archivo en formato <code>.deb</code> o <code>.rpm</code> cuya instalación permite resolver esas dependencias de forma automatizada. </li>
+<li>un archivo comprimido del que podemos extraer su contenido y copiarlo al 
+disco duro. Pero esto no resuelve la gestión de dependencias</li>
+<li>un archivo en formato <code>.deb</code> o <code>.rpm</code> cuya instalación permite resolver esas 
+dependencias de forma automatizada. </li>
 </ul>
-<p>Veamos un ejemplo de descarga manual. Abrimos el navegador web y acudimos a la página del editor de textos <a href="https://code.visualstudio.com/">Visual Studio Code</a>. Descargamos el archivo con extensión <code>.deb</code>, propio de sistemas tipo <em>Debian</em>.</p>
+<p>Veamos un ejemplo de descarga manual. Abrimos el navegador web y acudimos a la 
+página del editor de textos <a href="https://code.visualstudio.com/">Visual Studio Code</a>. 
+Descargamos el archivo con extensión <code>.deb</code>, propio de sistemas tipo <em>Debian</em>.</p>
 <div class="admonition warning">
 <p class="admonition-title">¡Cuidado!</p>
-<p>En este cuaderno estamos describiendo el uso de Linux en plataformas con arquitectura ARM de 64 bits. No intentar descargar e instalar software para chips de Intel, ya que es incompatible.</p>
-<p>En el caso de este editor, hay que pulsar en el enlace <a href="https://code.visualstudio.com/Download">other platforms</a> y, si tenemos un MacBook ejecutando Ubuntu en una máquina virtual, seleccionar el formato <code>.deb</code> para plataformas ARM64</p>
+<p>En este cuaderno estamos describiendo el uso de Linux en plataformas con 
+arquitectura ARM de 64 bits. No intentar descargar e instalar software 
+para chips de Intel, ya que es incompatible.</p>
+<p>En el caso de este editor, hay que pulsar en el enlace <a href="https://code.visualstudio.com/Download">other platforms</a> y, si tenemos un MacBook 
+ejecutando Ubuntu en una máquina virtual, seleccionar el formato <code>.deb</code> 
+para plataformas ARM64</p>
 </div>
-<p>Tras la descarga, comprobamos que en la carpeta de descargas tenemos un archivo cuyo nombre es algo así como:</p>
+<p>Tras la descarga, comprobamos que en la carpeta de descargas tenemos un archivo 
+cuyo nombre es algo así como:</p>
 <div class="codehilite"><pre><span></span><code>code_1.96.2-1734606918_arm64.deb
 </code></pre></div>
 
-<p>Para gestionar las instalaciones de paquetes descargados manualmente, nos va a venir muy bien un programa llamado <em>Gdebi</em>:</p>
+<p>Para gestionar las instalaciones de paquetes descargados manualmente, nos va a 
+venir muy bien un programa llamado <em>Gdebi</em>:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gdebi
 </code></pre></div>
 
@@ -953,9 +1044,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>gdebi-gtk
 </code></pre></div>
 
-<p>Y este es el aspecto que tiene:</p>
-<p><img alt="" src="img/01010Repositorios004.png" /></p>
-<p>Con el menú "Archivo" seleccionamos el fichero descargado, y usamos el botón <code>[Instalar]</code> para proceder a la instalación manual, resolviendo dependencias.</p>
+<p>Se abre una ventana de trabajo. Con el menú "Archivo" seleccionamos el fichero 
+descargado, y usamos el botón <code>[Instalar]</code> para proceder a la instalación manual, 
+resolviendo dependencias.</p>
 
 
 

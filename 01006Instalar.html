@@ -580,9 +580,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#apagar-la-maquina" class="md-nav__link">
+  <a href="#apagar-la-maquina-virtual" class="md-nav__link">
     <span class="md-ellipsis">
-      Apagar la máquina
+      Apagar la máquina virtual
     </span>
   </a>
   
@@ -592,6 +592,15 @@
   <a href="#instalacion-en-el-disco-duro" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación en el disco duro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primera-sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primera sesión
     </span>
   </a>
   
@@ -628,15 +637,6 @@
   <a href="#la-configuracion-de-gnome" class="md-nav__link">
     <span class="md-ellipsis">
       La configuración de Gnome
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalar-ubuntu-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalar Ubuntu Server
     </span>
   </a>
   
@@ -865,78 +865,156 @@
 
 
 <h1 id="probar-e-instalar-ubuntu">Probar e instalar Ubuntu<a class="headerlink" href="#probar-e-instalar-ubuntu" title="Permanent link">&para;</a></h1>
-<p>Según lo visto, al instalar Linux en nuestra computadora tenemos dos posibles alternativas, hacerlo en la máquina física, borrando el disco duro físico y sustituyendo el viejo sistema operativo, o instalarlo en la máquina virtual que hemos creado en el capítulo anterior.</p>
+<p>Según lo visto, al instalar Linux en nuestra computadora tenemos dos posibles 
+alternativas, hacerlo en la máquina física, borrando el disco duro físico y 
+sustituyendo el viejo sistema operativo, o instalarlo en la máquina virtual 
+que hemos creado en el capítulo anterior.</p>
 <ul>
 <li>en el primer caso, arrancaremos el ordenador con el pendrive conectado</li>
-<li>en el segundo, iniciaremos la máquina virtual, estableciendo el archivo ISO descargado como DVD virtual, sin necesidad de preparar un pendrive físico. Comprobar previamente que está configurado como disco de arranque.</li>
+<li>en el segundo, iniciaremos la máquina virtual, estableciendo el archivo 
+ISO descargado como DVD virtual, sin necesidad de preparar un pendrive físico. 
+Comprobar previamente que está configurado como disco de arranque.</li>
 </ul>
 <h2 id="pantalla-inicial">Pantalla inicial<a class="headerlink" href="#pantalla-inicial" title="Permanent link">&para;</a></h2>
-<p>Cuando ponemos en marcha un ordenador, ya sea físico o virtual, se busca automáticamente en el disco duro (o prioritariamente en el pendrive, si tenemos uno conectado) un programa que se conoce como "gestor de arranque". En muchos sistemas operativos es un software que no muestra nada en pantalla y se ejecuta silenciosamente. Carga en la memoria RAM el sistema operativo, un proceso que dura unos segundos, y lo pone en marcha. Durante este procedo, veremos la pantalla en negro.</p>
-<p>En el caso de Ubuntu, el programa cargador es uno llamado GRUB. Tratándose del DVD de instalación, GRUB viene configurado para mostrar un menú de arranque:</p>
-<p><img alt="" src="img/01006Instalar007.png" /></p>
-<p>Cuando hayamos instalado el sistema operativo, el arranque se hará desde el disco duro virtual, y este menú dejará de visualizarse. Esto es importante, ya que, si vemos el menú de GRUB en pantalla, significa que estamos arrancando la máquina desde el pendrive (físico o virtual) y no desde el disco duro. Si no es lo que pretendemos, habrá que apagar la máquina virtual, reconfigurarla (apartado <em>disco de arranque</em>, seleccionar <em>disco duro</em>) y volver a iniciarla.</p>
-<p>Como todavía no hemos iniciado Linux ni su escritorio, el menú de GRUB resulta bastante primitivo. Se ejecuta en forma de consola de texto, sin elementos gráficos, y  aquí no funciona el ratón. Hay que usar las teclas de flechas <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> para seleccionar una opción y, a continuación, pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span> para ejecutarla. </p>
+<p>Cuando ponemos en marcha un ordenador, ya sea físico o virtual, se busca 
+automáticamente en el disco duro (o prioritariamente en el pendrive, si tenemos 
+uno conectado) un programa que se conoce como "gestor de arranque". En muchos 
+sistemas operativos es un software que no muestra nada en pantalla y se ejecuta 
+silenciosamente. Carga en la memoria RAM el sistema operativo, un proceso que 
+dura unos segundos, y lo pone en marcha. Durante este procedo, veremos la 
+pantalla en negro.</p>
+<p>En el caso de Ubuntu, el programa cargador es uno llamado GRUB. Tratándose del 
+DVD de instalación, GRUB viene configurado para mostrar un menú de arranque:</p>
+<p><img alt="" src="img/01006Instalar001.png" /></p>
+<p>Cuando hayamos instalado el sistema operativo, el arranque se hará desde el 
+disco duro virtual, y este menú dejará de visualizarse. Esto es importante, ya 
+que, si vemos el menú de GRUB en pantalla, significa que estamos arrancando la 
+máquina desde el pendrive (físico o virtual) y no desde el disco duro. Si no es 
+lo que pretendemos, habrá que apagar la máquina virtual, reconfigurarla 
+(apartado <em>disco de arranque</em>, seleccionar <em>disco duro</em>) y volver a iniciarla.</p>
+<p>Como todavía no hemos iniciado Linux ni su escritorio, el menú de GRUB resulta 
+bastante primitivo. Se ejecuta en forma de consola de texto, sin elementos 
+gráficos, y  aquí no funciona el ratón. Hay que usar las teclas de flechas 
+<span class="keys"><kbd class="key-arrow-up">Up</kbd></span> <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> para seleccionar una opción y, a continuación, pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span> 
+para ejecutarla. </p>
 <div class="admonition note">
 <p class="admonition-title">Ratón bloqueado</p>
-<p>En el caso de las máquinas virtuales, cuando la ventana de VMWare es la que tiene el foco, se apropia del teclado y ratón, como sucede con todas las ventanas. Pero como en este menú de inicio no funciona el ratón, no podemos arrastrarlo fuera de la ventana, quedando el puntero atrapado y oculto. </p>
-<p>Para liberarlo, VMWare tiene una combinación de teclas especial. En mi caso, siendo la máquina física un Mac, se trata de las teclas <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-command">Cmd</kbd></span>. Podemos consultarlo en la configuración general de VMWare, apartado "<em>teclado y ratón</em>".</p>
+<p>En el caso de las máquinas virtuales, cuando la ventana de VMWare es la que 
+tiene el foco, se apropia del teclado y ratón, como sucede con todas las 
+ventanas. Pero como en este menú de inicio no funciona el ratón, no podemos 
+arrastrarlo fuera de la ventana, quedando el puntero atrapado y oculto. </p>
+<p>Para liberarlo, VMWare tiene una combinación de teclas especial. En mi caso, 
+siendo la máquina física un Mac, se trata de las teclas <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-command">Cmd</kbd></span>. 
+Podemos consultarlo en la configuración general de VMWare, apartado 
+"<em>teclado y ratón</em>".</p>
 </div>
-<p>En este menú de arranque, seleccionamos la primera opción, "<em>Try or Install Ubuntu</em>" y pulsamos <span class="keys"><kbd class="key-enter">Enter</kbd></span>. Se carga el sistema operativo desde el pendrive virtual. Tras un cierto período de tiempo, se completa la carga y se muestra el escritorio de <em>Gnome</em>. Se ejecuta automáticamente el programa para instalar Ubuntu en el disco duro. Lo primero que vemos es una ventana para seleccionar el idioma:</p>
-<p><img alt="" src="img/01006Instalar008.png" /></p>
-<p>Vamos pulsando en el botón <code>[Siguiente]</code>, paso a paso, y aceptamos las configuraciones por defecto. En lo referido a Internet, se nos sugiere como "<em>conexión por cable</em>". En realidad se trata de la conexión simulada por la máquina virtual, que se beneficia de lo que tengamos en la máquina física, wifi, cable, o lo que sea.</p>
-<p>En uno de los pasos se nos da la opción de seguir con la instalación de Ubuntu en el disco duro virtual o explorar el sistema un poco antes de instalar nada. Vamos a optar por esta segunda opción, "probar Ubuntu":</p>
-<p><img alt="" src="img/01006Instalar009.png" /></p>
-<p>Por ahora tenemos un disco virtual vacío, y un sistema operativo cargado desde el pendrive virtual. A esto se le llama una sesión "<em>Live</em>". </p>
+<p>En este menú de arranque, seleccionamos la primera opción, "<em>Try or Install 
+Ubuntu</em>" y pulsamos <span class="keys"><kbd class="key-enter">Enter</kbd></span>. Se carga el sistema operativo desde el pendrive 
+virtual:</p>
+<p><img alt="" src="img/01006Instalar002.png" /></p>
+<p>Tras un cierto período de tiempo, se completa la carga y se muestra el 
+escritorio de <em>Gnome</em>. Se ejecuta automáticamente el programa para instalar 
+Ubuntu en el disco duro. Lo primero que vemos es una ventana para seleccionar 
+el idioma:</p>
+<p><img alt="" src="img/01006Instalar003.png" /></p>
+<p>Vamos pulsando en el botón <code>[Siguiente]</code>, paso a paso, y aceptamos las 
+configuraciones por defecto. En lo referido a Internet, se nos sugiere como 
+"<em>conexión por cable</em>". En realidad se trata de la conexión simulada por la 
+máquina virtual, que se beneficia de lo que tengamos en la máquina física, wifi, 
+cable, o lo que sea.</p>
+<p>En uno de los pasos se nos da la opción de seguir con la instalación de Ubuntu 
+en el disco duro virtual o explorar el sistema un poco antes de instalar nada. 
+Vamos a optar por esta segunda opción, "probar Ubuntu":</p>
+<p><img alt="" src="img/01006Instalar004.png" /></p>
+<p>Por ahora tenemos un disco virtual vacío, y un sistema operativo cargado desde 
+el pendrive virtual. A esto se le llama una sesión "<em>Live</em>". </p>
 <div class="admonition info">
 <p class="admonition-title">El aspecto de Ubuntu</p>
-<p>Curiosamente, hay algo que siempre ha provocado cierta controversia; el esquema de colores tan chillón que tiene Ubuntu. Esos temas rojizos provocan una mezcla de amor y odio...</p>
-<p>Pero como veremos más adelante, si no nos gusta, podemos configurarlo. Paciencia.</p>
+<p>Curiosamente, hay algo que siempre ha provocado cierta controversia; el 
+esquema de colores tan chillón que tiene Ubuntu. Esos temas rojizos provocan 
+una mezcla de amor y odio...</p>
+<p>Pero como veremos más adelante, si no nos gusta, podemos configurarlo. 
+Paciencia.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Los logotipos de Ubuntu</p>
 <p><table style="border-style:none">
 <tr><td>
-<img alt="" src="img/01002ubuntu.png" style="float:right; padding:20px;" /> El logotipo principal de Ubuntu es conocido <em>Circle of Friends</em> (círculo de amigos). Los puntos son cabezas y las líneas curvas son los brazos y manos.
+<img alt="" src="img/01002ubuntu.png" style="float:right; padding:20px;" /> El logotipo 
+principal de Ubuntu es conocido <em>Circle of Friends</em> (círculo de amigos). 
+Los puntos son cabezas y las líneas curvas son los brazos y manos.
 </td></tr></p>
 <p><tr><td>
-<img _padding:20px_=";padding:20px;" alt="" src="img/01006Instalar004.png" style="float:left" /></p>
-<p>Cada nueva versión de Ubuntu lleva el nombre de un animal, cuyo diseño aparece en la documentación, fondo de escritorio y otros elementos gráficos.
+<img _padding:20px_=";padding:20px;" alt="" src="img/01006Instalar005.png" style="float:left" /></p>
+<p>Cada nueva versión de Ubuntu lleva el nombre de un animal, cuyo diseño 
+aparece en la documentación, fondo de escritorio y otros elementos gráficos.
 </td></tr>
 </table></p>
 </div>
 <h2 id="visualizacion-en-maquinas-virtuales">Visualización en máquinas virtuales<a class="headerlink" href="#visualizacion-en-maquinas-virtuales" title="Permanent link">&para;</a></h2>
-<p>VMware permite mostrar el escritorio virtual en una ventana, u ocupando la pantalla completa. Para cambiar de formato, pulsar sobre el menú "Vista" de VMware y seleccionar "single window" o "full screen".</p>
-<p>Cuando la máquina virtual ocupa toda la pantalla, dejaremos de ver el menú de VMWare. No hay problema. Basta con acercar el ratón al borde superior de la pantalla, y aparecerá el menú y la barra de título de la ventana:</p>
+<p>VMware permite mostrar el escritorio virtual en una ventana, u ocupando la 
+pantalla completa. Para cambiar de formato, pulsar sobre el menú "Vista" de 
+VMware y seleccionar "single window" o "full screen".</p>
+<p>Cuando la máquina virtual ocupa toda la pantalla, dejaremos de ver el menú de 
+VMWare. No hay problema. Basta con acercar el ratón al borde superior de la 
+pantalla, y aparecerá el menú y la barra de título de la ventana:</p>
 <p><img alt="" src="img/01006Instalar006.png" /></p>
-<p>La barra de título de la ventana VMware muestra el nombre de la máquina virtual y unos prácticos botones de control para gobernarla:</p>
-<p><img alt="" src="img/01006Instalar005.png" /></p>
-<p>Al cambiar de "single window" a "full screen", es posible que la resolución de la máquina virtual se reconfigure automáticamente. Si tenemos problemas con esto, tenemos dos opciones:</p>
+<p>La barra de título de la ventana VMware muestra el nombre de la máquina virtual 
+y unos prácticos botones de control para gobernarla:</p>
+<p><img alt="" src="img/01006Instalar007.png" /></p>
+<p>Al cambiar de "single window" a "full screen", es posible que la resolución de 
+la máquina virtual se reconfigure automáticamente. Si tenemos problemas con 
+esto, tenemos dos opciones:</p>
 <ul>
 <li>
-<p>Acudir a la configuración de VMware, según vimos en el capítulo dedicado a la creación de máquinas virtuales, y hacer ajustes en el apartado <em>Pantalla</em>. La opción "ajustar máquina virtual a la pantalla" significa que los contenidos se verán más grandes o más pequeños, pero sin modificar la resolución de la máquina virtual. La opción "cambiar tamaño", por el contrario, modifica la resolución en la máquina virtual cada vez que se modifica el tamaño de la ventana o pasamos a pantalla completa.</p>
+<p>Acudir a la configuración de VMware, según vimos en el capítulo dedicado a 
+la creación de máquinas virtuales, y hacer ajustes en el apartado <em>Pantalla</em>. 
+La opción "ajustar máquina virtual a la pantalla" significa que los contenidos 
+se verán más grandes o más pequeños, pero sin modificar la resolución de la 
+máquina virtual. La opción "cambiar tamaño", por el contrario, modifica la 
+resolución en la máquina virtual cada vez que se modifica el tamaño de la 
+ventana o pasamos a pantalla completa.</p>
 </li>
 <li>
-<p>Alternativamente, en lugar de reconfigurar VMware podemos ajustar las preferencias de Ubuntu, cambiando a mano la resolución del escritorio. Acudir a la configuración de Gnome siguiendo el procedimiento que se describe al final de este capítulo, y en el apartado "Displays", seleccionar otra resolución y activarla pulsando en el botón <code>[Apply]</code></p>
+<p>Alternativamente, en lugar de reconfigurar VMware podemos ajustar las 
+preferencias de Ubuntu, cambiando a mano la resolución del escritorio. Acudir a 
+la configuración de Gnome siguiendo el procedimiento que se describe al final 
+de este capítulo, y en el apartado "Monitores", seleccionar otra resolución y 
+activarla pulsando en el botón <code>[Apply]</code></p>
 </li>
 </ul>
 <h2 id="explorando-gnome">Explorando Gnome<a class="headerlink" href="#explorando-gnome" title="Permanent link">&para;</a></h2>
-<p>El escritorio de Ubuntu es una versión "<em>tuneada</em>" de Gnome. Incorpora una barra lateral (el <em>Dock</em>) con iconos de las aplicaciones favoritas. En la esquina inferior izquierda tenemos un icono con el logo de Ubuntu o con la imagen de una rejilla, dependiendo del juego de iconos que tengamos seleccionado (una vez instalado el sistema operativo, podemos cambiarlo):</p>
-<p><img alt="" src="img/01006Instalar001.png" style="width:60px;" />
-<img alt="" src="img/01006Instalar002.png" style="width:60px;" /></p>
-<p>Pulsando ahí, se despliega una lista de aplicaciones (la "parrilla", o <em>grid</em>), con una caja de búsqueda por texto:</p>
+<p>El escritorio de Ubuntu es una versión "<em>tuneada</em>" de Gnome. Incorpora una 
+barra lateral (el <em>Dock</em>) con iconos de las aplicaciones favoritas. En la 
+esquina inferior izquierda tenemos un icono con el logo de Ubuntu o con la 
+imagen de una rejilla, dependiendo del juego de iconos que tengamos seleccionado 
+(una vez instalado el sistema operativo, podemos cambiarlo):</p>
+<p><img alt="" src="img/01006Instalar008.png" style="width:60px;" />
+<img alt="" src="img/01006Instalar009.png" style="width:60px;" /></p>
+<p>Pulsando ahí, se despliega una lista de aplicaciones (la "parrilla", o <em>grid</em>), 
+con una caja de búsqueda por texto:</p>
 <p><img alt="" src="img/01006Instalar010.png" /></p>
-<p>Si hay más iconos que espacio disponible, se agrupan en páginas. En la parte inferior de la parrilla tenemos unos puntos que se pueden pulsar para seleccionar la página siguiente o la anterior. También podemos pasar de página pulsando en los iconos <code>&lt; &gt;</code> en los márgenes izquierdo o derecho.</p>
+<p>Si hay más iconos que espacio disponible, se agrupan en páginas. En la parte 
+inferior de la parrilla tenemos unos puntos que se pueden pulsar para 
+seleccionar la página siguiente o la anterior. También podemos pasar de página 
+pulsando en los iconos <code>&lt; &gt;</code> en los márgenes izquierdo o derecho.</p>
 <div class="admonition warning">
 <p class="admonition-title">La parrilla de aplicaciones</p>
-<p>¡Cuidado! No todos los programas instalados aparecen en la parrilla. Por ejemplo, si marcamos uno como favorito, se mostrará en el <em>Dock</em> y se retirará de la parrilla. De todas formas, la caja de búsquedas por texto muestra en sus resultados todas las aplicaciones encontradas.</p>
+<p>¡Cuidado! No todos los programas instalados aparecen en la parrilla. Por 
+ejemplo, si marcamos uno como favorito, se mostrará en el <em>Dock</em> y se 
+retirará de la parrilla. De todas formas, la caja de búsquedas por texto 
+muestra en sus resultados todas las aplicaciones encontradas.</p>
 </div>
-<p>En la barra superior del escritorio tenemos unos iconos de estado en la esquina de la derecha. Pulsando ahí, se despliega un menú de sistema que nos da acceso a dos iconos interesantes:</p>
+<p>En la barra superior del escritorio tenemos unos iconos de estado en la esquina 
+de la derecha. Pulsando ahí, se despliega un menú de sistema que nos da acceso 
+a dos iconos interesantes:</p>
 <ul>
 <li>El de la rueda dentada nos da acceso a la configuración de Ubuntu</li>
 <li>El icono de apagar nos permite finalizar la sesión</li>
 </ul>
 <p><img alt="" src="img/01006Instalar011.png" /></p>
-<p>Dependiendo de la configuración de la máquina (en mi caso, una virtual), podemos ver más iconos en este menú:</p>
+<p>Dependiendo de la configuración de la máquina (en mi caso, una virtual), podemos 
+ver más iconos en este menú:</p>
 <ul>
 <li>bloquear pantalla</li>
 <li>capturar imagen de la pantalla</li>
@@ -948,202 +1026,160 @@
 <li>etc.</li>
 </ul>
 <p>También podemos desplegar opciones de accesibilidad:</p>
-<p><img alt="" src="img/01006Instalar003.png" /></p>
-<p>La ejecución de programas se puede hacer pulsando en la barra lateral del <em>Dock</em>, o desplegando la parrilla de aplicaciones. Vamos a probar a pulsar en el icono de <em>Firefox</em>, el navegador web:</p>
+<p><img alt="" src="img/01006Instalar028.png" /></p>
+<p>La ejecución de programas se puede hacer pulsando en la barra lateral del <em>Dock</em>, 
+o desplegando la parrilla de aplicaciones. Vamos a probar a pulsar en el icono 
+de <em>Firefox</em>, el navegador web:</p>
 <p><img alt="" src="img/01006Firefox.png" /></p>
 <p>Esto nos permitirá comprobar nuestra conexión a internet:</p>
 <p><img alt="" src="img/01006Instalar012.png" /></p>
 <h2 id="iconos-de-control-de-ventanas">Iconos de control de ventanas<a class="headerlink" href="#iconos-de-control-de-ventanas" title="Permanent link">&para;</a></h2>
-<p>En el momento de escribir estas notas, las ventanas del escritorio Gnome no cuentan con los tradicionales iconos de minimizar, maximizar y restaurar ventana. El escritorio adaptado de Ubuntu los incluye en la esquina superior derecha;</p>
+<p>En el momento de escribir estas notas, las ventanas del escritorio Gnome no 
+cuentan con los tradicionales iconos de minimizar, maximizar y restaurar ventana. 
+El escritorio adaptado de Ubuntu los incluye en la esquina superior derecha;</p>
 <p><span style="background-color: LightGray;padding: 5px;"><big><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_ □ ✕</b></big></span></p>
 <h2 id="menus-en-las-aplicaciones">Menús en las aplicaciones<a class="headerlink" href="#menus-en-las-aplicaciones" title="Permanent link">&para;</a></h2>
-<p>Muchas aplicaciones suelen mostrar la típica barra de menú en la parte superior de la ventana. Las utilidades Gnome son algo atípico. Se suele sustituir la barra de menú por un icono que es habitual en las tablets o teléfonos móviles:</p>
+<p>Muchas aplicaciones suelen mostrar la típica barra de menú en la parte superior 
+de la ventana. Las utilidades Gnome son algo atípico. Se suele sustituir la 
+barra de menú por un icono que es habitual en las tablets o teléfonos móviles:</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2.5em;"><b>☰</b></span></p>
 <p>Pulsando en ese icono, veremos las opciones de menú. </p>
 <h2 id="el-manual-de-ubuntu">El manual de Ubuntu<a class="headerlink" href="#el-manual-de-ubuntu" title="Permanent link">&para;</a></h2>
-<p>Ubuntu proporciona un manual de uso al que podemos acceder iniciando la aplicación de <em>Ayuda</em>:</p>
+<p>Ubuntu proporciona un manual de uso al que podemos acceder iniciando la 
+aplicación de <em>Ayuda</em> (icono <strong>(?)</strong> en el <em>Dock</em>):</p>
 <p><img alt="" src="img/01006Instalar027.png" /></p>
-<p>Se trata de un texto con una traducción al español que a veces es incompleta. Pero nos puede servir como guía inicial.</p>
+<p>Se trata de un texto con una traducción al español que a veces es incompleta. 
+Pero nos puede servir como guía inicial.</p>
 <h2 id="teclado">Teclado<a class="headerlink" href="#teclado" title="Permanent link">&para;</a></h2>
-<p>Antes de instalar nada, conviene dejar resueltos los posibles conflictos entre "atajos de teclado" de ambas máquinas, la física y la virtual, aunque esto se puede dejar para más adelante.</p>
+<p>Antes de instalar nada, conviene dejar resueltos los posibles conflictos entre 
+"atajos de teclado" de ambas máquinas, la física y la virtual, aunque esto se 
+puede dejar para más adelante.</p>
 <p>En el menú de <em>VMware</em>, seleccionamos <em>Ajustes &gt; Keyboard</em>:</p>
 <p><img alt="" src="img/01006Instalar026.png" style="width:600px;" /></p>
-<h2 id="apagar-la-maquina">Apagar la máquina<a class="headerlink" href="#apagar-la-maquina" title="Permanent link">&para;</a></h2>
-<p>Tras explorar un poco el funcionamiento del escritorio de Ubuntu, vamos a instalar el sistema operativo en el disco duro, en nuestro caso, el virtual. </p>
-<p>Lo primero es reiniciar la máquina. En la barra superior del escritorio tenemos los iconos de estado en la esquina de la derecha, como ya hemos visto. Pulsamos ahí, y seguidamente en el icono de apagar.</p>
+<h2 id="apagar-la-maquina-virtual">Apagar la máquina virtual<a class="headerlink" href="#apagar-la-maquina-virtual" title="Permanent link">&para;</a></h2>
+<p>Tras explorar un poco el funcionamiento del escritorio de Ubuntu, vamos a 
+instalar el sistema operativo en el disco duro, en nuestro caso, el virtual. </p>
+<p>Lo primero es reiniciar la máquina. En la barra superior del escritorio tenemos 
+los iconos de estado en la esquina de la derecha, como ya hemos visto. 
+Pulsamos ahí, y seguidamente en el icono de apagar.</p>
 <p><img alt="" src="img/01006Instalar011.png" /></p>
 <h2 id="instalacion-en-el-disco-duro">Instalación en el disco duro<a class="headerlink" href="#instalacion-en-el-disco-duro" title="Permanent link">&para;</a></h2>
-<p>Antes de empezar el proceso, debemos asegurarnos de que tenemos el ordenador conectado a la red eléctrica y a Internet. Esto último es especialmente importante, porque permitirá detectar la conexión de red, configurarla automáticamente, y descargar contenidos no incluidos en el pendrive de instalación.</p>
-<p>Reiniciamos la sesión <em>Live</em>, comprobando que tenemos el pendrive virtual conectado, como vimos anteriormente, y asegurándonos de que el disco de arranque siga siendo el DVD virtual.</p>
+<p>Antes de empezar el proceso, debemos asegurarnos de que tenemos el ordenador 
+conectado a la red eléctrica y a Internet. Esto último es especialmente 
+importante, porque permitirá detectar la conexión de red, configurarla 
+automáticamente, y descargar contenidos no incluidos en el pendrive de instalación.</p>
+<p>Reiniciamos la sesión <em>Live</em>, comprobando que tenemos el pendrive virtual 
+conectado, como vimos anteriormente, y asegurándonos de que el disco de arranque 
+siga siendo el DVD virtual.</p>
 <p>Llegado el momento, optamos por completar la instalación:</p>
 <p><img alt="" src="img/01006Instalar013.png" /></p>
 <p>Se nos irá guiando paso a paso. A las sucesivas preguntas optamos por:</p>
 <ul>
 <li>Hacer una instalación interactiva guiada</li>
-<li>Selección ampliada de software, más allá de optar por instalar solo lo esencial</li>
-<li>Incluir la instalación de programas privativos de terceros y compatibilidad con formatos multimedia</li>
-<li>Usar todo el disco duro (en nuestro caso, el virtual), borrando su contenido si lo hubiera</li>
-<li>¿Cifrar el disco duro virtual? Tiene sus ventajas e inconvenientes. Yo no suelo hacerlo.</li>
-<li>Al cumplimentar los datos de usuario, optamos por acceder sin contraseña, dado que se trata de una máquina virtual, y ya tenemos contraseña para la física (a menos que usemos la virtualización para esconder nuestros documentos secretos)</li>
+<li>Selección ampliada de software, más allá de limitarnos a instalar solo lo 
+esencial</li>
+<li>Incluir la instalación de programas privativos de terceros y compatibilidad 
+con formatos multimedia</li>
+<li>Usar todo el disco duro (en nuestro caso, el virtual), borrando su contenido 
+si lo hubiera</li>
+<li>¿Cifrar el disco duro virtual? Tiene sus ventajas e inconvenientes. Yo no 
+suelo hacerlo.</li>
+<li>Al cumplimentar los datos de usuario, optamos por acceder sin contraseña, 
+dado que se trata de una máquina virtual, y ya tenemos contraseña para la física 
+(a menos que usemos la virtualización para esconder nuestros documentos secretos)</li>
 <li>Seleccionar el uso horario</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">¿Cifrar el disco duro?</p>
-<p>Si queremos una máquina virtual solo para experimentar, no lo veo necesario. Y si la queremos para esconder documentos confidenciales, habrá que tener un buen sistema de copias de seguridad. En cierta ocasión, examinando otra distribución (distinta de Ubuntu) me encontré con que la reinstalación del sistema operativo generaba nuevas claves de cifrado, y dejaba los documentos irrecuperables, por estar cifrados con la clave de la instalación anterior. Desconozco como gestionará Ubuntu este apartado en la actualidad.</p>
+<p>Si queremos una máquina virtual solo para experimentar, no lo veo necesario. 
+Y si la queremos para esconder documentos confidenciales, habrá que tener un 
+buen sistema de copias de seguridad, porque el cifrado puede hacer que los
+documentos sean irrecuperables.</p>
+<p>En cierta ocasión, examinando otra distribución distinta de Ubuntu, 
+me encontré con que la reinstalación del 
+sistema operativo generaba nuevas claves de cifrado, y los documentos
+no podían ser accedidos por estar cifrados con la clave de la instalación 
+anterior. Desconozco como gestionará Ubuntu estas cosas en la actualidad.</p>
 </div>
-<p>Tras cumplimentar todo esto, pulsamos en el botón <em>Instalar</em>. Durante el proceso, se copian los contenidos del pendrive al disco duro, se bajan otros de Internet y se configura el software. Mientras tanto, se nos irá mostrando información sobre Ubuntu. Paciencia; el proceso dura unos minutos. </p>
-<p>Finalmente, se muestra un mensaje "<em>Ubuntu está instalado</em>". Pulsamos en el botón "Reiniciar`:</p>
+<p>Tras cumplimentar todo esto, pulsamos en el botón <em>Instalar</em>. Durante el proceso, 
+se copian los contenidos del pendrive al disco duro, se bajan otros de Internet 
+y se configura el software. Mientras tanto, se nos irá mostrando información 
+sobre Ubuntu. Paciencia; el proceso dura unos minutos.</p>
+<p><img alt="" src="img/01006Instalar029.png" /> </p>
+<p>Finalmente, se muestra un mensaje "<em>Ubuntu está instalado</em>". Pulsamos en el 
+botón "Reiniciar`:</p>
 <p><img alt="" src="img/01006Instalar014.png" /></p>
-<p>Antes de reiniciarla, acudimos a la configuración de la máquina virtual, cambiamos la unidad de arranque y establecemos que sea el disco duro. </p>
-<div class="admonition warning">
-<p class="admonition-title">Unidad de arranque</p>
-<p>Si al reiniciar la máquina visualizamos el menú de GRUB, significa que estamos arrancando desde el pendrive virtual. Como ya hemos instalado Ubuntu, lo que queremos es arrancar desde el disco duro. Apagar la máquina virtual, entrar en la configuración de VMware, y establecer el disco duro virtual como disco de arranque. Volver a reiniciar.</p>
-<p><img alt="" src="img/01006Instalar007.png" /></p>
-</div>
-<p>Tras cargar el sistema instalado en el disco duro virtual, aparece la ventana de bienvenida:</p>
+<p>Antes de reiniciar la máquina virtual, acudimos a su configuración en VMWare, 
+cambiamos la unidad de arranque y establecemos que sea el disco duro. </p>
+<h2 id="primera-sesion">Primera sesión<a class="headerlink" href="#primera-sesion" title="Permanent link">&para;</a></h2>
+<p>Tras iniciar la máquina virtual y cargar el sistema que hemos instalado en el 
+disco duro virtual, aparece la ventana de bienvenida:</p>
 <p><img alt="" src="img/01006Instalar015.png" /></p>
-<p>Se establece un diálogo de configuración inicial. Vamos pulsando en el botón <code>[siguiente]</code> hasta completar todos los pasos.</p>
+<p>Se establece un diálogo de configuración inicial. Vamos pulsando en el botón 
+<code>[siguiente]</code> hasta completar todos los pasos.</p>
 <h2 id="actualizar-software">Actualizar software<a class="headerlink" href="#actualizar-software" title="Permanent link">&para;</a></h2>
-<p>Ubuntu publica actualizaciones de software diariamente, y el DVD de instalación viene con los programas vigentes en el momento del lanzamiento de la versión que hemos instalado. El primer paso ha de ser actualizar ese software. </p>
-<p>Desplegamos la parrilla de aplicaciones y, en la caja de búsqueda, introducimos el texto:</p>
+<p>Ubuntu publica actualizaciones de software diariamente, y el DVD de instalación 
+viene con los programas vigentes en el momento del lanzamiento de la versión que 
+hemos instalado. El primer paso ha de ser actualizar ese software. </p>
+<p>Desplegamos la parrilla de aplicaciones y, en la caja de búsqueda, introducimos 
+el texto:</p>
 <div class="codehilite"><pre><span></span><code>actualizaciones
 </code></pre></div>
 
 <p>con lo que veremos dos programas:</p>
 <p><img alt="" src="img/01006Instalar016.png" /></p>
-<p>Seleccionaremos el icono azul, <em>Programas y Actualizaciones</em>, para configurar la frecuencia de refresco y forma en que se instalan las actualizaciones. Para llevar a cabo la primera actualización, seleccionamos el icono gris, <em>Actualización de software</em>.</p>
-<p>Una vez completado el proceso, seguramente se nos pedirá que reiniciemos el sistema. Con esto, damos por terminada la instalación. </p>
+<p>Seleccionaremos el icono azul, <em>Programas y Actualizaciones</em>, para configurar la 
+frecuencia de refresco y forma en que se instalan las actualizaciones. Para 
+llevar a cabo la primera actualización, seleccionamos el icono gris, 
+<em>Actualización de software</em>.</p>
+<p>Una vez completado el proceso, seguramente se nos pedirá que reiniciemos el 
+sistema. Con esto, damos por terminada la instalación. </p>
 <p>Añadamos un par de detalles.</p>
 <h2 id="la-minibarra">La minibarra<a class="headerlink" href="#la-minibarra" title="Permanent link">&para;</a></h2>
-<p>Cuando la máquina virtual ocupa toda la pantalla, dejaremos de ver el menú de <em>VMWare</em>. Ya hemos visto como solucionarlo, pero contamos con una alternativa muy interesante, la <em>minibarra</em>. </p>
-<p>Consiste en un pequeño <em>gadget</em>, que se muestra en uno de los bordes de la pantalla, y al pulsar sobre el mismo muestra un menú con opciones que habitualmente encontraremos en el menú de VMWare o en su barra de herramientas. </p>
-<p>Si la activamos (menú <em>Vista &gt; Minibarra</em>) podemos hacer cosas tales como suspender/apagar la máquina virtual, entrar en la configuración, conectar o expulsar CDs, o simular combinaciones de teclas que son capturadas por el <em>Host</em> y necesitamos pulsar en la máquina <em>Guest</em>.</p>
-<p>En la siguiente imagen vemos la minibarra en el borde superior del escritorio. Una de las opciones del menú desplegado es cambiar de sitio la <em>minibarra</em> y llevarla a otro lado de la pantalla:</p>
+<p>Cuando la máquina virtual ocupa toda la pantalla, dejaremos de ver el menú de 
+<em>VMWare</em>. Ya hemos visto que podemos solucionarlo arrimando el ratón al borde 
+superior de la pantalla. Pero contamos con una alternativa muy interesante, 
+la <em>minibarra</em>. </p>
+<p>Consiste en un pequeño <em>gadget</em>, que se muestra en uno de los bordes de la 
+pantalla, y al pulsar sobre el mismo muestra un menú con opciones que 
+habitualmente encontraremos en el menú de VMWare o en su barra de herramientas. </p>
+<p>Si la activamos (menú <em>Vista &gt; Minibarra</em>) podemos hacer cosas tales como 
+suspender/apagar la máquina virtual, entrar en la configuración, conectar o 
+expulsar CDs, o simular combinaciones de teclas que son capturadas por el <em>Host</em> 
+y necesitamos pulsar en la máquina <em>Guest</em>. También tenemos la opción de ponerla 
+en cualquiera de los
+cuatro bordes de la pantalla.</p>
+<p>En la siguiente imagen vemos la minibarra en el borde derecho del escritorio:</p>
 <p><img alt="" src="img/01006Instalar017.png" /></p>
-<p>Podemos configurar la minibarra para que se muestre solo cuando acercamos el ratón.</p>
+<p>Podemos configurar la minibarra para que permanezca oculta y se muestre solo 
+cuando acercamos el ratón.</p>
 <h2 id="maquina-virtual-por-defecto">Máquina virtual por defecto<a class="headerlink" href="#maquina-virtual-por-defecto" title="Permanent link">&para;</a></h2>
-<p>Podemos establecer que cuando iniciemos VMWare, arranque determinada máquina virtual sin que tengamos que hacerlo a mano. La seleccionamos, entramos en la configuración de la máquina, y en el apartado <em>General</em>, marcamos la opción <em>Iniciar automáticamente</em>.</p>
+<p>Podemos establecer que cuando iniciemos VMWare, arranque determinada máquina 
+virtual sin que tengamos que hacerlo a mano. La seleccionamos, entramos en la 
+configuración de la máquina, y en el apartado <em>General</em>, marcamos la opción 
+<em>Iniciar automáticamente</em>.</p>
 <h2 id="la-configuracion-de-gnome">La configuración de Gnome<a class="headerlink" href="#la-configuracion-de-gnome" title="Permanent link">&para;</a></h2>
-<p>En los próximos capítulos veremos como configurar el sistema Ubuntu para adaptarlo a nuestras necesidades y preferencias. Como paso final del proceso de instalación, echemos un vistazo al programa de configuración de Gnome:</p>
+<p>En los próximos capítulos veremos como configurar el sistema Ubuntu para 
+adaptarlo a nuestras necesidades y preferencias. Como paso final del proceso de 
+instalación, echemos un vistazo al programa de configuración de Gnome:</p>
 <p><img alt="" src="img/01006Instalar099.png" /></p>
-<p>Para saber más sobre este programa de utilidad, véase <a href="https://apps.gnome.org/es/Settings/">página web</a> del proyecto.</p>
+<p>Para saber más sobre este programa de utilidad, véase 
+<a href="https://apps.gnome.org/es/Settings/">página web</a> del proyecto.</p>
 <p>Podemos acceder de varias formas:</p>
 <ul>
 <li>
 <p>pulsando en el icono de Ubuntu, en el extremo inferior del <em>Dock</em>:</p>
-<p><img alt="" src="img/01006Instalar001.png" style="width:30px;" /></p>
+<p><img alt="" src="img/01006Instalar008.png" style="width:30px;" /></p>
 <p>En la lista de aplicaciones, seleccionamos <em>Configuración</em></p>
 </li>
 <li>
-<p>pulsando en los iconos de estado, en la esquina superior derecha del escritorio. En el menú desplegable, pulsar en el icono de la rueda:</p>
+<p>pulsando en los iconos de estado, en la esquina superior derecha del 
+escritorio. En el menú desplegable, pulsar en el icono de la rueda:</p>
 <p><img alt="" src="img/01006Instalar011.png" /></p>
 </li>
 </ul>
-<p>Con esto damos por finalizado el proceso de instalación. En los próximos capítulos veremos como utilizar Linux Ubuntu.</p>
-<h2 id="instalar-ubuntu-server">Instalar Ubuntu Server<a class="headerlink" href="#instalar-ubuntu-server" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Todo lo descrito hasta ahora es válido para la versión <em>Desktop de Ubuntu</em>, concebida para uso doméstico. A veces he intentado instalar Ubuntu Server, para ver que aspecto tiene. A continuación hago un breve repaso del proceso.</p>
-<p>Podemos saltarnos este apartado.</p>
-</div>
-<p>Ubuntu Server es la versión concebida para instalar y configurar un servidor de red. Vamos a probar a instalarlo. Comparado con la versión <em>Desktop</em>, encontraremos algunas diferencias notables en el proceso:</p>
-<ul>
-<li>
-<p>el archivo ISO a descargar es el específico para <em>Ubuntu Server</em>.</p>
-</li>
-<li>
-<p><em>Ubuntu Server</em> se distribuye sin escritorio. El proceso de instalación y la sesión de usuario es en modo de consola de texto, donde solo funcionan las teclas de flechas <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>, <span class="keys"><kbd class="key-tab">Tab</kbd></span> y <span class="keys"><kbd class="key-enter">Enter</kbd></span>, además de la opción de introducir texto en algunas casillas. No hay ratón ni elementos gráficos.</p>
-</li>
-<li>
-<p>el software instalado de serie es el necesario para montar un servidor. Para un uso doméstico, tendremos que instalar otros programas a mano, y algunos de los que vienen por defecto, no los utilizaremos en nuestro día a día.</p>
-</li>
-<li>
-<p>una vez hecha la instalación, dado que el modo de trabajo sigue siendo en forma de consola de texto, instalaremos a mano el programa de escritorio Gnome (o cualquier otro que sea de nuestro gusto).</p>
-</li>
-</ul>
-<p>Durante el proceso de instalación, usar la tecla <span class="keys"><kbd class="key-tab">Tab</kbd></span> para ir de una casilla a otra, <span class="keys"><kbd class="key-space">Space</kbd></span> para marcar casillas, y <span class="keys"><kbd class="key-enter">Enter</kbd></span> para aceptar.</p>
-<p>Paso 1: selección de Idioma:</p>
-<p><img alt="" src="img/01006Instalar018.png" /></p>
-<p>Selección de teclado. Una vez hecho, ir a <code>[Hecho]</code> con <span class="keys"><kbd class="key-tab">Tab</kbd></span> (en la parte inferior de la pantalla) y pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
-<p><img alt="" src="img/01006Instalar019.png" /></p>
-<p>Paquetes a instalar. Ir con <span class="keys"><kbd class="key-tab">Tab</kbd></span> a la casilla <em>buscar drivers de terceros</em> y pulsar <span class="keys"><kbd class="key-space">Space</kbd></span> para marcarla. Ir a <code>[Hecho]</code> y pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
-<p><img alt="" src="img/01006Instalar020.png" /></p>
-<p>Selección de interfaz de comunicaciones y proxy. Lo damos por bueno o dejamos en blanco lo que se nos pida, salvo que queramos configurar la máquina como servidor de red.</p>
-<p><img alt="" src="img/01006Instalar021.png" /></p>
-<p>Selección de fuente de descargas para la instalación. Se resuelve automáticamente:</p>
-<p><img alt="" src="img/01006Instalar022.png" /></p>
-<p>Configuración del disco duro virtual. Lo damos por bueno:</p>
-<p><img alt="" src="img/01006Instalar023.png" /></p>
-<p>Tras completar todas las selecciones, se nos pide crear un nombre de usuario y contraseña. También se pregunta si queremos instalar un paquete de seguridad SSH para acceso a nuestro servidor. Como no es el caso, lo dejamos en blanco.</p>
-<p>Selección de paquetes populares en servidores. Lo dejamos en blanco (salvo que nos interese alguno de ellos):</p>
-<p><img alt="" src="img/01006Instalar024.png" /></p>
-<p>Proceso de instalación en marcha. Al finalizar, seleccionar <code>[Reiniciar ahora]</code> y pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
-<p><img alt="" src="img/01006Instalar025.png" /></p>
-<p>Una vez reiniciada la máquina, veremos que no hay elementos gráficos. En modo consola de texto aparece lo siguiente:</p>
-<div class="codehilite"><pre><span></span><code>login:
-</code></pre></div>
-
-<p>Introducimos nuestra nombre de usuario y seguidamente se nos pedirá la contraseña. Entramos a una sesión de comandos. </p>
-<p>Más adelante veremos con más detalle como funcionan los comandos de Linux. En resumen, se muestra un <em>prompt</em> <strong><code>$</code></strong> , precedido por información de la sesión. Ese <em>prompt</em>  nos invita a introducir el texto de un comando, que se ejecutará al pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
-<p>Cada comando ejecuta una tarea, que una vez completada, hace que se recupere el <em>prompt</em> <strong><code>$</code></strong> para introducir el siguiente comando.</p>
-<p>Algunos comandos van mostrando información en la pantalla, a medida que avanzan en su trabajo, y ocasionalmente nos hacen alguna pregunta:</p>
-<div class="codehilite"><pre><span></span><code>Ok to install software? [Y/n]
-</code></pre></div>
-
-<p>En ese caso, tecleamos <span class="keys"><kbd class="key-y">Y</kbd></span> o <span class="keys"><kbd class="key-n">N</kbd></span>. A veces, también hay que pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
-<p>El comando para apagar la máquina virtual es:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>shutdown<span class="w"> </span>now
-</code></pre></div>
-
-<p>El carácter <code>$</code> que se muestra en estos comandos no es algo que tenemos que teclear. </p>
-<p>La palabra <code>sudo</code> es la abreviatura de <em>super user do</em>, y significa que se trata de un comando que nos va a exigir permisos de administrador. Al ejecutarlo, se nos pedirá contraseña.</p>
-<p>Para instalar el escritorio gráfico vamos a utilizar los siguientes comandos:</p>
-<ul>
-<li>
-<p>Comenzamos por actualizar la lista del software disponible, sincronizando con los repositorios de Ubuntu:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</code></pre></div>
-
-<p><code>apt</code> es el programa de instalación de software nuevo. </p>
-</li>
-<li>
-<p>No recuerdo muy bien para que hacía falta el siguiente comando. Lo descubrí navegando por Internet e instala un programa llamado <em>tasksel</em>. Al parecer, permite la instalación de grupos de paquetes de software en un solo paso.</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>tasksel
-</code></pre></div>
-
-<p>El comando <code>apt install</code> es el que se usa para descargar e instalar paquetes, en el caso de repositorios tipo Debian, como es el caso de Ubuntu.</p>
-</li>
-<li>
-<p>El tercer paso es instalar el escritorio gráfico. Es un proceso largo que tarda un buen rato en ejecutarse, y llena la pantalla de mensajes:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ubuntu-desktop
-</code></pre></div>
-
-</li>
-<li>
-<p>Finalizamos reiniciando la máquina:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>reboot<span class="w"> </span>now
-</code></pre></div>
-
-</li>
-</ul>
-<p>Una vez reiniciada, veremos que el proceso de arranque es un poco lento, porque se comprueban muchos servicios de comunicaciones propios de un servidor. Paciencia. Estamos haciendo un apaño al utilizar <em>Ubuntu Server</em> en lugar de la versión <em>Desktop</em>.</p>
-<p>Tras completar el arranque, vemos que ya tenemos el escritorio gráfico. Abrimos el terminal de comandos y completamos algunos pasos adicionales:</p>
-<ul>
-<li>
-<p>Synaptic es el gestor gráfico para instalar software. Nos ahorra el uso de comandos. Abrir la ventana de Terminal, e instalarlo con el comando:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>synaptic
-</code></pre></div>
-
-</li>
-<li>
-<p>Los dos siguientes paquetes de software sirven para que Ubuntu se entienda con VMware en cosas tales como copiar y pegar de un sistema a otro, o compartir carpetas. Una vez ejecutados, para que tengan efecto habrá que reiniciar la máquina:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>open-vm-tools
-$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>open-vm-tools-desktop
-</code></pre></div>
-
-</li>
-</ul>
-<p>Finalmente, entramos en la configuración del sistema, y establecemos el idioma y huso horario. Con esto ya tenemos "casi" lo mismo que si hubiéramos instalado la versión <em>Desktop</em> de Ubuntu. Falta instalar nuestros paquetes favoritos, considerando que la selección de software no es la misma si comparamos las versiones <em>Desktop</em> y <em>Server</em></p>
+<p>Con esto damos por finalizado el proceso de instalación. En los próximos 
+capítulos veremos como utilizar Linux Ubuntu.</p>
 
 
 
