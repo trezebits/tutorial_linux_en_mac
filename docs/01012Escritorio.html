@@ -1,0 +1,750 @@
+<!DOCTYPE HTML>
+<html lang="es" class="rust sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Escritorio - Guía para instalar Linux en un Mac</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/estilos-f538a591.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "rust";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ccf29a16.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-bfb05ea3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Teclas de atajo</h2>
+            <div>
+                <p>Pulse <kbd>←</kbd> o <kbd>→</kbd> para navegar entre capítulos</p>
+                <p>Pulse <kbd>S</kbd> o <kbd>/</kbd> para hacer búsquedas</p>
+                <p>Pulse <kbd>?</kbd> para mostrar esta ayuda</p>
+                <p>Pulse <kbd>Esc</kbd> para ocultar esta ayuda</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Tabla de contenido">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Tabla de contenido" aria-label="Tabla de contenido" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Cambiar tema" aria-label="Cambiar tema" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Buscar (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Guía para instalar Linux en un Mac</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Imprimir libro" aria-label="Imprimir libro">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/trezebits/tutorial_linux_en_mac/" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="el-escritorio-de-ubuntu"><a class="header" href="#el-escritorio-de-ubuntu">El escritorio de Ubuntu</a></h1>
+<p>A lo largo de este cuaderno ya hemos ido explorando el funcionamiento del
+escritorio de Ubuntu.
+Ahora haremos un repaso de algunas de sus características.</p>
+<p>Tenemos la guía de uso
+<a href="https://help.ubuntu.com/stable/ubuntu-help/index.html.es">en este enlace</a>.</p>
+<h2 id="el-dock"><a class="header" href="#el-dock">El Dock</a></h2>
+<p>La barra lateral del escritorio se denomina <em>Dock</em>, y es un añadido de Ubuntu al
+escritorio de Gnome. Podemos pulsar en cualquier icono del <em>Dock</em> para iniciar
+la aplicación correspondiente o para seleccionar una de las ventanas abiertas.</p>
+<p>El <em>Dock</em> muestra los iconos de las aplicaciones favoritas y las que están en
+ejecución. Si queremos incluir una aplicación entre las favoritas, el
+primer paso es ejecutarla. Esto hará que aparezca temporalmente en la barra.
+Pulsamos con el botón secundario del ratón sobre ese icono del <em>Dock</em> ,
+y seleccionamos la opción <em>Pin to Dock</em> (fijar al Dock).</p>
+<p>Una vez añadida cualquier aplicación al <em>Dock</em>, desaparecerá de la parrilla. Alternativamente, la operación <em>Pin to Dock</em>
+también está disponible visualizando la parrilla de aplicaciones y pulsando
+sobre la elegida con el botón secundario del ratón.</p>
+<p>Cuando un icono del <em>Dock</em> muestra uno o varios puntos, significa que hay
+abiertas una o varias ventanas de esa aplicación. Pulsando sobre el icono con
+el botón secundario del ratón, se muestra la lista de ventanas para seleccionar
+una de ellas o abrir una nueva.</p>
+<p>Podemos reorganizar los iconos en el Dock. Basta con arrastrarlos a su nueva
+posición. Para quitar un icono del Dock, pulsar con el botón secundario del
+ratón y seleccionar “<em>quitar</em>”.</p>
+<p>Para ocultar el <em>Dock</em>, acudir a la configuración del sistema, apartado
+<em>Escritorio &gt; Dock</em>. Podemos hacer que se oculte o muestre cuando acercamos el
+puntero del ratón al borde de la pantalla. También podemos cambiar el tamaño de
+los iconos, o llevar el <em>Dock</em> al costado derecho o inferior del escritorio.</p>
+<p>La papelera y los dispositivos externos conectados se incluyen automáticamente
+en el extremo de la barra. Su visualización se puede activar o desactivar
+acudiendo a la configuración del sistema, apartado <em>Escritorio &gt; Dock &gt;
+Comportamiento</em>.</p>
+<h2 id="la-parrilla-grid"><a class="header" href="#la-parrilla-grid">La parrilla (grid)</a></h2>
+<p>La parrilla de aplicaciones es complementaria del Dock. Podemos organizar los
+iconos de la parrilla arrastrándolos para ordenarlos a nuestro gusto.</p>
+<p>No todas las aplicaciones instaladas se muestran en la parrilla. Ubuntu
+selecciona solo las que considera más importantes, y de esa selección, excluye
+las incorporadas al <em>Dock</em>.</p>
+<p>Podemos agrupar los iconos de la parrilla en forma de carpetas. Para crear una
+carpeta con dos iconos, arrastrar uno sobre el otro. Se unirán los dos en un
+grupo. Para añadir otros iconos al grupo, arrastrarlos a esa carpeta.</p>
+<p>Para editar el nombre de un grupo, pulsar sobre el mismo y, una vez abierto su
+contenido, editar la cabecera.</p>
+<p>Para eliminar un grupo, arrastrar los iconos fuera del mismo.</p>
+<h2 id="capturar-pantalla"><a class="header" href="#capturar-pantalla">Capturar pantalla</a></h2>
+<p>Pulsando la tecla <kbd>prtsc</kbd> podemos abrir la aplicación de Captura de Pantalla:</p>
+<p><img src="../img/01012Escritorio001.png" alt=""></p>
+<blockquote>
+<p><strong>Teclados Mac</strong>
+<hr></p>
+<p>Como lo que tenemos en este cuaderno es un teclado <em>Mac</em>, nos encontraremos
+con que no hay tecla <kbd>prtsc</kbd> Podemos simular una pulsación de  esta tecla
+mediante el menú de VMWare, <em>máquina virtual &gt; enviar tecla &gt; Impr Pant</em>.
+Tendremos un mejor acceso a esta función si activamos la visualización de la
+minibarra, como se explicó en el apartado dedicado a la instalación del
+sistema.</p>
+</blockquote>
+<p>También podemos iniciar la <em>Captura de Pantalla</em> desde el menú desplegable del
+sistema, donde encontraremos un icono al lado del de configuración:</p>
+<p><img src="../img/01006Instalar011.png" alt=""></p>
+<p>Al ejecutarse la captura de pantalla, muestra un recuadro con seis iconos:</p>
+<p><img src="../img/01012Escritorio002.png" alt=""></p>
+<p>cuyo significado de izquierda a derecha y de arriba abajo es:</p>
+<ul>
+<li>capturar el área seleccionada con el ratón</li>
+<li>capturar la pantalla completa</li>
+<li>capturar la ventana activa</li>
+<li>seleccionar entre capturar imagen o grabar video</li>
+<li>botón para hacer la captura</li>
+<li>mostrar puntero en la captura (si/no)</li>
+</ul>
+<p>Al pulsar en el botón <em>Capturar</em>, se guarda una imagen en la carpeta
+<code>/Imagenes/Capturas de pantalla</code>.</p>
+<p>Como alternativa de la aplicación de captura de pantalla, podemos instalar otros
+programas similares acudiendo al <em>Centro de Aplicaciones</em>. Por ejemplo, podemos
+instalar <a href="https://apps.kde.org/es/spectacle/">spectacle</a>, que forma parte del
+escritorio Plasma de KDE.</p>
+<h2 id="múltiples-escritorios"><a class="header" href="#múltiples-escritorios">Múltiples escritorios</a></h2>
+<p>Cuando tenemos varias ventanas de aplicaciones en ejecución, podemos seleccionar
+una u otra:</p>
+<ul>
+<li>pulsando en la ventana correspondiente</li>
+<li>pulsando en el icono de la aplicación en la barra lateral (el <em>Dock</em>)</li>
+<li>recorriendo la lista de aplicaciones con la combinación de teclas <kbd>alt</kbd>+<kbd>tab</kbd></li>
+</ul>
+<p>Si tenemos muchas aplicaciones abiertas, podemos utilizar varios escritorios
+(áreas de trabajo), y poner las aplicaciones en uno u otro.
+De forma predeterminada, Gnome tiene dos espacios de trabajo disponibles,
+el original y uno adicional vacío. A medida que vayamos utilizándolos,
+se añadirá automáticamente uno vacío.</p>
+<p>Si cerramos ventanas y vaciamos un escritorio, las áreas de trabajo sobrantes se
+suprimirán, manteniendo siempre un único escritorio vacío.</p>
+<p>Para pasar de un escritorio a otro, pulsar <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>→</kbd> o, para hacerlo
+en sentido contrario, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>←</kbd>. Para utilizar un área de trabajo,
+desplazarse hacia ella y abrir allí las aplicaciones deseadas.</p>
+<p>Podemos obtener una vista conjunta de todas las áreas, y navegar de una a otra.
+Para ello, pulsar en el icono “Actividades”, en la esquina superior izquierda
+del escritorio. Podemos arrastrar ventanas de un área a otra.</p>
+<p><img src="../img/01012Escritorio008.png" alt=""></p>
+<h2 id="la-barra-dash"><a class="header" href="#la-barra-dash">La barra <em>Dash</em></a></h2>
+<p>El escritorio Gnome original, sin los añadidos de <em>Ubuntu</em>, no tiene una barra
+<em>Dock</em> de aplicaciones favoritas. En su lugar, al pulsar en el botón de
+<em>Actividades</em>, en la esquina superior izquierda, se visualizan las áreas de
+trabajo y una barra inferior de <em>favoritos</em>, llamada <em>Dash</em>, que incluye un
+icono para visualizar la parrilla de aplicaciones.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/GNOME_Shell.png" alt=""></p>
+<h2 id="tecla-super"><a class="header" href="#tecla-super">Tecla Super</a></h2>
+<p>En los teclados Mac hay una tecla <kbd>cmd</kbd> que Linux toma como tecla <kbd>super</kbd>.
+En otros teclados puede ser la tecla <kbd>win</kbd> u otra diferente. De todas formas,
+en máquinas virtuales depende de lo que tengamos configurado en <em>WMware</em>.</p>
+<p>Una vez identificada la tecla que sirve
+como <kbd>super</kbd> podemos configurar su uso en el apartado de configuración del
+sistema, apartado <em>Teclado</em>.</p>
+<p>En el escritorio, pulsando en <kbd>super</kbd> se muestra la vista general de ventanas
+y áreas de trabajo:</p>
+<p><img src="../img/01012Escritorio004.png" alt=""></p>
+<h2 id="avisos-y-agenda"><a class="header" href="#avisos-y-agenda">Avisos y agenda</a></h2>
+<p>En el centro de la barra superior del escritorio tenemos un reloj y fecha.
+Pulsando ahí, se abre una ventana de notificaciones y calendario.
+Pulsando en uno de los días, se abre una agenda que nos permite programar avisos.</p>
+<p><img src="../img/01012Escritorio003.png" alt=""></p>
+<h2 id="personalizar-el-escritorio"><a class="header" href="#personalizar-el-escritorio">Personalizar el escritorio</a></h2>
+<p>La configuración del sistema nos permite personalizar el aspecto que tiene el
+escritorio:</p>
+<ul>
+<li>
+<p>Para cambiar la imagen del fondo, descargamos algún fondo de escritorio que
+nos guste (por ejemplo, desde <a href="https://pixabay.com">Pixabay</a> o desde
+<a href="https://www.pexels.com/es-es/">Pexels</a>), y en la aplicación
+“Configuración del Sistema” buscamos el apartado <em>Apariencia &gt;
+Fondos de Escritorio &gt; Añadir imagen</em>. Tomamos la imagen de la carpeta de
+<em>Descargas</em>, añadiéndola a los fondos de escritorio, y la seleccionamos como fondo.</p>
+</li>
+<li>
+<p>En el apartado <em>Apariencia &gt; Estilo</em> seleccionar un color para iconos,
+ventanas, etc.</p>
+</li>
+</ul>
+<h2 id="mostrar-icono-de-carpeta-personal"><a class="header" href="#mostrar-icono-de-carpeta-personal">Mostrar icono de carpeta personal</a></h2>
+<p>Para ocultar o mostrar el acceso a la carpeta personal en el escritorio, ir a la
+<em>Configuración &gt; Iconos &gt; Mostrar carpeta personal</em>.</p>
+<h2 id="gnome-tweaks"><a class="header" href="#gnome-tweaks">Gnome Tweaks</a></h2>
+<p>Más allá de las opciones estándar de personalización del escritorio, contamos
+con una utilidad llamada <a href="https://gitlab.gnome.org/GNOME/gnome-tweaks">GNOME Tweaks</a>
+(retoques de GNOME), que proporciona opciones añadidas de configuración,
+tipografías, cambiar el juego de iconos, las áreas de trabajo, el comportamiento
+del ratón, etc.</p>
+<p>Esta aplicación se instala abriendo el terminal y ejecutando el comando:</p>
+<pre><code>$ sudo apt install gnome-tweaks 
+</code></pre>
+<p>Para ejecutarla, introducir el comando:</p>
+<pre><code>$ gnome-tweaks
+</code></pre>
+<p>o bien, en la rejilla de aplicaciones, buscar una llamada “<em>retoques</em>”.</p>
+<p>Podemos usarlo, por ejemplo, para cambiar el juego de iconos (menú <em>Apariencia &gt;
+Estilos</em>).</p>
+<h2 id="extensiones"><a class="header" href="#extensiones">Extensiones</a></h2>
+<p>Gnome es un escritorio excesivamente minimalista, pero podemos ampliar sus
+funcionalidades con extensiones. El proyecto oficial da soporte a muchas de ellas
+en la página web <a href="https://extensions.gnome.org">https://extensions.gnome.org</a>.</p>
+<p>De hecho, Ubuntu trae de serie algunas de esas extensiones ya instaladas. Podemos
+hacer nuestros propios añadidos para personalizar la experiencia. Para descargar
+e instalar extensiones, tenemos que instalar el programa gestor de extensiones
+con el comando:</p>
+<pre><code>$ sudo apt install gnome-shell-extension-manager
+</code></pre>
+<p>lo que dejará en la rejilla de aplicaciones una nueva aplicación “Extensiones”.</p>
+<p>Al ponerlo en marcha, vemos las que trae Ubuntu por defecto:</p>
+<p><img src="../img/01012Escritorio005.png" alt=""></p>
+<p>Veamos algunas extensiones para mejorar el escritorio de Ubuntu. Vamos a instalar:</p>
+<ul>
+<li>
+<p><em>Dash to panel</em>. Sustituye la barra del <em>Dock</em> de Ubuntu por una barra <em>Dash</em>
+mejorada en el borde inferior del escritorio, con más funcionalidades. Integra la
+barra superior de Gnome:</p>
+<p><img src="../img/01012Escritorio006.png" alt=""></p>
+<p>Como podemos ver, muestra un funcionamiento más cercano a los escritorios
+tradicionales. Pero no integra, por defecto, el botón de actividades que
+teníamos en la esquina superior izquierda. Podemos activar su visualización
+entrando en la configuración de la extensión.</p>
+<blockquote>
+<p><strong>Configurar extensiones</strong>
+<hr></p>
+<p>Las extensiones se configuran seleccionando cada una de ellas en el
+gestor de extensiones, y pulsando en el icono de configurar
+(rueda dentada <big><b>⚙</b></big> ) si está disponible.</p>
+</blockquote>
+</li>
+<li>
+<p><em>Apps Menu</em>. Añade un menú desplegable de aplicaciones, que convive con la
+rejilla de Gnome:</p>
+</li>
+</ul>
+<pre><code>![](../img/01012Escritorio007.png)
+</code></pre>
+<ul>
+<li>
+<p><em>Places Status Indicator</em>. Añade un menú desplegable con las principales
+carpetas de usuario. En la barra <em>Dash</em> se muestra como “<em>Lugares</em>”</p>
+</li>
+<li>
+<p><em>Clipboard indicator</em>. Añade un pequeño icono a la barra de indicadores,
+mostrando el contenido del portapapeles al pulsar sobre el mismo</p>
+</li>
+<li>
+<p><em>Removable Drive menu</em>. Añade un pequeño icono a la barra de indicadores,
+mostrando los dispositivos externos conectados (pendrives, etc) y
+permitiendo expulsarlos.</p>
+</li>
+<li>
+<p><em>Show desktop button</em>. Añade un pequeño icono a la barra de indicadores,
+permitiendo minimizar todas las ventanas o volver a mostrarlas.</p>
+</li>
+</ul>
+<h2 id="iconos-en-el-escritorio"><a class="header" href="#iconos-en-el-escritorio">Iconos en el escritorio</a></h2>
+<p>Gnome no proporciona la posibilidad de poner iconos de aplicaciones y archivos
+en el escritorio, pero Ubuntu añade esta opción mediante la extensión
+<em>Desktop Icons</em>.</p>
+<p>Para arrastrar un documento o carpeta al escritorio, basta con hacerlo desde el
+Gestor de archivos. Si pulsamos la tecla <kbd>ctrl</kbd> al mismo tiempo, en lugar de
+arrastrar, haremos una copia del documento o carpeta.</p>
+<p>El contenido del escritorio es en realidad un reflejo de la carpeta
+<code>/home/usuario/Escritorio</code>, por lo que si abrimos esta en el <em>Gestor de Archivos</em>,
+también podemos gestionar el contenido del escritorio añadiendo o suprimiendo
+elementos.</p>
+<h2 id="lanzadores-en-el-escritorio"><a class="header" href="#lanzadores-en-el-escritorio">Lanzadores en el escritorio</a></h2>
+<p>En líneas generales, los programas se pueden ejecutar:</p>
+<ul>
+<li>pulsando en los iconos de la barra lateral, el <em>dock</em></li>
+<li>buscando en los iconos de la parrilla de programas</li>
+<li>desde el terminal de comandos, introduciendo el nombre del programa.</li>
+</ul>
+<p>Una cuarta opción es crear “<em>lanzadores</em>” en el escritorio. Son iconos sobre los
+que podemos pulsar para ejecutar una acción.</p>
+<p>Veamos un ejemplo. Crearemos un lanzador para la calculadora. Lo primero es
+ejecutarla y abrir el programa <em>Monitor del Sistema</em>. Descubrimos que la
+calculadora es en realidad un programa llamado <em>gnome-calculator</em>.</p>
+<p>Cerramos la calculadora. Abrimos un terminal de comandos y comprobamos el
+comando a ejecutar:</p>
+<pre><code>$ gnome-calculator
+</code></pre>
+<p>Esto debería abrir la calculadora en otra ventana. La cerramos.</p>
+<p>Lo siguiente es situarnos en la carpeta de escritorio:</p>
+<pre><code>$ cd ~/Escritorio
+</code></pre>
+<p>Los lanzadores son archivos de texto con la extensión <code>.desktop</code>. Creamos uno
+con:</p>
+<pre><code>$ touch calculadora.desktop
+</code></pre>
+<p>Vamos a editar el contenido:</p>
+<pre><code>$ gnome-text-editor calculadora.desktop
+</code></pre>
+<p>El texto serán las especificaciones técnicas del lanzador:</p>
+<pre><code>[Desktop Entry]
+Name=Calculadora
+Comment=La calculadora de Gnome
+Exec=gnome-calculator
+Terminal=false
+Icon=/home/usuario/Images/iconoPrograma
+Type=Application
+</code></pre>
+<p>Todo esto son las directrices que necesita un lanzador. En el ejemplo, vemos una
+línea con el comando a ejecutar para iniciar el programa:</p>
+<pre><code>Exec=gnome-calculator
+</code></pre>
+<p>El tipo de lanzador se indica en la línea:</p>
+<pre><code>Type=Application
+</code></pre>
+<p>El nombre que se mostrará bajo el icono:</p>
+<pre><code>Name=Calculadora
+</code></pre>
+<p>Guardamos el contenido del archivo. Seguidamente, tenemos que asignarle permisos
+de ejecución:</p>
+<pre><code>$ chmod +x ~/Escritorio/calculadora.desktop
+</code></pre>
+<p>Finalmente, tenemos que hacer que el lanzador sea “de confianza”. Pulsar con el
+botón secundario del ratón sobre el nuevo icono del escritorio y seleccionar la
+opción “<em>permitir lanzar</em>”.</p>
+<p>En realidad hay una forma más cómoda de hacer todo esto. Podemos copiar los
+lanzadores ya existentes (los que se utilizan para ser mostrados en la parrilla
+de aplicaciones, por ejemplo). Para ello, examinar la carpeta
+<code>/usr/share/applications</code>. El lanzador de la calculadora es un archivo llamado
+<code>org.gnome.Calculator.desktop</code>. Podemos copiarlo a la carpeta <code>~/Escritorio</code>,
+pero tendremos que repetir la maniobra de “<em>permitir lanzar</em>” en el icono del
+escritorio.</p>
+<blockquote>
+<p><strong>Especificaciones de los lanzadores</strong>
+<hr></p>
+<p>Los lanzadores son archivos de texto cuyo formato se corresponde con el
+proyecto <em>Freedesktop.org</em>. Ver <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">especificaciones</a> en la <a href="https://www.freedesktop.org/wiki/">página web</a> del proyecto.</p>
+</blockquote>
+<h2 id="lanzadores-en-el-grid"><a class="header" href="#lanzadores-en-el-grid">Lanzadores en el grid</a></h2>
+<p>No todas las aplicaciones están incluidas en la parrilla. Los iconos de esta
+son en realidad lanzadores.
+Ya hemos visto que el icono que ejecuta la calculadora es en realidad el archivo
+<code>org.gnome.Calculator.desktop</code> guardado en la carpeta <code>/usr/share/applications</code>.
+Estos lanzadores se guardan en:</p>
+<ul>
+<li>
+<p>aplicaciones a nivel global:</p>
+<pre><code>/usr/share/applications
+</code></pre>
+</li>
+<li>
+<p>aplicaciones particulares de usuario:</p>
+<pre><code>~/.local/share/applications
+</code></pre>
+</li>
+</ul>
+<h2 id="un-lanzador-para-montar-y-desmontar-carpetas-compartidas"><a class="header" href="#un-lanzador-para-montar-y-desmontar-carpetas-compartidas">Un lanzador para montar y desmontar carpetas compartidas</a></h2>
+<p>Vamos a crear en el escritorio un lanzador que ejecute un script para
+conectar y desconectar el
+acceso a carpetas compartidas de la máquina física, de forma que limitemos su
+visibilidad sin necesidad de tenerlas expuestas permanentemente.</p>
+<p>Abrimos el Terminal y nos situamos en la carpeta principal del usuario:</p>
+<pre><code>$ cd
+</code></pre>
+<p>Creamos el scrip:</p>
+<pre><code>$ touch montar_compartidas.sh
+</code></pre>
+<p>Los scripts son pequeños programas consistentes en una lista de comandos a
+ejecutar. Lo de ponerles la extensión <code>.sh</code> es opcional.
+Es la abreviatura de “shell”.</p>
+<p>Abrimos el archivo con el editor de textos:</p>
+<pre><code>$ gnome-text-editor montar_compartidas.sh
+</code></pre>
+<p>El texto del archivo puede ser algo así como:</p>
+<pre><code class="language-bash title=&quot;montar_compartidas.sh&quot; linenums=&quot;1&quot;">#!/bin/bash
+
+# Montar/desmontar carpetas de la máquina física
+# compartidas con la virtual
+#
+# La variable RUTA hace referencia al punto de
+# montaje en la máquina virtual
+#
+# Las carpetas a compartir se establecen en la
+# configuración de VMware de la máquina virtual
+
+RUTA=/mnt/compartidas
+
+while true; do
+    clear
+    echo "Acceso a carpetas compartidas de la máquina host."
+    echo
+    echo "Carpetas actualmente montadas y accesibles:"
+    echo
+    ls /mnt/compartidas/* -d1 2&gt; /dev/null
+    estado=$?
+    if [[ $estado != 0  ]]; then 
+        echo "    no hay carpetas compartidas"
+    fi
+    echo
+    echo "---------------------------------------------------"
+    echo "Seleccione:"
+    echo
+    echo "   M. Montar carpetas"
+    echo "   D. Desmontar carpetas"
+    echo "   S. Salir"
+    echo
+    read -p "Introduzca opción M/D/S seguida de Intro: " opcion
+    echo "---------------------------------------------------"
+    echo
+    if [[ "$opcion" =~ [Mm]$ ]]; then
+            echo "Montar carpetas."
+            echo "Se intentará con las establecidas en la configuración VMware de la máquina virtual"
+            sudo /usr/bin/vmhgfs-fuse .host:/ $RUTA -o subtype=vmhgfs-fuse,allow_other 2&gt;/dev/null
+            estado=$?
+            if [[ $estado != 0  ]]; then 
+                read -p "Error montando carpetas. Pulse Intro para continuar."
+            else
+                read -p "Operación realizada. Pulse Intro para continuar"
+            fi
+            continue
+    fi
+ 
+    if [[ "$opcion" =~ [Dd]$ ]]; then
+            echo "Desmontando carpetas"
+            echo "Se intentará desmontar todas las carpetas en $RUTA"
+            sudo umount $RUTA 2&gt;/dev/null
+            estado=$?
+            if [[ $estado != 0  ]]; then 
+                read -p "Error desmontando carpetas. Pulse Intro para continuar"
+            else
+                echo "Operación realizada."
+                echo "Si observa que siguen montadas, probablemente se debe a que" 
+                echo "el dispositivo está ocupado. Reintente la operación."
+                read -p "Pulse Intro para continuar"                
+            fi
+            continue
+    fi
+
+    if [[ "$opcion" =~ [Ss]$  ]]; then
+        break
+    fi
+    
+    echo "Entrada inválida."
+    read -p "Pulse Intro para volver a intentarlo."
+    
+done
+</code></pre>
+<p>Ya hemos hablado del intérprete de comando <em>bash</em>. Cuenta con todo lo necesario
+para convertirse en todo un lenguaje de programación, y a este tipo de archivos
+con comandos a ejecutar se les llama <em>scripts</em>.</p>
+<p>En realidad, no hace falta que entendamos muy bien el texto de este archivo.
+Basta con copiar y pegarlo (los números de línea que se muestran a la izquierda
+no forman parte del texto). Algunas observaciones:</p>
+<ul>
+<li>
+<p>las líneas que comienzan con <code>#</code> son “comentarios”. Se insertan en el script
+a efectos de documentación.</p>
+</li>
+<li>
+<p>la primera línea ha de ser: <code>#!/bin/bash</code>, para que el sistema operativo lo
+identifique como script a ejecutar</p>
+</li>
+<li>
+<p>tenemos que revisar la línea 12:</p>
+<pre><code>RUTA=/mnt/compartidas
+</code></pre>
+<p>sustituyendo la ruta <code>/mnt/compartidas</code> por la que corresponda.
+Debe tratarse de una carpeta ya existente, donde se van a montar las carpetas
+compartidas. Si no existe, podemos crearla con la siguiente secuencia de
+comandos:</p>
+<pre><code>$ cd /mnt
+$ mkdir compartidas
+</code></pre>
+<p><code>mkdir</code> es el comando que  crea nuevos directorios en la carpeta actual
+(“<em>make directory</em>”).</p>
+</li>
+</ul>
+<p>Guardamos el texto del archivo y cerramos el editor. Damos permisos de ejecución
+al script con el comando:</p>
+<pre><code>$ chmod +x ~/montar_compartidas.sh
+</code></pre>
+<p>Lo ejecutamos desde el terminal de comandos, para verificar su correcto
+funcionamiento:</p>
+<pre><code>$ cd
+$ ./montar_compartidas.sh
+</code></pre>
+<p>Esto muestra las carpetas actualmente compartidas, y un menú de opciones:</p>
+<pre><code>Acceso a carpetas compartidas de la máquina host.
+
+Carpetas actualmente montadas y accesibles:
+
+    no hay carpetas compartidas
+
+---------------------------------------------------
+Seleccione:
+
+   M. Montar carpetas
+   D. Desmontar carpetas
+   S. Salir
+
+Introduzca opción M/D/S seguida de Intro: 
+
+
+</code></pre>
+<p>Pulsamos <kbd>M</kbd> para montar las carpetas, <kbd>D</kbd> para desmontarlas, o <kbd>S</kbd> para
+finalizar la ejecución del script, seguido de <kbd>enter</kbd>. La primera vez que
+montemos o desmontemos las carpetas, se nos pedirá la contraseña de usuario:</p>
+<pre><code>Montar carpetas.
+Se intentará con las establecidas en la configuración VMware de la máquina virtual
+[sudo] contraseña para usuario: 
+
+</code></pre>
+<p>Al intentar desmontar una carpeta, se mostrará un mensaje de error si cualquier
+programa está haciendo uso de ella.</p>
+<p>Este script puede ejecutarse desde el terminal de comandos, pero lo que nos
+interesa es crear un lanzador en el escritorio. Nos situamos en la carpeta
+<code>~/Escritorio</code>:</p>
+<pre><code>$ cd ~/Escritorio
+</code></pre>
+<p>Creamos el lanzador:</p>
+<pre><code>$ touch montar_compartidas.desktop
+</code></pre>
+<p>Es un archivo de texto. Editamos su contenido:</p>
+<pre><code class="language-txt title=&quot;montar_compartidas.desktop&quot;">[Desktop Entry]
+Name=Montar compartidas
+Comment=Montar/desmontar directorios compartidos
+Exec=/home/usuario/montar_compartidas.sh
+Terminal=true
+Icon=/usr/share/icons/Humanity/actions/48/gtk-open.svg
+Type=Application
+</code></pre>
+<p>Véase que en el apartado <code>Exec</code> ponemos el script a ejecutar. Como icono hemos
+seleccionado uno de la carpeta <code>/usr/share/icons</code>.</p>
+<p>Tras pulsar sobre el icono en el escritorio y seleccionar la opción “<em>permitir
+lanzar</em>”, ahora tendremos una forma cómoda de desconectar las carpetas
+compartidas de la máquina física.</p>
+<h2 id="enlaces-a-carpetas"><a class="header" href="#enlaces-a-carpetas">Enlaces a carpetas</a></h2>
+<p>Para poner en el escritorio un icono que muestre el contenido de una carpeta,
+podemos crear un lanzador que abra el gestor de archivos, <em>Nautilus</em>:</p>
+<pre><code>$ cd ~/Escritorio
+$ touch carpetas_compartidas.desktop
+</code></pre>
+<p>Editamos el contenido del fichero:</p>
+<pre><code class="language-txt title=&quot;carpetas_compartidas.desktop&quot;">[Desktop Entry]
+Name=Compartida
+Comment=Carpetas compartidas
+Path=/mnt/compartidas/micarpeta
+Exec=nautilus --new-window /mnt/compartidas/micarpeta
+Icon=org.gnome.Nautilus
+Terminal=false
+Type=Application
+</code></pre>
+<p>El apartado <code>Exec</code> establece que se ejecute <em>Nautilus</em>, en una nueva ventana si
+ya está abierto, y mostrando la carpeta especificada. El apartado <code>Path</code>
+establece cual es la carpeta de trabajo. Si no está montada, la pulsación sobre
+el lanzador no tendrá efecto.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../docs/01011Configurar.html" class="mobile-nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../docs/01013Dispositivos.html" class="mobile-nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../docs/01011Configurar.html" class="nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../docs/01013Dispositivos.html" class="nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

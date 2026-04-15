@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html lang="es" class="rust sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Instalar Linux - Guía para instalar Linux en un Mac</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/estilos-f538a591.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "rust";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ccf29a16.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-bfb05ea3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Teclas de atajo</h2>
+            <div>
+                <p>Pulse <kbd>←</kbd> o <kbd>→</kbd> para navegar entre capítulos</p>
+                <p>Pulse <kbd>S</kbd> o <kbd>/</kbd> para hacer búsquedas</p>
+                <p>Pulse <kbd>?</kbd> para mostrar esta ayuda</p>
+                <p>Pulse <kbd>Esc</kbd> para ocultar esta ayuda</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Tabla de contenido">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Tabla de contenido" aria-label="Tabla de contenido" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Cambiar tema" aria-label="Cambiar tema" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Buscar (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Guía para instalar Linux en un Mac</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Imprimir libro" aria-label="Imprimir libro">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/trezebits/tutorial_linux_en_mac/" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="probar-e-instalar-linux"><a class="header" href="#probar-e-instalar-linux">Probar e instalar Linux</a></h1>
+<p>Según lo visto, podemos instalar Linux en la máquina física, borrando el disco
+duro físico y sustituyendo el viejo sistema operativo, o en la máquina virtual
+que hemos creado en el capítulo anterior.</p>
+<ul>
+<li>en el primer caso, arrancaremos el ordenador con el pendrive conectado</li>
+<li>en el segundo, iniciaremos la máquina virtual, estableciendo el archivo
+ISO descargado como DVD virtual, sin necesidad de preparar un pendrive físico.
+Comprobar que está configurado como disco de arranque.</li>
+</ul>
+<h2 id="pantalla-inicial"><a class="header" href="#pantalla-inicial">Pantalla inicial</a></h2>
+<p>Cuando ponemos en marcha un ordenador, ya sea físico o virtual, se busca
+automáticamente en el disco duro (o prioritariamente en el pendrive, si tenemos
+uno conectado) un programa que se conoce como “gestor de arranque”. En muchos
+sistemas operativos es un software que no muestra nada en pantalla y se ejecuta
+silenciosamente. Carga en la memoria RAM el sistema operativo, un proceso que
+dura unos segundos, y lo pone en marcha. Durante este procedo, veremos la
+pantalla en negro.</p>
+<p>En el caso de Ubuntu, el programa cargador es uno llamado GRUB. Tratándose del
+DVD de instalación, GRUB viene configurado para mostrar un menú de arranque:</p>
+<p><img src="../img/01006Instalar001.png" alt=""></p>
+<p>Cuando hayamos instalado el sistema operativo, el arranque se hará desde el
+disco duro virtual, y este menú dejará de visualizarse. Esto es importante, ya
+que, si vemos el menú de GRUB en pantalla, significa que estamos arrancando la
+máquina desde el pendrive de instalación (físico o virtual)
+y no desde el disco duro. Si no es lo que pretendemos, habrá que apagar
+la máquina virtual, reconfigurarla
+(apartado <em>disco de arranque</em>, seleccionar <em>disco duro</em>) y volver a iniciarla.</p>
+<p>Como todavía no hemos iniciado Linux ni su escritorio, el menú de GRUB resulta
+bastante primitivo. Se ejecuta en forma de consola de texto, sin elementos
+gráficos, y  aquí no funciona el ratón. Hay que usar las teclas de flechas
+<kbd>↑</kbd> <kbd>↓</kbd> para seleccionar una opción y, a continuación,
+pulsar <kbd>enter</kbd>
+para ejecutarla.</p>
+<blockquote>
+<p><strong>Ratón bloqueado</strong>
+<hr></p>
+<p>En el caso de las máquinas virtuales, cuando la ventana de VMWare es la que
+tiene el foco, se apropia del teclado y ratón, como sucede con todas las
+ventanas. Pero como en este menú de inicio no funciona el ratón, no podemos
+arrastrarlo fuera de la ventana, quedando el puntero atrapado y oculto.</p>
+<p>Para liberarlo, VMWare tiene una combinación de teclas especial. En mi caso,
+siendo la máquina física un Mac, se trata de las teclas <kbd>ctrl</kbd>+<kbd>cmd</kbd>.
+Podemos consultarlo en la configuración general de VMWare, apartado
+“<em>teclado y ratón</em>”.</p>
+</blockquote>
+<p>En este menú de arranque, seleccionamos la primera opción, “<em>Try or Install
+Ubuntu</em>” y pulsamos <kbd>enter</kbd> Se carga el sistema operativo desde el pendrive
+virtual:</p>
+<p><img src="../img/01006Instalar002.png" alt=""></p>
+<p>Tras un cierto período de tiempo, se completa la carga y se muestra el
+escritorio de <em>Gnome</em>. Se ejecuta automáticamente el programa para instalar
+Ubuntu en el disco duro. Lo primero que vemos es una ventana para seleccionar
+el idioma:</p>
+<p><img src="../img/01006Instalar003.png" alt=""></p>
+<p>Vamos pulsando en el botón <code>[Siguiente]</code>, paso a paso, y aceptamos las
+configuraciones por defecto. En lo referido a Internet, se nos sugiere como
+“<em>conexión por cable</em>”. Lo damos por bueno, ya que en realidad se trata de la
+conexión simulada por la máquina virtual, que se beneficia de lo que tengamos
+en la máquina física, wifi, cable, o lo que sea.</p>
+<p>En uno de los pasos se nos da la opción de seguir con la instalación de Ubuntu
+en el disco duro virtual o explorar el sistema un poco antes de instalar nada.
+Vamos a optar por esta segunda opción, “probar Ubuntu”:</p>
+<p><img src="../img/01006Instalar004.png" alt=""></p>
+<p>Por ahora tenemos un disco virtual vacío, y un sistema operativo cargado desde
+el pendrive virtual. A esto se le llama una sesión “<em>Live</em>”.</p>
+<blockquote>
+<p><strong>El aspecto de Ubuntu</strong>
+<hr></p>
+<p>Curiosamente, hay algo que siempre ha provocado cierta controversia; el
+esquema de colores tan chillón que tiene Ubuntu. Esos temas rojizos provocan
+una mezcla de amor y odio…</p>
+<p>Pero como veremos más adelante, si no nos gusta, podemos configurarlo.
+Paciencia.</p>
+</blockquote>
+<blockquote>
+<p><strong>Los logotipos de Ubuntu</strong>
+<hr></p>
+<table style="border-style:none">
+<tr><td>
+<img src="../img/01002ubuntu.png" style="float:right; padding:20px;"> 
+<p>El logotipo
+principal de Ubuntu es conocido <i>Circle of Friends</i> (círculo de amigos).
+Los puntos son cabezas y las líneas curvas son los brazos y manos.</p>
+</td></tr>
+
+<tr><td>
+<img src="../img/01006Instalar005.png" style="float:left;padding:20px;">
+<p>Cada nueva versión de Ubuntu lleva el nombre de un animal, cuyo diseño
+aparece en la documentación, fondo de escritorio y otros elementos gráficos.</p>
+</td></tr>
+
+</table>
+
+<br>
+</blockquote>
+<h2 id="visualización-de-máquinas-virtuales"><a class="header" href="#visualización-de-máquinas-virtuales">Visualización de máquinas virtuales</a></h2>
+<p>VMware permite mostrar el escritorio virtual en una ventana, u ocupando la
+pantalla completa. Para cambiar de formato, pulsar sobre el menú “Vista” de
+VMware y seleccionar “single window” o “full screen”.</p>
+<p>Cuando la máquina virtual ocupa toda la pantalla, dejaremos de ver el menú de
+VMWare. No hay problema. Basta con acercar el ratón al borde superior de la
+pantalla, y aparecerá el menú y la barra de título de la ventana:</p>
+<p><img src="../img/01006Instalar006.png" alt=""></p>
+<p>La barra de título de la ventana VMware muestra el nombre de la máquina virtual
+y unos prácticos botones de control para gobernarla:</p>
+<p><img src="../img/01006Instalar007.png" alt=""></p>
+<p>Al cambiar de “single window” a “full screen”, es posible que la resolución de
+la máquina virtual se reconfigure automáticamente. Si tenemos problemas con
+esto, tenemos dos opciones:</p>
+<ul>
+<li>
+<p>Acudir a la configuración de VMware, según vimos en el capítulo dedicado a
+la creación de máquinas virtuales, y hacer ajustes en el apartado <em>Pantalla</em>.
+La opción “ajustar máquina virtual a la pantalla” significa que los contenidos
+se verán más grandes o más pequeños, pero sin modificar la resolución de la
+máquina virtual. La opción “cambiar tamaño”, por el contrario, modifica la
+resolución en la máquina virtual cada vez que se modifica el tamaño de la
+ventana o pasamos a pantalla completa.</p>
+</li>
+<li>
+<p>Alternativamente, en lugar de reconfigurar VMware podemos ajustar las
+preferencias de Ubuntu, cambiando a mano la resolución del escritorio. Acudir a
+la configuración de Gnome siguiendo el procedimiento que se describe al final
+de este capítulo, y en el apartado “Monitores”, seleccionar otra resolución y
+activarla pulsando en el botón <code>[Apply]</code></p>
+</li>
+</ul>
+<h2 id="explorando-gnome"><a class="header" href="#explorando-gnome">Explorando Gnome</a></h2>
+<p>El escritorio de Ubuntu es una versión “<em>tuneada</em>” de Gnome. Añade una
+barra lateral (el <em>Dock</em>) con iconos de las aplicaciones favoritas. En la
+esquina inferior izquierda tenemos un icono con el logo de Ubuntu o con la
+imagen de una rejilla, dependiendo del juego de iconos que tengamos seleccionado
+(una vez instalado el sistema operativo, podemos cambiarlo):</p>
+<p><img src="../img/01006Instalar008.png" alt="">
+<img src="../img/01006Instalar009.png" alt=""></p>
+<p>Pulsando ahí, se despliega una lista de aplicaciones (la “parrilla”, o <em>grid</em>),
+con una caja de búsqueda por texto:</p>
+<p><img src="../img/01006Instalar010.png" alt=""></p>
+<p>Si hay más iconos que espacio disponible, se agrupan en páginas. En la parte
+inferior de la parrilla tenemos unos puntos que se pueden pulsar para
+seleccionar la página siguiente o la anterior. También podemos pasar de página
+pulsando en los iconos <code>&lt; &gt;</code> en los márgenes izquierdo o derecho.</p>
+<blockquote>
+<p><strong>La parrilla de aplicaciones</strong>
+<hr></p>
+<p>¡Cuidado! No todos los programas instalados aparecen en la parrilla. Por
+ejemplo, si marcamos uno como favorito, se mostrará en el <em>Dock</em> y se
+retirará de la parrilla. De todas formas, la caja de búsquedas por texto
+muestra en sus resultados todas las aplicaciones encontradas.</p>
+</blockquote>
+<p>En la barra superior del escritorio tenemos unos iconos de estado en la esquina
+de la derecha. Pulsando ahí, se despliega un menú de sistema que nos da acceso
+a dos iconos interesantes:</p>
+<ul>
+<li>El de la rueda dentada nos da acceso a la configuración de Ubuntu</li>
+<li>El icono de apagar nos permite finalizar la sesión</li>
+</ul>
+<p><img src="../img/01006Instalar011.png" alt=""></p>
+<p>Dependiendo de la configuración de la máquina (en mi caso, una virtual), podemos
+ver más iconos en este menú:</p>
+<ul>
+<li>bloquear pantalla</li>
+<li>capturar imagen de la pantalla</li>
+<li>control de sonido</li>
+<li>estado de red</li>
+<li>control de energía / estado de batería</li>
+<li>seleccionar modo claro/oscuro</li>
+<li>bluetooth, wifi</li>
+<li>etc.</li>
+</ul>
+<p>También podemos desplegar opciones de accesibilidad:</p>
+<p><img src="../img/01006Instalar028.png" alt=""></p>
+<p>La ejecución de programas se puede hacer pulsando en la barra lateral del <em>Dock</em>,
+o desplegando la parrilla de aplicaciones. Vamos a probar a pulsar en el icono
+de <em>Firefox</em>, el navegador web:</p>
+<p><img src="../img/01006Firefox.png" alt=""></p>
+<p>Esto nos permitirá comprobar nuestra conexión a internet:</p>
+<p><img src="../img/01006Instalar012.png" alt=""></p>
+<h2 id="iconos-de-control-de-ventanas"><a class="header" href="#iconos-de-control-de-ventanas">Iconos de control de ventanas</a></h2>
+<p>En el momento de escribir estas notas, las ventanas del escritorio Gnome no
+cuentan con los tradicionales iconos de minimizar, maximizar y restaurar ventana.
+El escritorio adaptado de Ubuntu los incluye en la esquina superior derecha;</p>
+<p><span style="background-color: LightGray;padding: 5px;"><big><b>                _ □ ✕</b></big></span></p>
+<h2 id="menús-en-las-aplicaciones"><a class="header" href="#menús-en-las-aplicaciones">Menús en las aplicaciones</a></h2>
+<p>Muchas aplicaciones suelen mostrar la típica barra de menú en la parte superior
+de la ventana. Las utilidades Gnome son algo atípico. Se suele sustituir la
+barra de menú por un icono que es habitual en las tablets o teléfonos móviles:</p>
+<p>      <span style="font-size: 2.5em;"><b>☰</b></span></p>
+<p>Pulsando en ese icono, veremos las opciones de menú.</p>
+<h2 id="el-manual-de-ubuntu"><a class="header" href="#el-manual-de-ubuntu">El manual de Ubuntu</a></h2>
+<p>Ubuntu proporciona un manual de uso al que podemos acceder iniciando la
+aplicación de <em>Ayuda</em> (icono <strong>(?)</strong> en el <em>Dock</em>):</p>
+<p><img src="../img/01006Instalar027.png" alt=""></p>
+<p>Se trata de un texto con una traducción al español que a veces es incompleta.
+Pero nos puede servir como guía inicial.</p>
+<h2 id="teclado"><a class="header" href="#teclado">Teclado</a></h2>
+<p>Antes de instalar nada, conviene dejar resueltos los posibles conflictos entre
+“atajos de teclado” de ambas máquinas, la física y la virtual, aunque esto se
+puede dejar para más adelante.</p>
+<p>En el menú de <em>VMware</em>, seleccionamos <em>Ajustes &gt; Keyboard</em>:</p>
+<p><img src="../img/01006Instalar026.png" alt=""></p>
+<h2 id="apagar-la-máquina-virtual"><a class="header" href="#apagar-la-máquina-virtual">Apagar la máquina virtual</a></h2>
+<p>Tras explorar un poco el funcionamiento del escritorio de Ubuntu, vamos a
+instalar el sistema operativo en el disco duro, en nuestro caso, el virtual.</p>
+<p>Lo primero es reiniciar la máquina virtual. En la barra superior del escritorio
+tenemos los iconos de estado en la esquina de la derecha, como ya hemos visto.
+Pulsamos ahí, y seguidamente en el icono de apagar.</p>
+<p><img src="../img/01006Instalar011.png" alt=""></p>
+<h2 id="instalación-en-el-disco-duro"><a class="header" href="#instalación-en-el-disco-duro">Instalación en el disco duro</a></h2>
+<p>Antes de empezar el proceso de instalación, debemos asegurarnos de que tenemos
+el ordenador conectado a la red eléctrica y a Internet.
+Esto último es especialmente
+importante, porque permitirá detectar la conexión de red, configurarla
+automáticamente, y descargar contenidos no incluidos en el pendrive de instalación.</p>
+<p>Reiniciamos la sesión <em>Live</em>, comprobando que tenemos el pendrive virtual
+conectado, como vimos anteriormente, y asegurándonos de que el disco de arranque
+siga siendo el DVD virtual.</p>
+<p>Llegado el momento, optamos por completar la instalación:</p>
+<p><img src="../img/01006Instalar013.png" alt=""></p>
+<p>Se nos irá guiando paso a paso. A las sucesivas preguntas optamos por:</p>
+<ul>
+<li>Hacer una instalación interactiva guiada</li>
+<li>Selección ampliada de software, más allá de limitarnos a instalar solo lo
+esencial</li>
+<li>Incluir la instalación de programas privativos de terceros y compatibilidad
+con formatos multimedia</li>
+<li>Usar todo el disco duro (en nuestro caso, el virtual), borrando su contenido
+si lo hubiera</li>
+<li>¿Cifrar el disco duro virtual? Tiene sus ventajas e inconvenientes. Yo no
+suelo hacerlo.</li>
+<li>Al cumplimentar los datos de usuario, optamos por acceder sin contraseña,
+dado que se trata de una máquina virtual, y ya tenemos contraseña para la física
+(a menos que usemos la virtualización para esconder nuestros documentos secretos)</li>
+<li>Seleccionar el uso horario</li>
+</ul>
+<blockquote>
+<p><strong>¿Cifrar el disco duro?</strong>
+<hr></p>
+<p>El cifrado del disco duro impide que una persona con un pendrive de arranque
+pueda acceder a los contenidos de nuestra máquina sin necesidad de
+contraseña. Pero si queremos una máquina virtual solo para experimentar,
+no lo veo necesario.
+Y si la queremos para esconder documentos confidenciales, habrá que tener un
+buen sistema de copias de seguridad, porque el cifrado puede hacer que los
+documentos sean irrecuperables.</p>
+<p>En cierta ocasión, examinando otra distribución distinta de Ubuntu,
+me encontré con que la reinstalación del
+sistema operativo generaba nuevas claves de cifrado, y los documentos
+antiguos no podían ser accedidos por estar cifrados con la clave de la
+instalación anterior.
+Desconozco como gestionará Ubuntu estas cosas en la actualidad.</p>
+</blockquote>
+<p>Tras cumplimentar todo esto, pulsamos en el botón <em>Instalar</em>. Durante el proceso,
+se copian los contenidos del pendrive al disco duro, se bajan otros de Internet
+y se configura el software. Mientras tanto, se nos irá mostrando información
+sobre Ubuntu. Paciencia; el proceso dura unos minutos.</p>
+<p><img src="../img/01006Instalar029.png" alt=""></p>
+<p>Finalmente, se muestra un mensaje “<em>Ubuntu está instalado</em>”. Pulsamos en el
+botón “Reiniciar`:</p>
+<p><img src="../img/01006Instalar014.png" alt=""></p>
+<p>Antes de reiniciar la máquina virtual, acudimos a su configuración en VMWare,
+cambiamos la unidad de arranque y establecemos que sea el disco duro.</p>
+<h2 id="primera-sesión"><a class="header" href="#primera-sesión">Primera sesión</a></h2>
+<p>Tras iniciar la máquina virtual y cargar el sistema que hemos instalado en el
+disco duro virtual, aparece la ventana de bienvenida:</p>
+<p><img src="../img/01006Instalar015.png" alt=""></p>
+<p>Se establece un diálogo de configuración inicial. Vamos pulsando en el botón
+<code>[siguiente]</code> hasta completar todos los pasos.</p>
+<h2 id="actualizar-software"><a class="header" href="#actualizar-software">Actualizar software</a></h2>
+<p>Ubuntu publica actualizaciones de software diariamente, y el DVD de instalación
+viene con los programas vigentes en el momento del lanzamiento de la versión que
+hemos instalado. El primer paso ha de ser actualizar ese software.</p>
+<p>Desplegamos la parrilla de aplicaciones y, en la caja de búsqueda, introducimos
+el texto:</p>
+<pre><code>actualizaciones
+</code></pre>
+<p>con lo que veremos dos programas:</p>
+<p><img src="../img/01006Instalar016.png" alt=""></p>
+<p>Seleccionaremos el icono azul, <em>Programas y Actualizaciones</em>, para configurar la
+frecuencia de refresco y forma en que se instalan las actualizaciones. Para
+llevar a cabo la primera actualización, seleccionamos el icono gris,
+<em>Actualización de software</em>.</p>
+<p>Una vez completado el proceso, seguramente se nos pedirá que reiniciemos el
+sistema. Con esto, damos por terminada la instalación.</p>
+<p>Añadamos un par de detalles.</p>
+<h2 id="la-minibarra"><a class="header" href="#la-minibarra">La minibarra</a></h2>
+<p>Cuando la máquina virtual ocupa toda la pantalla, dejaremos de ver el menú de
+<em>VMWare</em>. Ya hemos visto que podemos solucionarlo arrimando el ratón al borde
+superior de la pantalla. Pero contamos con una alternativa muy interesante,
+la <em>minibarra</em>.</p>
+<p>Consiste en un pequeño <em>gadget</em>, que se muestra en uno de los bordes de la
+pantalla, y al pulsar sobre el mismo muestra un menú con opciones que
+habitualmente encontraremos en el menú de VMWare o en su barra de herramientas.</p>
+<p>Si la activamos (menú <em>Vista &gt; Minibarra</em>) podemos hacer cosas tales como
+suspender/apagar la máquina virtual, entrar en la configuración, conectar o
+expulsar CDs, o simular combinaciones de teclas que son capturadas por el <em>Host</em>
+y necesitamos pulsar en la máquina <em>Guest</em>. También tenemos la opción de ponerla
+en cualquiera de los cuatro bordes de la pantalla.</p>
+<p>En la siguiente imagen vemos la minibarra en el borde derecho del escritorio:</p>
+<p><img src="../img/01006Instalar017.png" alt=""></p>
+<p>Podemos configurar la minibarra para que permanezca oculta y se muestre solo
+cuando acercamos el ratón al borde de la pantalla.</p>
+<h2 id="máquina-virtual-por-defecto"><a class="header" href="#máquina-virtual-por-defecto">Máquina virtual por defecto</a></h2>
+<p>Podemos establecer que cuando iniciemos VMWare, arranque determinada máquina
+virtual sin que tengamos que hacerlo a mano. La seleccionamos, entramos en la
+configuración de la máquina, y en el apartado <em>General</em>, marcamos la opción
+<em>Iniciar automáticamente</em>.</p>
+<h2 id="la-configuración-de-gnome"><a class="header" href="#la-configuración-de-gnome">La configuración de Gnome</a></h2>
+<p>En los próximos capítulos veremos como configurar el sistema Ubuntu para
+adaptarlo a nuestras necesidades y preferencias. Como paso final del proceso de
+instalación, echemos un vistazo al programa de configuración de Gnome:</p>
+<p><img src="../img/01006Instalar099.png" alt=""></p>
+<p>Para saber más sobre este programa de utilidad, véase
+<a href="https://apps.gnome.org/es/Settings/">página web</a> del proyecto.</p>
+<p>Podemos acceder de varias formas:</p>
+<ul>
+<li>
+<p>pulsando en el icono de Ubuntu, en el extremo inferior del <em>Dock</em>:</p>
+<p><img src="../img/01006Instalar008.png" alt=""></p>
+<p>En la rejilla de aplicaciones, seleccionamos <em>Configuración</em></p>
+</li>
+<li>
+<p>pulsando en los iconos de estado, en la esquina superior derecha del
+escritorio. En el menú desplegable, pulsar en el icono de la rueda:</p>
+<p><img src="../img/01006Instalar011.png" alt=""></p>
+</li>
+</ul>
+<p>Con esto damos por finalizado el proceso de instalación. En los próximos
+capítulos veremos como utilizar Linux Ubuntu.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../docs/01005VMWare.html" class="mobile-nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../docs/01007Carpetas.html" class="mobile-nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../docs/01005VMWare.html" class="nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../docs/01007Carpetas.html" class="nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

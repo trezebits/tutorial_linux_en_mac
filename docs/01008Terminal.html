@@ -1,0 +1,654 @@
+<!DOCTYPE HTML>
+<html lang="es" class="rust sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Terminal - Guía para instalar Linux en un Mac</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/estilos-f538a591.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "rust";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ccf29a16.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-bfb05ea3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Teclas de atajo</h2>
+            <div>
+                <p>Pulse <kbd>←</kbd> o <kbd>→</kbd> para navegar entre capítulos</p>
+                <p>Pulse <kbd>S</kbd> o <kbd>/</kbd> para hacer búsquedas</p>
+                <p>Pulse <kbd>?</kbd> para mostrar esta ayuda</p>
+                <p>Pulse <kbd>Esc</kbd> para ocultar esta ayuda</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Tabla de contenido">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Tabla de contenido" aria-label="Tabla de contenido" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Cambiar tema" aria-label="Cambiar tema" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Buscar (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Guía para instalar Linux en un Mac</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Imprimir libro" aria-label="Imprimir libro">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/trezebits/tutorial_linux_en_mac/" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="terminal-de-comandos"><a class="header" href="#terminal-de-comandos">Terminal de comandos</a></h1>
+<p>Ya hemos visto que los sistemas operativos modernos suelen incluir un programa
+llamado “Terminal”, que emula un shell de texto y permite trabajar introduciendo
+comandos para ejecutar programas y realizar operaciones de administración del
+sistema.</p>
+<p>El funcionamiento es mediante una sesión de diálogo: vamos tecleando comandos,
+que al ejecutarse, llenan la consola de texto que se va desplazando hacia arriba.
+En la siguiente imagen vemos un Terminal de comandos sobre otras ventanas del
+escritorio.</p>
+<p>El Terminal se puede configurar para cambiarle los colores. Pulsar en el icono
+<span style="font-size: 2em;"><b>☰</b></span> que despliega el menú, opción
+<em>Preferencias</em>. Yo he escogido la paleta de colores de Gnome.</p>
+<p><img src="../img/01008Terminal001.png" alt=""></p>
+<h2 id="iniciando-el-terminal"><a class="header" href="#iniciando-el-terminal">Iniciando el terminal</a></h2>
+<p>El terminal de comandos es un programa que suele estar presente en todas las
+distribuciones Linux. Cada una tiene su propio terminal, pero básicamente todos
+funcionan de forma similar. En el caso de Ubuntu, encontraremos el programa de
+<em>Terminal</em> en la barra lateral del escritorio de Ubuntu (el <em>Dock</em>) o acudiendo
+a la parrilla de aplicaciones.</p>
+<p>Lo primero que veremos es una línea de texto que muestra cierta información
+seguida de un símbolo <code>$</code>. Suele ser algo así como:</p>
+<pre><code>usuario@maquina:carpeta $
+</code></pre>
+<p>A esto se le llama <em>prompt</em>. Termina con un carácter <code>$</code>, tras el cual, el
+cursor parpadeante nos invita a teclear algún comando.</p>
+<p>En mi caso, se muestra:</p>
+<pre><code>usuario@vm:~$
+</code></pre>
+<p>Durante el proceso de instalación del sistema, al usuario le he llamado tal cual,
+“usuario”, y a la máquina virtual la he denominado “vm”.</p>
+<p>El símbolo <code>~</code> es un
+alias que representa la carpeta principal del usuario. En este ejemplo, <code>~</code>
+equivale a <code>/home/usuario</code>. En todo momento, el <em>prompt</em> muestra cual es la
+carpeta de trabajo. Finalmente se muestra el símbolo <code>$</code>.</p>
+<h2 id="ejecutando-programas"><a class="header" href="#ejecutando-programas">Ejecutando programas</a></h2>
+<p>En principio, los programas se ponen en marcha tecleando su nombre y pulsando
+<kbd>enter</kbd>. Por ejemplo, el editor de textos suministrado por el escritorio
+<em>Gnome</em> se llama <em>gnome-text-editor</em>:</p>
+<pre><code>$ gnome-text-editor
+</code></pre>
+<p><strong>Nota</strong>: en el texto de estos ejemplos mostramos el <em>prompt</em> <code>$</code>, pero no es
+algo que tengamos que teclear.</p>
+<p>Tras introducir el comando, se abre el editor en una nueva ventana, que
+convivirá con la del <em>Terminal</em>:</p>
+<p><img src="../img/01008Terminal003.png" alt=""></p>
+<p>Siempre que pongamos en marcha un programa mediante un comando, el terminal se
+queda a la espera de que dicho programa finalice y cierre su ventana,
+tras lo cual, se recupera
+el <em>prompt</em> para introducir más comandos. Podemos evitar este bloqueo añadiendo
+un carácter <code>&amp;</code> al comando:</p>
+<pre><code>$ gnome-text-editor &amp;
+</code></pre>
+<p>Esto hace que la ejecución del editor sea en paralelo a la del terminal, de
+forma que este recupere el <em>prompt</em> inmediatamente.</p>
+<p>Una ventaja de ejecutar programas desde el terminal de comandos es la
+posibilidad de pasarle información adicional:</p>
+<pre><code>$ gnome-text-editor /home/usuario/documentos/miArchivo.txt
+</code></pre>
+<p>En este ejemplo, al editor le pasamos como argumento el nombre del fichero a
+editar. Los argumentos añadidos nos permiten personalizar la ejecución del
+programa. Otro beneficio del terminal es que visualizaremos los posibles
+mensajes de error en la consola, que sin ella, no serían visibles.</p>
+<p>¿Como averiguar cual es el nombre de cada programa? Hay varias formas.
+Una de ellas es mantenerlo en ejecución y poner en marcha otro programa que se
+llama “Monitor del Sistema”. En la pestaña “procesos” tenemos los nombres de
+los programas que están ejecutándose y su consumo de recursos:</p>
+<p><img src="../img/01008Terminal004.png" alt=""></p>
+<h2 id="programas-de-consola"><a class="header" href="#programas-de-consola">Programas de consola</a></h2>
+<p>En el ejemplo anterior, usábamos el terminal de comandos para iniciar el
+procesador de textos en una ventana aparte. Pero hay programas que se ejecutan
+en la misma ventana del terminal. Por ejemplo, si introducimos el comando:</p>
+<pre><code>$ date
+dom 13 mar 2022 15:34:15 CET
+</code></pre>
+<p>vemos que, al ejecutarse, muestra la fecha y hora del sistema, y seguidamente
+recupera el prompt.</p>
+<h2 id="utilidad-de-los-comandos"><a class="header" href="#utilidad-de-los-comandos">Utilidad de los comandos</a></h2>
+<p>¿Para que sirven los comandos? Seamos realistas. Muchos usuarios prescindirán
+de esta herramienta. Si lo que pretendemos es utilizar el ordenador solo para
+navegar por Internet, editar documentos, o guardar nuestras fotos, todas estas
+actividades se manejan mejor pulsando sobre un icono, en lugar de tener  que
+interaccionar con la computadora al estilo prehistórico, tecleando comandos.</p>
+<p>Sin embargo, el valor real del terminal se pone de manifiesto en la
+administración y configuración del equipo. Algunas actividades administrativas
+cuentan con más opciones usando comandos, y hay operaciones que requieren de
+su uso. Para un usuario avanzado, los comandos dan acceso a un mundo lleno de
+posibilidades.</p>
+<p>Veamos un ejemplo. Supongamos que queremos instalar el conocido reproductor de
+video <a href="https://www.videolan.org/vlc/index.es.html">VLC</a>. Ubuntu cuenta con un
+programa llamado <em>App Center</em> (Centro de Aplicaciones) para gestionar la
+descarga e instalación de software. Haciendo uso del mismo, podemos buscar
+el programa en cuestión, seleccionarlo, y pulsar en el botón <code>Instalar</code>:</p>
+<p><img src="../img/01008Terminal002.png" alt=""></p>
+<p>Nótese que se nos mostrará la opción de buscar en el repositorio de Debian
+(heredado por Ubuntu) o en la tienda de Snaps de Ubuntu.</p>
+<p>Como alternativa, podemos hacer la misma tarea de instalación abriendo la
+ventana del Terminal y tecleando un comando:</p>
+<pre><code>$ sudo apt install vlc
+</code></pre>
+<p>Lo que significa:</p>
+<ul>
+<li>el símbolo <code>$</code> es el <em>prompt</em> que nos invita a teclear algo.</li>
+<li>la palabra <em>sudo</em> se antepone a todo comando que requiera ser ejecutado
+con permisos especiales. Hará que se nos pida nuestra contraseña. Es la
+abreviatura de “<em>super user do</em>.”</li>
+<li>el comando a ejecutar es <em>apt</em>, abreviatura de <em>Advanced Package Tool</em>.
+Es el nombre del programa usado para instalar software de los repositorios tipo
+Debian .</li>
+<li><code>install</code> es la operación a realizar.</li>
+<li><code>vlc</code> es el programa a instalar.</li>
+</ul>
+<p>Al pulsar la tecla <kbd>enter</kbd> se ejecutará todo el proceso de descarga e
+instalación de forma automática. La ventana del Terminal se llenará de mensajes,
+informando sobre el proceso de descarga, y ejecutando todo el proceso
+automáticamente.</p>
+<blockquote>
+<p><strong>Contraseña</strong>
+<hr></p>
+<p>Los comandos precedidos por la palabra <em>sudo</em> obligan a introducir la
+contraseña de usuario, pero esta se recuerda durante unos minutos.
+Sucesivos comandos <em>sudo</em> solo requieren teclear la contraseña la primera vez.</p>
+</blockquote>
+<blockquote>
+<p><strong>Comando apt</strong>
+<hr></p>
+<p>El comando <code>apt</code> es propio de Debian y derivados como Ubuntu. Otras
+distribuciones Linux utilizan comandos similares, como es el caso de
+<code>dnf</code> en Fedora o <code>pacman</code> en Linux Arch.</p>
+</blockquote>
+<p>A la vista de esto se diría que, para instalar software, resulta más cómodo
+usar el  <em>App Center</em>, evitando tener que teclear comandos.
+Pero, ¿que pasa si periódicamente
+queremos hacer limpieza de nuestro equipo y reinstalar una veintena de nuestras
+aplicaciones favoritas? La tarea de instalación una por una puede resultar pesada.</p>
+<p>En su lugar, podemos crear un archivo de texto que contenga comandos de
+instalación:</p>
+<pre><code>apt install vlc
+apt install otro_programa
+apt install otro_programa_2
+</code></pre>
+<p>Guardamos este archivo con un nombre, por ejemplo “instalar”, y lo ejecutamos
+con el comando:</p>
+<pre><code>$ sudo instalar
+</code></pre>
+<p>Ejecutando este script de comandos como si fuera un programa, todas las
+instalaciones se llevarán a cabo de forma automatizada.</p>
+<blockquote>
+<p><strong>Scripts</strong>
+<hr></p>
+<p>Este tipo de archivos de texto, con comandos a ejecutar, se llaman <em>scripts</em>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Ejecutar scripts</strong>
+<hr></p>
+<p>En realidad, este comando no funcionaría por dos razones:</p>
+<ul>
+<li>
+<p>para ejecutar un script hay que especificar la carpeta donde lo hemos
+guardado:</p>
+<pre><code>$ sudo /home/usuario/instalar
+</code></pre>
+</li>
+<li>
+<p>todo script requiere que le asignemos permisos de ejecución.</p>
+</li>
+</ul>
+</blockquote>
+<p>En el siguiente capítulo veremos los comandos con más detenimiento, y un ejemplo
+práctico sobre como crear un script.</p>
+<h2 id="errores"><a class="header" href="#errores">Errores</a></h2>
+<p>Si tecleamos mal un comando, se mostrará un mensaje de error:</p>
+<pre><code>$ gkghj
+Orden «gkghj» no encontrada
+</code></pre>
+<p>UNIX distingue entre mayúsculas y minúsculas. Un comando, un nombre de archivo,
+de directorio o cualquier otra cosa donde no respetemos el uso de las letras,
+no será reconocido y lo más probable es que obtengamos un mensaje de error.
+Por ejemplo, si escribimos el comando <em>date</em> con la primera letra en mayúsculas,
+obtenemos:</p>
+<pre><code>$ Date
+Orden «Date» no encontrada
+</code></pre>
+<p>Algunos sistemas son suficientemente inteligentes como para sugerirnos opciones:</p>
+<pre><code>~$ Date
+Orden «Date» no encontrada. Quizá quiso decir:
+  la orden «kate» del paquete snap «kate (23.08.4)»
+  la orden «date» del paquete deb «coreutils (9.4-3.1ubuntu1)»
+  la orden «late» del paquete deb «late (0.1.0-14)»
+  la orden «kate» del paquete deb «kate (4:24.08.1-0ubuntu1)»
+</code></pre>
+<p>Los programas forman parte de paquetes de software, instalados o instalables.</p>
+<h2 id="programas-no-instalados"><a class="header" href="#programas-no-instalados">Programas no instalados</a></h2>
+<p>La mayoría de comandos son en realidad pequeños programas. Los repositorios de
+las distribuciones son enormes, y es materialmente imposible que lo tengamos
+todo instalado en nuestra computadora.</p>
+<p>Es posible que alguno de los ejemplos que aquí se muestran sean programas que
+no vienen de serie con <em>Ubuntu</em>. Por ejemplo, el editor de textos “kate”:</p>
+<pre><code>$ kate
+No se ha encontrado la orden «kate», pero se puede instalar con:
+sudo snap install kate  # version 23.08.4, or
+sudo apt  install kate  # version 4:24.08.1-0ubuntu1
+</code></pre>
+<p>Si nos interesa ese programa, podemos hacer caso de la recomendación y ejecutar
+alguno de esos comandos:</p>
+<pre><code>$ sudo apt install kate
+</code></pre>
+<blockquote>
+<p><strong>kate</strong>
+<hr></p>
+<p>Kate es un editor de textos que se suministra con el escritorio KDE. Aunque
+estemos usando Gnome, podemos instalar programas que acompañan a otros
+escritorios, si son de nuestro agrado.</p>
+</blockquote>
+<h2 id="cerrar-sesión-interactiva"><a class="header" href="#cerrar-sesión-interactiva">Cerrar sesión interactiva</a></h2>
+<p>Podemos cerrar el terminal como cualquier otra ventana. También podemos hacerlo
+introduciendo el comando:</p>
+<pre><code>$ exit
+</code></pre>
+<h2 id="uso-del-ratón"><a class="header" href="#uso-del-ratón">Uso del ratón</a></h2>
+<p>Las antiguas consolas de texto funcionaban solo con el teclado. Las emulaciones
+de terminal contemplan el uso del ratón para poder seleccionar texto y realizar
+operaciones de cortar y pegar, pero no podemos utilizarlo para mover el cursor.
+Para desplazarnos en la edición de un comando tenemos que utilizar las teclas
+<kbd>←</kbd> y <kbd>→</kbd>.</p>
+<h2 id="historial-de-comandos"><a class="header" href="#historial-de-comandos">Historial de comandos</a></h2>
+<p>Siempre que ejecutamos un comando, el terminal lo recuerda y mantiene un
+registro de los últimos comandos introducidos. Pulsando <kbd>↑</kbd> y <kbd>↓</kbd>,
+podemos recuperar comandos ejecutados, navegando hacia arriba y hacia abajo
+en la lista, siendo el punto de partida el comando más reciente. Una vez que
+recuperemos el comando deseado, podemos editarlo y ejecutarlo de nuevo
+pulsando <kbd>enter</kbd>.</p>
+<h2 id="uso-del-teclado"><a class="header" href="#uso-del-teclado">Uso del teclado</a></h2>
+<p>Originalmente, en sistemas tipo Unix se utilizan cinco teclas para editar
+comandos:</p>
+<ul>
+<li><kbd>←</kbd> mueve el cursor una posición a la izquierda</li>
+<li><kbd>→</kbd> mueve el cursor una posición a la derecha</li>
+<li><kbd>⌫</kbd> borra carácter a la izquierda del cursor</li>
+<li><kbd>del</kbd> borra carácter a la derecha del cursor</li>
+<li><kbd>enter</kbd> ejecuta el comando</li>
+</ul>
+<p>Dependiendo de la configuración de nuestro sistema, podemos tener otras
+combinaciones de teclas adicionales. Para mover el cursor:</p>
+<ul>
+<li><kbd>ctrl</kbd>+<kbd>a</kbd> va al inicio de la línea.</li>
+<li><kbd>ctrl</kbd>+<kbd>e</kbd> va al final de la línea.</li>
+<li><kbd>ctrl</kbd>+<kbd>b</kbd> mueve el cursor un carácter a la izquierda. Equivale a <kbd>←</kbd>.</li>
+<li><kbd>ctrl</kbd>+<kbd>f</kbd> mueve el cursor un carácter a la derecha.  Equivale a <kbd>→</kbd></li>
+<li><kbd>alt</kbd>+<kbd>b</kbd>  mueve el cursor una palabra a la izquierda.</li>
+<li><kbd>alt</kbd>+<kbd>f</kbd>  mueve el cursor una palabra a la derecha.</li>
+</ul>
+<p>Para borrar texto:</p>
+<ul>
+<li><kbd>ctrl</kbd>+<kbd>d</kbd>         borra el carácter a la derecha del cursor. Equivale a <kbd>del</kbd></li>
+<li><kbd>ctrl</kbd>+<kbd>h</kbd>         borra el carácter a la izquierda del cursor. Equivale a <kbd>⌫</kbd></li>
+<li><kbd>ctrl</kbd>+<kbd>u</kbd>         borra todo el texto a la izquierda del cursor.</li>
+<li><kbd>ctrl</kbd>+<kbd>k</kbd>         borra todo el texto tras el cursor.</li>
+<li><kbd>alt</kbd>+<kbd>⌫</kbd>  borra palabra a la izquierda</li>
+<li><kbd>ctrl</kbd>+<kbd>w</kbd>         borra palabra a la derecha</li>
+<li><kbd>ctrl</kbd>+<kbd>_</kbd>         deshacer</li>
+</ul>
+<h2 id="detener-un-comando"><a class="header" href="#detener-un-comando">Detener un comando</a></h2>
+<p>Cuando ejecutamos un comando en el terminal, el sistema se queda a la espera de
+que termine, para volver a mostrar el <em>prompt</em>. Para desbloquearlo, tendremos
+que finalizar la ejecución del programa.</p>
+<p>En el caso de programas de consola, podemos abortarlos pulsando las teclas
+<kbd>ctrl</kbd>+<kbd>c</kbd>, siempre que la ventana de <em>Terminal</em> sea la activa y tenga el foco
+del teclado.</p>
+<h2 id="copiar-y-pegar"><a class="header" href="#copiar-y-pegar">Copiar y pegar</a></h2>
+<p>El uso de las teclas de flecha para recuperar comandos del historial es un
+recurso interesante, pero a veces querremos copiar y pegar comandos de algún
+ejemplo buscado en Internet, o de otras fuentes.</p>
+<p>Aunque en los terminales antiguos no había portapapeles, el programa de terminal
+implementa la posibilidad de seleccionar texto con el ratón y copiarlo  al
+portapapeles, así como pegar su contenido en la posición del cursor.</p>
+<p>Sin ambargo, la combinación de teclas <kbd>ctrl+c</kbd> que en otros programas se
+utiliza para copiar, aquí no funciona. Ya hemos visto que se usa para
+interrumpir programas en ejecución. En su lugar, se usa:</p>
+<ul>
+<li>para copiar lo seleccionado con el ratón: <kbd>may</kbd>+<kbd>ctrl</kbd>+<kbd>c</kbd></li>
+<li>para pegar en la posición del cursor: <kbd>may</kbd>+<kbd>ctrl</kbd>+<kbd>v</kbd></li>
+</ul>
+<p>Estas teclas se pueden personalizar. En la ventana del Terminal, pulsar en el
+icono de menú, opción <em>Preferencias &gt; Atajos de teclado</em>.</p>
+<h2 id="terminal-y-shell"><a class="header" href="#terminal-y-shell">Terminal y shell</a></h2>
+<p>Podría pensarse que la aplicación Terminal sirve para introducir comandos, pero
+en realidad no es así. Lo que hace es simular una consola, y en ella se puede
+ejecutar cualquier programa en formato de texto.</p>
+<p>El programa que acepta, y ejecuta  comandos es uno más de los que se
+pueden ejecutar en el Terminal. Su función es mostrar el <em>prompt</em>, interpretar
+el texto tecleado por el usuario, y visualizar un mensaje de error o ejecutar
+el comando si es uno válido.</p>
+<p>Por lo tanto, cuando introducimos un comando, tenemos dos programas en ejecución,
+el Terminal y el intérprete de comandos, o shell de texto. El primero se encarga
+de establecer el tipo de letra, maneja las teclas de copiar y pegar, proporciona
+una barra de desplazamiento para visualizar el texto que  se va desplazando
+hacia arriba, etc. El shell se limita a gestionar la ejecución de los comandos.</p>
+<p>De hecho, podemos utilizar diferentes programas Shell. El que suele utilizar
+Ubuntu (y la mayoría de distribuciones Linux) es uno llamado <code>bash</code>. Podemos
+averiguar cuales son los programas que se están ejecutando en el terminal con
+el comando <code>ps</code> (<em>procces status</em>):</p>
+<pre><code>$ ps
+   PID TTY         TIME CMD
+ 2572 pts/0    00:00:00 bash
+ 3242 pts/0    00:00:00 ps
+</code></pre>
+<p>Esto muestra una lista de procesos. La primera columna indica el código interno
+que identifica el proceso. La última columna indica el nombre de programa que
+se está ejecutando, que en este caso es el shell <code>bash</code> y el propio comando <code>ps</code>.</p>
+<p>¿Por que es importante aclarar todo esto? Porque si buscamos un manual de
+referencia de comandos de Linux, lo que encontraremos será la documentación
+de <code>bash</code>. Cada shell tiene su propio lenguaje de comandos, y su instalamos
+y utilizamos un shell alternativo, el manual de <code>bash</code> no nos sirve.</p>
+<p>¿Cuantos interpretes existen? A lo largo de la historia de Unix y Linux han
+surgido varios programas intérpretes. Veamos una lista de los más relevantes:</p>
+<ul>
+<li>
+<p>El primer shell de la historia de UNIX fue creado por el inventor de este
+sistema operativo, <em>Ken Thompson</em>, y se llamaba <em>sh</em>. Hoy en día, muchas
+distribuciones de Linux tienen un programa <em>sh</em>, que en realidad es un alias
+que hace referencia al shell que tengamos instalado.</p>
+</li>
+<li>
+<p>Hacia finales de los años setenta, Stephen Bourne, un colega de Thompson en
+los Bell Labs, creó una versión más avanzada llamada <em>Bourne Shell</em>. Típicamente
+también lleva el nombre de <em>sh</em>, dado que sustituyó al original.</p>
+</li>
+<li>
+<p>Cuando AT&amp;T convirtió UNIX en un producto comercial, como respuesta surgió
+UNIX BSD. Como alternativa al shell de Bourne, <em>Kenneth Almquist</em> creó un shell
+llamado <em>ash</em> (<em>Almquist shell</em>)</p>
+</li>
+<li>
+<p>Cuando surgió el proyecto GNU, incorporaron un shell inspirado en el
+<em>Bourne Shell</em> al que llamaron <em>Bourne-Again shell</em> (bash). Actualmente suele
+ser el shell por defecto en muchas distribuciones de Linux.</p>
+</li>
+<li>
+<p><em>Debian Almquist shell</em> (dash) es una versión moderna de ash, presente en
+sistemas Debian y derivados.</p>
+</li>
+<li>
+<p><em>Korn shell (ksh)</em> fue escrito por David Korn basándose en el Bourne shell</p>
+</li>
+<li>
+<p><em>Z shell (zsh)</em> es una variante moderna de <em>bash</em>. Se utiliza, por ejemplo,
+en los ordenadores iMac a partir de la versión 10.15 de su sistema operativo</p>
+</li>
+<li>
+<p><em>C shell (csh)</em> fue creado por Bill Joy y se suele distribuir con UNIX BSD.
+Consiste en un lenguaje de comandos inspirado en el lenguaje de programación C.</p>
+</li>
+</ul>
+<h2 id="consolas"><a class="header" href="#consolas">Consolas</a></h2>
+<p>Como alternativa a la emulación de Terminal, podemos prescindir del escritorio
+gráfico y poner en marcha el ordenador (en nuestro caso la máquina virtual)
+al estilo antiguo, con el modo de texto a pantalla completa.</p>
+<p>En la siguiente imagen vemos una máquina virtual Linux ejecutándose en modo
+consola dentro de una ventana de la máquina física.</p>
+<p><img src="../img/01008Terminal005.png" alt=""></p>
+<p>Tendremos más limitaciones, ya que no hay ratón ni portapapeles, y tampoco
+podemos utilizar las aplicaciones gráficas como el navegador de Internet o
+cualquier otro programa gráfico. ¿Para que sirve entonces? Hay situaciones en
+las que puede resultar útil, por ejemplo, si el escritorio se queda bloqueado,
+o si tenemos problemas de arranque y no se llega a visualizar el modo gráfico.
+De hecho, ya hemos visto que el arranque inicial del sistema se ejecuta en modo
+de consola de texto.</p>
+<p>A las consolas de un ordenador se les llama TTYs. Las primeras consolas de la
+historia no incluían una pantalla, sino que funcionaban como los terminales de
+teletipo, con un teclado donde escribir y una impresora de papel continuo.
+De ahí viene el nombre de TTY, acrónimo de <em>teletype</em>.</p>
+<p>Los ordenadores anteriores a la época de la informática doméstica solían
+consistir en una CPU y varios puestos de trabajo conectados a ella, de forma que
+desde cada puesto se podía ejecutar un programa. Los ordenadores modernos son
+capaces de proporcionar varias TTYs en la pantalla, aunque solo se puede
+visualizar una de ellas a la vez.</p>
+<p>Cada sistema operativo tiene su propio planteamiento. Es frecuente proporcionar
+media docena de TTYs, y dedicar alguna de ellas a mostrar el escritorio gráfico.
+De todas formas, esto puede cambiar de una distribución a otra. Ubuntu
+utiliza la TTY2 para la sesión gráfica de escritorio, la TTY1 para la
+pantalla de inicio de sesión, y deja las TTY3, TTY4, TTY5 y TTY6 como consolas
+de texto.</p>
+<p>Vamos a probar este modo de consola de texto en Ubuntu, por ejemplo la TTY3.
+Tras iniciar la sesión de gráfica habitual y con el escritorio a la vista,
+pulsamos <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>f3</kbd>.
+En muchos teclados Mac, esto debe ir acompañado de la tecla <kbd>fn</kbd>.</p>
+<p>Esto nos cambia a la consola de texto, donde veremos la pantalla en negro y un
+texto que puede ser algo así como:</p>
+<pre><code>Ubuntu tty3
+login:
+</code></pre>
+<p>En cada consola tenemos que iniciar sesión con nuestro nombre de usuario
+y contraseña:</p>
+<pre><code>login:
+Password:
+</code></pre>
+<p>Seguidamente se mostrará el <em>prompt</em> para introducir comandos:</p>
+<pre><code>usuario@maquina: ~$
+</code></pre>
+<p>Se cierra la sesión de usuario con el comando:</p>
+<pre><code>exit
+</code></pre>
+<p>Y se vuelve al escritorio gráfico seleccionando la tty correspondiente,
+que en el caso de Ubuntu es la TTY2. Pulsamos <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>f2</kbd>,
+con <kbd>fn</kbd> si es necesario.</p>
+<p>Para pasar de una consola a otra, las combinaciones de teclas son:</p>
+<ul>
+<li>para ver la TTY 1, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>f1</kbd></li>
+<li>para ver la TTY 2, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>f2</kbd></li>
+<li>para ver la TTY 3, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>f3</kbd></li>
+<li>para ver la TTY 4, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>f4</kbd></li>
+<li>para ver la TTY 5, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>f5</kbd></li>
+<li>para ver la TTY 6, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>f6</kbd></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../docs/01007Carpetas.html" class="mobile-nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../docs/01009Comandos.html" class="mobile-nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../docs/01007Carpetas.html" class="nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../docs/01009Comandos.html" class="nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
