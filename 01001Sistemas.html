@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="es" class="rust sidebar-visible" dir="ltr">
+<html lang="es" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Instalar software - Guía para instalar Linux en un Mac</title>
+        <title>Sistemas operativos - Guía para instalar Linux en un Mac</title>
 
 
         <!-- Custom HTML head -->
@@ -12,36 +12,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon-de23e50b.svg">
-        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
-        <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
-        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
-        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
-        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../theme/estilos-f538a591.css">
+        <link rel="stylesheet" href="theme/estilos-f538a591.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
         <!-- Provide site root and default themes to javascript -->
         <script>
-            const path_to_root = "../";
-            const default_light_theme = "rust";
+            const path_to_root = "";
+            const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-6db3d212.js";
+            window.path_to_searchindex_js = "searchindex-ef84c5d9.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-6d7dcba3.js"></script>
+        <script src="toc-be74aea1.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -79,7 +79,7 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
-            html.classList.remove('rust')
+            html.classList.remove('light')
             html.classList.add(theme);
             html.classList.add("js");
         </script>
@@ -108,7 +108,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
             </noscript>
             <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -143,11 +143,8 @@
                     <h1 class="menu-title">Guía para instalar Linux en un Mac</h1>
 
                     <div class="right-buttons">
-                        <a href="../print.html" title="Imprimir libro" aria-label="Imprimir libro">
+                        <a href="print.html" title="Imprimir libro" aria-label="Imprimir libro">
                             <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
-                        </a>
-                        <a href="https://github.com/trezebits/tutorial_linux_en_mac/" title="Git repository" aria-label="Git repository">
-                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
                         </a>
 
                     </div>
@@ -180,236 +177,155 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="instalar-software"><a class="header" href="#instalar-software">Instalar software</a></h1>
-<p>Toda nueva instalación de Ubuntu deja en nuestra máquina una extensa colección de
-programas, que se puede ampliar acudiendo a los repositorios de la distribución
-para descargar e instalar todo tipo de paquetes de software. Para realizar esta
-labor contamos con varias herramientas que examinaremos en este capítulo.</p>
-<p>Pero ¡cuidado! Es posible que, al añadir programas o hacer cambios en la
-configuración de nuestro ordenador, posteriormente queramos echar “marcha atrás”.
-Conviene guardar previamente una “instantánea” del sistema, algo que se conoce
-como un <em>snapshot</em>, y que nos permite recuperar el estado de la máquina.</p>
-<h2 id="snapshots"><a class="header" href="#snapshots">Snapshots</a></h2>
-<p>Un snapshot es una “foto” del ordenador que refleja su estado en un momento
-determinado, la memoria RAM, procesos que se están ejecutando, contenido del
-disco, etcétera. Podemos usarlo en el futuro para descartar todos los cambios
-que se hayan producido durante el tiempo transcurrido. Resulta útil, por ejemplo,
-cuando vayamos a efectuar cambios que no sabemos como deshacer, o de cuyas
-consecuencias no estamos seguros.</p>
-<p><em>VMware</em> cuenta con una utilidad de snapshots, que guarda el estado completo de
-la máquina virtual en el momento de crearlo. Para mostrar la lista de snapshots,
-pulsar en el menú de VMware <em>Máquina Virtual &gt; Snapshots</em>. Veremos todos los
-estados de la máquina que hemos ido guardando, y el estado actual. Para tomar un
-nuevo snapshot, seleccionar el estado actual, y en el menú emergente que se
-muestra tras pulsar con el botón secundario del ratón, pulsar sobre <em>Realizar
-Snapshot</em>:</p>
-<p><img src="../img/01010Repositorios001.png" alt=""></p>
-<p>Para recuperar un estado anterior de la máquina, volver a pulsar en el menú de
-VMware Máquina Virtual &gt; Snapshots. Seleccionar el snapshot deseado
-y pulsar en <em>Restablecer</em>, en el menú emergente. Se nos dará la opción de guardar
-el estado actual de la máquina antes de restablecerla, creando un nuevo snapshot.</p>
-<p>Cada snapshot consume espacio en nuestro disco, por lo que conviene no excedernos
-creando muchos de ellos. Se pueden eliminar siguiendo estos mismos procedimientos,
-y en lugat de la opción <em>Restablecer</em>, pulsar sobre <em>Eliminar</em>.</p>
-<h2 id="dependencias"><a class="header" href="#dependencias">Dependencias</a></h2>
-<p>Una vez hecha una copia del estado de nuestra máquina virtual, podemos proceder
-a instalar los programas que deseemos. Pero la ejecución de muchos de estos
-programas puede depender de la existencia de otros complementos en nuestro
-equipo. La descarga de un paquete requiere, con frecuencia, que obtengamos
-otros necesarios, si no los tenemos ya.</p>
-<p>Una de las fases de la instalación de una nueva aplicación es la comprobación
-de dependencias y la descarga de ese software complementario. Las herramientas
-que vamos a utilizar pueden resolver la instalación de dependencias de forma
-automática.</p>
-<h2 id="formatos"><a class="header" href="#formatos">Formatos</a></h2>
-<p>La forma más simple de distribuir un paquete de software es reuniendo todos sus
-componentes en un archivo <code>.zip</code>. Tras su descarga, extraeremos los ficheros que
-lo integran y los dejaremos en alguna carpeta de nuestro equipo. Pero esto no
-resuelve dependencias ni configura el software. Las distribuciones Linux suelen
-contar con mecanismos para automatizar el proceso completo.</p>
-<p>Una solución bastante potente, implementada por <em>Debian</em>, <em>Ubuntu</em> y otras
-distribuciones derivadas, consiste en “empaquetar” la aplicación y toda su
-información en un fichero <code>.deb</code>, gestionando la instalación con un programa
-que descargue, configurare el software, y controle las dependencias.</p>
-<p>RedHat, Fedora y derivados siguen un planteamiento similar, utilizando un
-formato propio en forma de archivos <code>.rpm</code> (<em>Red Hat Packaging Management</em>).</p>
-<h2 id="instalar-paquetes-desde-el-terminal-de-comandos"><a class="header" href="#instalar-paquetes-desde-el-terminal-de-comandos">Instalar paquetes desde el terminal de comandos</a></h2>
-<p>La forma más técnica de instalar software es usar el terminal de comandos.
-Supongamos, por ejemplo, que queremos instalar el reproductor de vídeo
-<a href="https://www.videolan.org/vlc/index.es.html">VLC</a>.
-Vamos a utilizar el comando <code>apt</code>, <em>Advanced Packaging Tool</em>.
-Se usa en el caso de paquetes con formato tipo <em>Debian</em>, uno de los formatos
-usados por Linux Ubuntu.</p>
-<p>El primer paso es hacer una búsqueda en el repositorio. El comando será:</p>
-<pre><code>$ apt-cache search vlc
-</code></pre>
-<p>La orden apt-cache permite hacer búsquedas en la base de datos de nuestro equipo.
-Cuando instalamos Linux, no se descarga todo el repositorio, pero sí un índice
-de lo que hay en él.</p>
-<p>Este comando mostrará una lista de paquetes con ese texto en el nombre o en la
-descripción. Si la lista es muy extensa, podemos redirigir la salida al comando
-<code>less</code>:</p>
-<pre><code>$ apt-cache search vlc | less
-</code></pre>
-<p>El comando <code>less</code> permite desplazar el texto  por la pantalla con las teclas
-<kbd>↑</kbd> y <kbd>↓</kbd>. Se sale con la tecla <kbd>q</kbd> (abreviatura de quit).</p>
-<p>Examinando la lista, veremos una entrada que dice:</p>
-<pre><code>vlc - reproductor multimedia y de flujo
-</code></pre>
-<p>y ese es el paquete a instalar:</p>
-<pre><code>$ sudo apt install vlc
-</code></pre>
-<p>Véase que se necesita permisos de administrador, por lo que anteponemos la
-palabra <code>sudo</code>. Una vez completada la operación, ya tendremos VLC entre
-las aplicaciones.</p>
-<p>Esta forma de hacer las cosas automatiza todo el proceso, gestionando las
-dependencias. Pero está limitado a paquetes <code>.deb</code>.</p>
-<p>El comando <code>apt</code> tiene una versión más antigua, llamada <code>apt-get</code>, con menos
-opciones de búsqueda y administración de paquetes. En cualquier caso, los
-dos comandos siguientes hacen lo mismo:</p>
-<pre><code>$ sudo apt-get install vlc
-$ sudo apt install vlc
-</code></pre>
-<blockquote>
-<p><strong>Sistemas derivados de <em>RedHat</em></strong>
-<hr></p>
-<p>Aunque aquí se describe el funcionamiento de <em>Ubuntu</em>, veremos que cada
-distribución tiene sus propias herramientas de configuración y
-administración. En sistemas tipo <em>RedHat</em>, como es el caso de <em>Fedora</em>,
-el comando equivalente a <code>apt</code> es <code>dnf</code>:</p>
-<pre><code>$ sudo dnf install vlc
-</code></pre>
-</blockquote>
-<h2 id="suprimir-paquetes"><a class="header" href="#suprimir-paquetes">Suprimir paquetes</a></h2>
-<p>El comando para eliminar una aplicación consiste en sustituir la palabra
-<code>install</code> por <code>remove</code>:</p>
-<pre><code>$ sudo apt remove vlc
-</code></pre>
-<h2 id="synaptic"><a class="header" href="#synaptic">Synaptic</a></h2>
-<p>Si no queremos depender del Terminal de comandos, <em>Synaptic</em> es un programa que
-nos proporciona la versión gráfica del comando <code>apt</code>. Como sucede con este,
-se limita a paquetes en formato <code>.deb</code>.</p>
-<p>Lo encontraremos en el menú de aplicaciones, apartado <em>Administración</em>, con el
-nombre de <em>Gestor de paquetes Synaptic</em>. Si se da el caso de que nuestra
-distribución no lo incluye de serie, podemos instalarlo con:</p>
-<pre><code>$ sudo apt install synaptic
-</code></pre>
-<p>Al ejecutarlo, se muestra un navegador de paquetes. Los marcados son los que ya
-tenemos instalados:</p>
-<p><img src="../img/01010Repositorios002.png" alt=""></p>
-<p>Pulsando en el menú <em>Ayuda &gt; Leyenda de iconos</em>, obtenemos el significado de
-cada marca:</p>
-<p><img src="../img/01010Repositorios003.png" alt=""></p>
-<p>Pulsando en el botón <em>Buscar</em>, podemos filtrar los paquetes por nombre. Pulsando
-sobre un paquete, se muestra información del mismo. Pulsando sobre la casilla
-que hay a la izquierda de cada paquete, lo marcamos para instalar o desinstalar.</p>
-<p>Una vez marcados los paquetes deseados, llevamos a cabo la instalación pulsando
-en el icono “Aplicar”. Si se da el caso, se nos preguntará si queremos
-instalar también las dependencias.</p>
-<h2 id="el-gestor-de-software"><a class="header" href="#el-gestor-de-software">El gestor de software</a></h2>
-<p>La forma más simple de instalar software, reuniendo en un solo programa todos
-los repositorios de Ubuntu, es mediante un programa
-llamado <em>Centro de aplicaciones</em>. Lo encontraremos entre los programas que
-Ubuntu trae de serie:</p>
-<p><img src="../img/01008Terminal002.png" alt=""></p>
-<p>Podemos navegar por una estructura de categorías, o hacer búsquedas por nombre.
-Una vez seleccionado un paquete, pulsamos sobre el mismo para obtener
-información e instalarlo.</p>
-<p>Nótese que, al mostrar los resultados de búsqueda, se nos da opción a
-seleccionar la versión entre los paquetes del repositorio Debian, o los de
-la <em>tienda de snaps</em>.</p>
-<h2 id="la-tienda-de-snaps"><a class="header" href="#la-tienda-de-snaps">La tienda de <em>Snaps</em></a></h2>
-<p>Ubuntu tiene su propia versión de empaquetamiento, con el nombre de <em>Snaps</em>.
-Se trata de un sistema de gestión de paquetes universal, que pretende ser
-independiente de la distribución. Canonical, la empresa que distribuye <em>Ubuntu</em>,
-ha creado con este sistema una especie de <em>Linux Store</em>.
-Ver <a href="https://snapcraft.io">https://snapcraft.io</a></p>
-<p>De todas formas, la “Tienda de Snaps” tiene sus detractores. Existe otra
-alternativa de empaquetamiento universal, popular en otras distribuciones,
-llamada <em>Flatpack</em>. Ver <a href="https://flathub.org">https://flathub.org</a></p>
-<p>Ya hemos visto que, en el caso de paquetes Debian, podemos usar el comando <code>apt</code>
-para instalar software, como alternativa al uso del <em>Centro de Aplicaciones</em>.
-La tienda de Snaps también es accesible mediante comandos:</p>
+                        <h1 id="sistemas-operativos"><a class="header" href="#sistemas-operativos">Sistemas operativos</a></h1>
+<p>Ya que vamos a instalar Linux, comencemos por explorar
+algunos conceptos. ¿Que es un sistema operativo? ¿Y un kernel? ¿Que es un shell?</p>
+<h2 id="que-es-un-sistema-operativo"><a class="header" href="#que-es-un-sistema-operativo">¿Que es un sistema operativo?</a></h2>
+<p>Cuando adquirimos un nuevo ordenador, la compra suele incluir una
+colección de programas preinstalados que podemos ampliar con nuevos paquetes
+de software.
+A grandes rasgos, y sin ánimo de ser dogmáticos, este conjunto de
+programas básicos es conocido como <em>sistema operativo</em>.
+Se divide en cinco grandes piezas:</p>
 <ul>
 <li>
-<p>para ver las aplicaciones instaladas:</p>
-<pre><code>$ snap list
-</code></pre>
+<p>Un programa de arranque, que es lo primero que se ejecuta cuando encendemos
+la computadora. El ordenador lo buscará automáticamente en el disco duro, aunque
+generalmente podremos tener la máquina configurada para que lo busque
+prioritariamente en un pendrive si tenemos uno conectado, o en otro dispositivo
+de almacenamiento.</p>
 </li>
 <li>
-<p>para buscar aplicaciones a instalar:</p>
-<pre><code>$ snap find texto
-</code></pre>
+<p>Un conjunto de programas básicos de gestión de recursos y procesos, conocido
+como el “<em><strong>kernel</strong></em>” o núcleo del sistema. Los pone en marcha el programa de
+arranque y se mantienen ejecutándose “en la sombra” hasta que apaguemos
+la computadora.</p>
 </li>
 <li>
-<p>para obtener información sobre una aplicación:</p>
-<pre><code>$ snap info nombre
-</code></pre>
+<p>Un programa que nos permita interaccionar con la máquina, llamado
+“escritorio”, también conocido como “<em><strong>shell</strong></em>”.
+Esta palabra significa, en inglés, <em>caparazón</em>, y  se llama así porque es la
+parte “visible” del sistema operativo, algo así como el <em>envoltorio</em>.</p>
+<p>Ambos paquetes, el <em>kernel</em> y el <em>shell</em>, se ponen en marcha
+de forma automática con la ayuda del proceso de arranque.</p>
 </li>
 <li>
-<p>para instalar una aplicación:</p>
-<pre><code>$ snap install nombre
-</code></pre>
+<p>Varios programas de utilidad para controlar accesos, usuarios, contraseñas,
+para configurar el sistema, etc.</p>
 </li>
 <li>
-<p>para desinstalar una aplicación;</p>
-<pre><code>$ snap remove nombre
-</code></pre>
+<p>Todo ello va acompañado del una colección de aplicaciones de uso común:
+navegador web, explorador de ficheros, gestor de correo, etc.</p>
 </li>
 </ul>
-<h2 id="instalar-a-partir-de-descargas"><a class="header" href="#instalar-a-partir-de-descargas">Instalar a partir de descargas</a></h2>
-<p>Programas como <em>Synaptic</em>, el <em>Centro de aplicaciones</em> o el comando <em>apt</em> nos
-dan acceso a los repositorios de Ubuntu, y resuelven automáticamente las
-dependencias, descargando el software complementario que pudiera ser necesario
-para el buen funcionamiento del paquete a instalar.</p>
-<p>Pero si queremos obtener un programa cuya versión en los repositorios no es
-la más reciente, o que no está incluido, tenemos que acudir a la página web
-del programa en cuestión. Suele haber diferentes opciones de descarga:</p>
+<p>Siendo puristas, la definición de sistema operativo se limita al kernel y al
+shell, considerando todo lo demás como complementos. En este cuaderno
+dejaremos ese debate aparte.</p>
+<h2 id="monitorizando-procesos"><a class="header" href="#monitorizando-procesos">Monitorizando procesos</a></h2>
+<p>Supongamos un escritorio con el siguiente aspecto:</p>
+<p><img src="img/01001Escritorio.png" alt=""></p>
+<p>En este ejemplo tenemos dos programas en sendas ventanas, el navegador web y una
+calculadora. Pero si nos fijamos bien, hay un tercer programa, el escritorio.</p>
+<p>De hecho hay otros programas ejecutándose en la sombra, sin visualizar nada.
+Son los programas de gestión interna de recursos.
+Por ejemplo:</p>
 <ul>
-<li>un programa instalador que resuelva de forma automática todo el proceso</li>
-<li>un archivo comprimido del que podemos extraer su contenido y copiarlo al
-disco duro. Pero esto no resuelve la gestión de dependencias</li>
-<li>un archivo en formato <code>.deb</code> o <code>.rpm</code> cuya instalación permite resolver esas
-dependencias de forma automatizada.</li>
+<li>El programa que gestiona las conexiones de red.</li>
+<li>El programa para controlar los accesos a disco que llevan a cabo las
+aplicaciones (procesador de textos, editor de imágenes, etc), evitando
+conflictos entre ellas al reclamar espacio para almacenar datos.</li>
+<li>El portapapeles, que permite copiar y pegar de una aplicación a otra.</li>
+<li>Y un largo etcétera.</li>
 </ul>
-<p>Veamos un ejemplo de descarga manual. Abrimos el navegador web y acudimos a la
-página del editor de textos <a href="https://code.visualstudio.com/">Visual Studio Code</a>.
-Descargamos el archivo con extensión <code>.deb</code>, propio de sistemas tipo <em>Debian</em>.</p>
-<blockquote>
-<p><strong>¡Cuidado!</strong>
-<hr></p>
-<p>En este cuaderno estamos describiendo el uso de Linux en plataformas con
-arquitectura ARM de 64 bits. No intentar descargar e instalar software
-para chips de Intel, ya que es incompatible.</p>
-<p>En el caso de Visual Studio Code, hay que pulsar en el enlace
-<a href="https://code.visualstudio.com/Download">other platforms</a> y, si tenemos un MacBook
-ejecutando Ubuntu en una máquina virtual, seleccionar el formato <code>.deb</code>
-para plataformas ARM64</p>
-</blockquote>
-<p>Tras la descarga, comprobamos que en la carpeta de descargas tenemos un archivo
-cuyo nombre es algo así como:</p>
-<pre><code>code_1.96.2-1734606918_arm64.deb
-</code></pre>
-<p>Para gestionar las instalaciones de paquetes descargados manualmente, nos va a
-venir muy bien un programa llamado <em>Gdebi</em>:</p>
-<pre><code>$ sudo apt install gdebi
-</code></pre>
-<p>Una vez instalado, lo ejecutamos con el comando:</p>
-<pre><code>$ gdebi-gtk
-</code></pre>
-<p>Se abre una ventana de trabajo. Con el menú “Archivo” seleccionamos el fichero
-descargado, y usamos el botón <code>[Instalar]</code> para proceder a la instalación manual,
-resolviendo dependencias.</p>
+<p>¿Como podemos averiguar cuales son esas tareas de intendencia que se ejecutan
+en segundo plano?
+Muchos sistemas suelen contar con algún programa de utilidad que muestra la
+lista de procesos en ejecución. Este programa suele tener diferentes nombres,
+monitor del sistema, administrador de tareas… En Windows, por ejemplo,
+se inicia pulsando la combinación de teclas <kbd>mayúsculas
+</kbd>+<kbd>control</kbd>+<kbd>esc</kbd>.</p>
+<p>En la siguiente imagen tenemos un <em>monitor del sistema</em> ejecutándose en una
+ventana sobre un escritorio de Linux. Podemos ver la lista de procesos,
+los recursos consumidos por cada uno, y en caso de que la máquina se quede
+bloqueada, detectar cual es el programa que está acaparando el tiempo de la CPU.</p>
+<p><img src="img/01001Procesos.png" alt=""></p>
+<p>Buena parte de estos procesos forman el <em>kernel</em>. ¿Quien ha dado la orden de
+ejecutarlos? Se ponen en marcha automáticamente al iniciar la computadora.</p>
+<h2 id="el-shell"><a class="header" href="#el-shell">El Shell</a></h2>
+<p>La parte visible de cualquier sistema operativo suele ser el escritorio,
+es decir, el programa que usamos para interaccionar con la máquina. Este tipo
+de programas son conocidos como “<em>shell</em>”. y han ido evolucionando desde
+la prehistoria de la informática. En los primeros tiempos, los ordenadores no
+contaban con pantallas. Los puestos de trabajo consistían en un teclado y una
+impresora:</p>
+<p><img src="img/01001teletipo.jpg" alt=""></p>
+<p>El usuario tecleaba comandos a ejecutar, y el ordenador respondía mostrando las
+respuestas en papel. El <em>shell</em> era el programa que gestionaba este diálogo.</p>
+<p>Con el paso de los años, estas primitivas consolas fueron sustituidas por
+pantallas donde la información se mostraba en forma de texto, que se iba
+desplazando hacia arriba a medida que se llenaba la pantalla:</p>
+<p><img src="img/01001pcTexto.jpg" alt=""></p>
+<p>La década de 1980 fue testigo de la aparición de los primeros escritorios
+gráficos. En lugar de teclear comandos, había que pulsar con el ratón sobre los
+elementos de la pantalla:</p>
+<p><img src="img/01003xerox.jpg" alt=""></p>
+<p>A partir de ese momento se fue imponiendo el uso de shells cada vez más
+sofisticados. Actualmente se distingue entre <em>shells gráficos</em> y
+<em>shells de texto</em>.
+Los sistemas operativos modernos suelen incluir un programa llamado “Terminal”,
+que simula un shell de texto en una ventana:</p>
+<p><img src="img/01001Terminal.png" alt=""></p>
+<p>¿Como funciona? Tecleamos comandos en la ventana de trabajo y observamos
+las respuestas del ordenador.
+En un capítulo posterior haremos un repaso básico de los comandos
+que son propios del sistema operativo  Linux.</p>
+<p>¿Para que sirve el Terminal? El usuario medio de un ordenador doméstico lo
+utilizará en contadas ocasiones, pero hay situaciones en las que resulta de
+gran utilidad, especialmente para tareas de administración y configuración del
+sistema.</p>
+<h2 id="sistemas-operativos-más-populares"><a class="header" href="#sistemas-operativos-más-populares">Sistemas operativos más populares</a></h2>
+<p>En resumen, un sistema operativo es un software formado por un Kernel, un Shell
+(gráfico, de texto, o ambos) y otros programas de utilidad.
+En los primeros años de la informática, cada fabricante de ordenadores tenía su
+propio sistema operativo. Esto era un planteamiento bastante ineficiente, porque
+los programas que utilizamos se apoyan en los servicios proporcionados por el
+kernel, como ya hemos visto. Un editor de textos, pongamos por caso, requiere que
+haya un gestor de almacenamiento en disco ejecutándose en la sombra.
+En aquellos primeros años, esto suponía que si una empresa cambiaba de
+computadora y adquiría un nuevo modelo más avanzado de otra
+marca, tenía que prescindir de todos sus programas, por ser
+incompatibles con el kernel de la nueva máquina. Había que volver a comenzar
+desde cero.</p>
+<p>En la década de 1960 comenzaron a surgir algunas iniciativas para crear sistemas
+operativos universales, algo que, en la actualidad se encuentra bastante
+extendido. Hoy en día, dos de los sistemas más populares son “Windows” y
+“Android”. Las ordenadores de la marca Apple tienen su propio sistema operativo,
+“MacOS”.</p>
+<p>En el mundo de los servidores corporativos, el sistema de referencia es “UNIX”,
+que se remonta a la década de 1970. En los años noventa surgió una versión para
+ordenadores personales denominada “Linux”, que hoy en día es desarrollada de
+forma comunitaria, y es el sistema preferido por los defensores del software
+libre. Incluso ha ido  sustituyendo de forma progresiva a su antecesor Unix en
+muchos servidores.</p>
+<p>Otra alternativa es “ChromeOS”, diseñado por Google y orientado a máquinas donde
+las aplicaciones y los datos de los usuarios residen en la nube.</p>
+<p>MS-DOS fue el sistema operativo de Microsoft en la década de 1980, superado en
+1992 por el lanzamiento de Windows 3, y aparcado definitivamente en 1995 tras
+la presentación de Windows 95.</p>
+<p>¿Cuantos sistemas operativos existen? Considerando los de cierta relevancia,
+cientos. Véase
+<a href="https://en.wikipedia.org/wiki/List_of_operating_systems">lista en la wikipedia</a>.</p>
+<p>En este cuaderno describiremos la instalación de un sistema operativo Linux.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../docs/01009Comandos.html" class="mobile-nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
+                            <a rel="prev" href="0000Introduccion.html" class="mobile-nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../docs/01011Configurar.html" class="mobile-nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="01002Linux.html" class="mobile-nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -419,11 +335,11 @@ resolviendo dependencias.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../docs/01009Comandos.html" class="nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
+                    <a rel="prev" href="0000Introduccion.html" class="nav-chapters previous" title="Capítulo anterior" aria-label="Capítulo anterior" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../docs/01011Configurar.html" class="nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="01002Linux.html" class="nav-chapters next" title="Capítulo siguiente" aria-label="Capítulo siguiente" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
@@ -443,13 +359,13 @@ resolviendo dependencias.</p>
         </script>
 
 
-        <script src="../elasticlunr-ef4e11c1.min.js"></script>
-        <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
 
-        <script src="../clipboard-1626706a.min.js"></script>
-        <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 
