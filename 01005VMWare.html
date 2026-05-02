@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="description" content="Linux en un Mac. Instalar sin romper nada">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -38,7 +38,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-e37f205e.js";
+            window.path_to_searchindex_js = "searchindex-31aaaf14.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-be74aea1.js"></script>
@@ -195,20 +195,10 @@ mi ordenador Mac:</p>
 <p><img src="img/01005VMWare001.png" alt=""></p>
 <p>En la imagen vemos:</p>
 <ul>
-<li>
-<p>Al fondo, el escritorio de la máquina física, un Mac</p>
-</li>
-<li>
-<p>En el borde superior del escritorio Mac, el menú del programa de
-virtualización, que es VMware (lo veremos más adelante)</p>
-</li>
-<li>
-<p>En una ventana, el escritorio de una máquina virtual con fondo rojizo.</p>
-</li>
-<li>
-<p>En el escritorio de la máquina virtual tenemos un par de programas
-ejecutándose, el navegador web accediendo a la Wikipedia y una calculadora.</p>
-</li>
+<li>Al fondo, el escritorio de la máquina física, un Mac</li>
+<li>En una ventana, el escritorio de una máquina virtual con fondo rojizo.</li>
+<li>En el escritorio de la máquina virtual tenemos un par de programas
+ejecutándose, el navegador web accediendo a la Wikipedia y una calculadora.</li>
 </ul>
 <p>En la máquina física crearemos un gran archivo que representa el disco de la
 máquina virtual. Ahí se
@@ -338,7 +328,7 @@ opción personal. En líneas generales, va bastante bien, pero he detectado
 algunos fallos de sonido en el caso de las versiones de Linux más
 recientes. De todas formas, he
 encontrado una posible solución al problema. La describo más adelante,
-en el apartado dedicado a como configurar el sistema.</p>
+en el apartado dedicado a la configuración del sistema.</p>
 <p>En este cuaderno trato de plasmar las notas recogidas a partir de mi experiencia
 particular. Como mi ordenador es un Mac, usaré <em>VMWare Fusion</em>. Si la máquina
 física fuera Windows, el funcionamiento de <em>VMWare Workstation Player</em> debería
@@ -346,7 +336,7 @@ ser bastante parecido a lo aquí descrito.</p>
 <h2 id="instalando-vmware-fusion"><a class="header" href="#instalando-vmware-fusion">Instalando VMWare Fusion</a></h2>
 <p>A finales de 2023, VMware fue adquirida por una empresa llamada Broadcom.
 Para descargar el producto de forma gratuita necesitamos registrarnos y crear
-una cuenta de usuario en esta empresa.
+una cuenta de usuario.
 El formulario de alta está
 <a href="https://profile.broadcom.com/web/registration">en este enlace</a>.
 Tras completar nuestros datos, recibiremos un email de verificación a
@@ -368,7 +358,7 @@ actual. Si dicha máquina está apagada, veremos la imagen en negro.</p>
 ordenador:</p>
 <p><img src="img/01005VMWare002.png" alt=""></p>
 <blockquote>
-<p><strong>Nota</strong>
+<p><strong>Nota</strong>:
 <hr>
 Aquí vemos una de las ventaja de la virtualización. Podemos usarla para
 probar otros sistemas operativos o una versión antigua de nuestro sistema,
@@ -448,7 +438,7 @@ configurar más adelante.</p>
 <p>Para terminar, si pulsamos en “<em>Personalizar configuración</em>”, podemos asignar
 un nombre y carpeta al disco duro virtual:</p>
 <p><img src="img/01005VMWare011.png" alt=""></p>
-<p>Pulsamos en el botón [Finalizar]. En el directorio seleccionado se creará un
+<p>Pulsamos en el botón <kbd>Finalizar</kbd>. En el directorio seleccionado se creará un
 archivo que empaqueta las especificaciones de la máquina virtual,
 discos virtuales, estado de la máquina, etc.</p>
 <h2 id="configurar-la-máquina-virtual"><a class="header" href="#configurar-la-máquina-virtual">Configurar la máquina virtual</a></h2>
@@ -493,12 +483,12 @@ a las que tendremos acceso desde la virtual. Podemos pulsar en los iconos [+] y
 máquina virtual, que se restará de la utilizada por la máquina física.
 El rendimiento de cada máquina se verá afectado por la cantidad de memoria
 asignada. Consultar los requerimientos mínimos del sistema operativo descargado.
-Ubuntu los muestra en la página de descargas:</p>
+Ubuntu los muestra en la <a href="https://documentation.ubuntu.com/release-notes/">página de descargas</a>:</p>
 <blockquote>
 <p>System requirements:</p>
 <ul>
 <li>2 GHz dual-core processor or better</li>
-<li>4 GB system memory</li>
+<li>6 GB system memory</li>
 <li>25 GB of free hard drive space</li>
 <li>Either a USB port or a DVD drive for the installer media</li>
 <li>Internet access is helpful</li>

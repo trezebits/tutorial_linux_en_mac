@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="description" content="Linux en un Mac. Instalar sin romper nada">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -38,7 +38,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-e37f205e.js";
+            window.path_to_searchindex_js = "searchindex-31aaaf14.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-be74aea1.js"></script>
@@ -231,35 +231,36 @@ que descargue, configurare el software, y controle las dependencias.</p>
 <p>RedHat, Fedora y derivados siguen un planteamiento similar, utilizando un
 formato propio en forma de archivos <code>.rpm</code> (<em>Red Hat Packaging Management</em>).</p>
 <h2 id="instalar-paquetes-desde-el-terminal-de-comandos"><a class="header" href="#instalar-paquetes-desde-el-terminal-de-comandos">Instalar paquetes desde el terminal de comandos</a></h2>
-<p>La forma más técnica de instalar software es usar el terminal de comandos.
+<p>La forma más técnica de instalar software a partir de los repositorios heredados
+de Debian es usar el terminal de comandos.
 Supongamos, por ejemplo, que queremos instalar el reproductor de vídeo
 <a href="https://www.videolan.org/vlc/index.es.html">VLC</a>.
-Vamos a utilizar el comando <code>apt</code>, <em>Advanced Packaging Tool</em>.
-Se usa en el caso de paquetes con formato tipo <em>Debian</em>, uno de los formatos
-usados por Linux Ubuntu.</p>
-<p>El primer paso es hacer una búsqueda en el repositorio. El comando será:</p>
+Vamos a utilizar el comando <code>apt</code>, <em>Advanced Packaging Tool</em>.</p>
+<p>Cuando instalamos Linux, no se descarga todo el repositorio, pero sí un índice
+de lo que hay en él. Lo primero es actualizar
+esa base de datos que hay en nuestro equipo. El comando será:</p>
+<pre><code>$ sudo apt update
+</code></pre>
+<p>Véase que se necesita permisos de administrador, por lo que anteponemos la
+palabra <code>sudo</code>. Seguidamente hacemos la búsqueda con:</p>
 <pre><code>$ apt-cache search vlc
 </code></pre>
-<p>La orden apt-cache permite hacer búsquedas en la base de datos de nuestro equipo.
-Cuando instalamos Linux, no se descarga todo el repositorio, pero sí un índice
-de lo que hay en él.</p>
 <p>Este comando mostrará una lista de paquetes con ese texto en el nombre o en la
 descripción. Si la lista es muy extensa, podemos redirigir la salida al comando
 <code>less</code>:</p>
 <pre><code>$ apt-cache search vlc | less
 </code></pre>
-<p>El comando <code>less</code> permite desplazar el texto  por la pantalla con las teclas
-<kbd>↑</kbd> y <kbd>↓</kbd>. Se sale con la tecla <kbd>q</kbd> (abreviatura de quit).</p>
+<p>El comando <code>less</code> visualiza el texto y permite desplazarlo por la pantalla con
+las teclas <kbd>↑</kbd> y <kbd>↓</kbd>.
+Se sale con la tecla <kbd>q</kbd> (abreviatura de quit).</p>
 <p>Examinando la lista, veremos una entrada que dice:</p>
 <pre><code>vlc - reproductor multimedia y de flujo
 </code></pre>
 <p>y ese es el paquete a instalar:</p>
 <pre><code>$ sudo apt install vlc
 </code></pre>
-<p>Véase que se necesita permisos de administrador, por lo que anteponemos la
-palabra <code>sudo</code>. Una vez completada la operación, ya tendremos VLC entre
-las aplicaciones.</p>
-<p>Esta forma de hacer las cosas automatiza todo el proceso, gestionando las
+<p>Una vez completada la operación, ya tendremos VLC entre las aplicaciones.
+Esta forma de hacer las cosas automatiza todo el proceso, gestionando las
 dependencias. Pero está limitado a paquetes <code>.deb</code>.</p>
 <p>El comando <code>apt</code> tiene una versión más antigua, llamada <code>apt-get</code>, con menos
 opciones de búsqueda y administración de paquetes. En cualquier caso, los
@@ -270,7 +271,7 @@ $ sudo apt install vlc
 <blockquote>
 <p><strong>Sistemas derivados de <em>RedHat</em></strong>
 <hr></p>
-<p>Aunque aquí se describe el funcionamiento de <em>Ubuntu</em>, veremos que cada
+<p>Aquí se describe el funcionamiento de <em>Ubuntu</em>, pero cada
 distribución tiene sus propias herramientas de configuración y
 administración. En sistemas tipo <em>RedHat</em>, como es el caso de <em>Fedora</em>,
 el comando equivalente a <code>apt</code> es <code>dnf</code>:</p>
@@ -291,7 +292,7 @@ nombre de <em>Gestor de paquetes Synaptic</em>. Si se da el caso de que nuestra
 distribución no lo incluye de serie, podemos instalarlo con:</p>
 <pre><code>$ sudo apt install synaptic
 </code></pre>
-<p>Al ejecutarlo, se muestra un navegador de paquetes. Los marcados son los que ya
+<p>Al ejecutarlo, muestra un navegador de paquetes. Los marcados son los que ya
 tenemos instalados:</p>
 <p><img src="img/01010Repositorios002.png" alt=""></p>
 <p>Pulsando en el menú <em>Ayuda &gt; Leyenda de iconos</em>, obtenemos el significado de
@@ -375,7 +376,7 @@ Descargamos el archivo con extensión <code>.deb</code>, propio de sistemas tipo
 <blockquote>
 <p><strong>¡Cuidado!</strong>
 <hr></p>
-<p>En este cuaderno estamos describiendo el uso de Linux en plataformas con
+<p>En este cuaderno estamos describiendo el uso de Linux en plataformas Apple con
 arquitectura ARM de 64 bits. No intentar descargar e instalar software
 para chips de Intel, ya que es incompatible.</p>
 <p>En el caso de Visual Studio Code, hay que pulsar en el enlace
@@ -395,8 +396,8 @@ venir muy bien un programa llamado <em>Gdebi</em>:</p>
 <pre><code>$ gdebi-gtk
 </code></pre>
 <p>Se abre una ventana de trabajo. Con el menú “Archivo” seleccionamos el fichero
-descargado, y usamos el botón <code>[Instalar]</code> para proceder a la instalación manual,
-resolviendo dependencias.</p>
+descargado, y usamos el botón <kbd>Instalar</kbd> para proceder a la instalación
+manual, resolviendo dependencias.</p>
 
                     </main>
 

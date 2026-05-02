@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="description" content="Linux en un Mac. Instalar sin romper nada">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -38,7 +38,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-e37f205e.js";
+            window.path_to_searchindex_js = "searchindex-31aaaf14.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-be74aea1.js"></script>
@@ -200,48 +200,72 @@ La elección debe hacerse antes de la descarga.</p>
 <h2 id="seleccionando-una-distribución"><a class="header" href="#seleccionando-una-distribución">Seleccionando una distribución</a></h2>
 <p>¿Que distribución escoger? Las alternativas son muchas.
 Podemos visitar la página web <a href="https://distrowatch.com">Distrowatch</a>,
-que publica rankings y comparativas de forma
-periódica, y nos puede dar una idea de por donde van los tiros.</p>
-<p>Yo he probado varias distribuciones, y suelo considerar cinco criterios para
-optar por una u otra. Para un usuario de ordenadores Mac,
-como es mi caso, lo primero es poner el foco en distribuciones con versiones
-para la arquitectura ARM. Podemos hacer una
-búsqueda en <a href="https://distrowatch.com/search.php">Distrowatch</a> y
-filtrar por arquitectura. Veremos que los chips de Intel son los más populares,
-y muchas distribuciones proporcionan versiones para arquitecturas <code>amd64</code>.
-Para un Mac de última generación tendremos que seleccionar <code>arm64</code></p>
-<p>Lo segundo a tener en cuenta es optar por un escritorio con el que nos sintamos
-cómodos. KDE es el más vistoso, pero también es el más complejo,
-y en mi experiencia particular, me he encontrado con algunos fallos
-en el caso de máquinas virtuales.</p>
-<p>El tercer factor a considerar es la facilidad de instalación y uso. <em>Mint</em> es
-probablemente uno de las distribuciones más atractivas,
-pero no hay versión para Mac. Mala suerte.</p>
-<p>El cuarto factor es distinguir entre distribuciones
-concebidas para montar un servidor web, y las orientadas a su uso como ordenador
-de sobremesa. Estas son las versiones <em>desktop</em>.</p>
-<p>Y finalmente tenemos la cuestión de cuales son las distribuciones más populares.
-Se diría que hay dos grandes referencias, <em>Fedora</em> y <em>Debian</em>.
-De esta última se deriva <em>Ubuntu</em>, muy orientada al mercado
-doméstico, aunque presente en otros ámbitos. <em>Debian</em> no tiene tantos adeptos
-por excluir todo tipo de software con licencia, aunque sea la favorita de los
-defensores del software libre. Voy a descartarla.</p>
-<p>¿RedHat/Fedora o Ubuntu? Por supuesto, hay otras alternativas. OpenSuSE ofrece
-una experiencia muy sólida y amigable. Un “hacker” de los sistemas Linux
-apostará por <em>Arch</em> o similares.</p>
-<p>En este cuaderno voy a instalar Linux Ubuntu con escritorio Gnome mejorado.
-Añadiremos algunas extensiones, para mejorar sus funcionalidades. Después de
-probar con varias distribuciones, es la configuración con la que he conseguido
-una mejor y más sólida experiencia en máquinas virtuales.</p>
-<h2 id="páginas-de-descarga"><a class="header" href="#páginas-de-descarga">Páginas de descarga</a></h2>
-<p>Sea cual sea nuestra elección, veamos algunas páginas de descarga. Para acceder
-a ellas, pulsar sobre su nombre, a modo de enlace:</p>
+que publica rankings y comparativas, y tener una visión de por donde van
+los tiros. Pero fijémonos que la lista de distribuciones es interminable.
+Si dedicáramos una semana a instalar y experimentar cada distribución,
+¡tardaríamos más de 10 años en probarlas todas!</p>
+<p>Para un usuario que viene del mundo Windows, o acostumbrado al sistema operativo
+de Apple, donde no hay que tomar estas decisiones, el proceso puede
+resultar un poco apabullante. Pero no debemos perder
+de vista algo muy importante. Linux es un sistema operativo libre de restricciones
+de licencias, que podemos instalar y desinstalar a nuestro gusto. Si no nos
+va bien con una distribución, podemos cambiarnos a otra libremente.</p>
+<p>En resumen, la elección depende de nuestro perfil de usuario:</p>
 <ul>
 <li>
-<p><a href="https://linuxmint.com/download_all.php">Mint</a></p>
+<p>Lo primero es distinguir entre distribuciones
+concebidas para montar un servidor web, y las orientadas a ser usadas
+como ordenador de sobremesa. Estas son las versiones <em>desktop</em>.</p>
 </li>
 <li>
-<p><a href="https://www.opensuse.org">OpenSuSE</a>
+<p>Para quienes están huyendo de Windows y quieren algo parecido, sin grandes
+complicaciones, una de las elecciones más acertadas y populares es
+Linux Mint, con escritorio Cinnamon.</p>
+<p>Inconvenientes:</p>
+<ul>
+<li>
+<p>Lo mantiene una comunidad algo reducida.</p>
+</li>
+<li>
+<p>Priorizan la estabilidad y buen funcionamiento contrastado, descartando
+a veces las versiones más recientes de cada paquete de software.</p>
+</li>
+<li>
+<p>No hay versión para la arquitectura de procesadores <code>arm</code>,
+propia de los Mac. Solo se distribuye para chips compatibles con Intel.
+Mala suerte.</p>
+<blockquote>
+<p><strong>Los chips de Apple</strong></p>
+<p>¿Cuales son las distribuciones que sirven para un Mac?
+Podemos hacer una búsqueda en
+<a href="https://distrowatch.com/search.php">Distrowatch</a> y
+filtrar por arquitectura. Seleccionar <code>arm64</code>.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Para quienes buscan un sistema operativo con el respaldo de una empresa
+por detrás y una experiencia sólida, <em>Ubuntu</em> puede ser una buena opción.
+Pero es una elección no exenta de polémica. <em>Ubuntu</em> es algo consumidora
+de recursos, y su tienda de software (<em>Snaps</em>) no está muy bien vista por
+la comunidad Linux.</p>
+</li>
+<li>
+<p>Para quienes quieren experimentar un poco y descubrir lo que hay detrás de
+Linux, yo elegiría <em>Fedora</em>. Un “hacker” apostará por <em>Arch</em> o similares.</p>
+</li>
+</ul>
+<p>En este cuaderno voy a instalar Linux Ubuntu con escritorio Gnome mejorado.
+Añadiremos algunas extensiones, para mejorar sus funcionalidades.</p>
+<h2 id="páginas-de-descarga"><a class="header" href="#páginas-de-descarga">Páginas de descarga</a></h2>
+<p>Sea cual sea nuestra elección, veamos algunas páginas de descarga:</p>
+<ul>
+<li>
+<p>La página de <a href="https://linuxmint.com/download_all.php">Mint</a></p>
+</li>
+<li>
+<p>Página de <a href="https://www.opensuse.org">OpenSuSE</a>.
 Se distribuye en dos versiones, Leap, que tiene un período de actualizaciones
 hasta que lancen la siguiente versión, y Tumbleweed, que se atualiza
 permanentemente sin que tengamos que reinstalarlo. La descarga incluye varios
@@ -403,10 +427,8 @@ descargas es:</p>
 </ul>
 </li>
 </ul>
-<h2 id="mi-selección"><a class="header" href="#mi-selección">Mi selección</a></h2>
-<p>Con todo lo expuesto, vamos a instalar Linux Ubuntu con escritorio Gnome mejorado.
-La página de descargas es:</p>
-<p><a href="https://ubuntu.com/download/desktop">https://ubuntu.com/download/desktop</a></p>
+<h2 id="descargando-ubuntu"><a class="header" href="#descargando-ubuntu">Descargando Ubuntu</a></h2>
+<p>La página de descargas es <a href="https://ubuntu.com/download/desktop">https://ubuntu.com/download/desktop</a></p>
 <p>Podemos seleccionar la versión LTS (con soporte a largo plazo) o la más reciente,
 a nuestra elección. Tratándose de un Mac, necesitamos la versión para procesadores
 ARM-64 bits.</p>
@@ -415,12 +437,12 @@ generalmente semestral, abril y octubre.
 Lo que obtenemos es un archivo .iso de imagen de disco con un nombre
 que puede ser algo así como:</p>
 <blockquote>
-<p>ubuntu-25.10-desktop-arm64.iso</p>
+<p>ubuntu-26.04-desktop-arm64.iso</p>
 </blockquote>
 <p>Lo que indica:</p>
 <ul>
 <li>nombre de la distribución: Ubuntu</li>
-<li>número de versión: 25.10 (octubre de 2025)</li>
+<li>número de versión: 26.04 (abril de 2026)</li>
 <li>versión <em>desktop</em> para ordenadores de escritorio. La versión <em>server</em> sería
 para instalar en un servidor</li>
 <li>arquitectura: arm64 (la de los Mac)</li>

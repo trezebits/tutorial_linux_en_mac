@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="description" content="Linux en un Mac. Instalar sin romper nada">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -38,7 +38,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-e37f205e.js";
+            window.path_to_searchindex_js = "searchindex-31aaaf14.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-be74aea1.js"></script>
@@ -206,13 +206,14 @@ puede contener archivos varios y otras carpetas como <em>Documentos</em>, <em>M�
 podemos acudir a otra carpeta tecleándola en esa barra. Para ir al directorio
 raíz de todo el sistema, introducir una barra “<code>/</code>” como ruta a buscar.</p>
 <p>Podemos crear enlaces a nuestras carpetas favoritas en la barra lateral de la
-ventana. Basta con navegar por el sistema de archivos hasta encontrar la carpeta
-que nos interesa, y arrastrarla a la barra lateral, a la posición que se mostrará
-como “<em>Marcador Nuevo</em>”.</p>
+ventana. Para ello, basta con navegar por el sistema de archivos hasta encontrar
+la carpeta que nos interesa, y arrastrarla a la barra lateral,
+a la posición que se mostrará como “<em>Marcador Nuevo</em>”.</p>
 <p>Nótese que el explorador de archivos no cuenta con una barra de menú, siguiendo
 el planteamiento típico de Gnome. En su lugar, hay que pulsar en los iconos
 desplegables de la barra superior de la ventana.</p>
-<p>Si queremos más información sobre esta aplicación, visitar <a href="https://apps.gnome.org/es/Nautilus/">página web de Nautilus</a>.</p>
+<p>Si queremos más información sobre esta aplicación,
+visitar <a href="https://apps.gnome.org/es/Nautilus/">página web de Nautilus</a>.</p>
 <h2 id="archivos-ocultos"><a class="header" href="#archivos-ocultos">Archivos ocultos</a></h2>
 <p>En los sistemas operativos derivados de Unix, como es el caso de Linux y Mac,
 para marcar un archivo como oculto tenemos que modificar su nombre, anteponiendo
@@ -279,7 +280,7 @@ sentido cuando trabajemos con comandos de Terminal, como veremos en el capítulo
 siguiente.</p>
 <h2 id="directorios"><a class="header" href="#directorios">Directorios</a></h2>
 <p>En Windows cada unidad de almacenamiento (disco duro, dvd, unidades USB, etc)
-tiene por separado su propia estructura de directorios o carpetas, mientras que
+tiene su propia estructura de directorios o carpetas, mientras que
 en los sistemas tipo UNIX, como Mac o Linux, existe un único árbol global de
 directorios. Cuando hacemos referencia a un archivo, no decimos en que disco
 está, sino en que carpeta. Por ejemplo:</p>
@@ -289,7 +290,8 @@ está, sino en que carpeta. Por ejemplo:</p>
 <p><code>c:\nombrecarpeta\archivo.doc</code></p>
 </li>
 <li>
-<p>mientras que en sistemas tipo UNIX y derivados hacemos referencia al mismo archivo como:</p>
+<p>mientras que en sistemas tipo UNIX y derivados hacemos referencia
+al mismo archivo como:</p>
 <p><code>/nombrecarpeta/archivo.doc</code></p>
 </li>
 </ul>
@@ -344,17 +346,12 @@ Un directorio o un fichero debe escribirse tal y como lo hemos creado.
 Por ejemplo. <code>Documentos</code> y <code>documentos</code> serían dos carpetas diferentes.</p>
 </blockquote>
 <h2 id="estructura"><a class="header" href="#estructura">Estructura</a></h2>
-<p>Veamos a continuación las principales carpetas de un típico sistema de la familia
-UNIX. La estructura completa se conoce como <code>filesystem</code>.</p>
-<blockquote>
-<p><strong>Directorios especiales</strong>
-<hr></p>
-<p>La estructura de directorios Linux está inspirada en el antiguo sistema
-operativo Unix, aunque cada distribución hace su propia adaptación. En el
-caso de Ubuntu, por ejemplo, si instalamos cualquier paquete de Software a
-partir de la <em>tienda de snaps</em>, se ubicarán en a carpeta llamada
+<p>Veamos a continuación las principales carpetas de Linux.
+La estructura completa se conoce como <code>filesystem</code>. y está inspirada en el
+antiguo sistema operativo Unix, aunque cada distribución Linux hace su propia
+adaptación. En el caso de Ubuntu, por ejemplo, si instalamos cualquier paquete
+de Software a partir de la <em>tienda de snaps</em>, se ubicarán en una carpeta llamada
 <code>/snap</code>.</p>
-</blockquote>
 <h3 id="directorio-"><a class="header" href="#directorio-">Directorio /</a></h3>
 <p>Toda la estructura de carpetas “cuelga” del directorio raíz, también llamado
 <em>root</em>, representado por una barra inclinada <code>/</code>. Todos los contenidos de las
@@ -375,11 +372,12 @@ principalmente.</p>
 <blockquote>
 <p><strong>Nota:</strong>
 <hr></p>
-<p>Es frecuente asociar <code>/home</code> a una partición de disco separada,
-dejando programas y documentos en particiones de disco diferentes.
-Si queremos aplicar este planteamiento, en la instalación del sistema
-tenemos que crear un punto de montaje, asociando <code>/home</code> a la unidad
-de almacenamiento en cuestión.</p>
+<p>Hay quien convierte <code>/home</code> en punto de montaje asociado a una partición de
+disco separada de la partición principal,
+dejando programas y documentos en particiones de disco diferentes.</p>
+<p>Si queremos aplicar este planteamiento, al instalar el sistema operativo
+tenemos que establecer dos particiones, asociándoles dos puntos de montaje,
+la carpeta <code>/</code> para el sistema, y <code>/home</code> para los documentos.</p>
 <p>Si vamos a crear una máquina virtual solo para experimentar, dejando
 los documentos en una carpeta compartida de la máquina física,
 podemos dejar <code>/home</code> en la unidad principal del sistema.</p>
@@ -430,10 +428,9 @@ directorios /bin y /sbin, así como los módulos del kernel.</p>
 <blockquote>
 <p><strong>Nota:</strong>
 <hr></p>
-<p>Una biblioteca (<em>library</em>) es una pieza de software necesaria para
-complementar el contenido de los programas. Su principal utilidad es la
-posibilidad de que varios programas compartan las mismas bibliotecas,
-logrando un ahorro de recursos y un comportamiento homogéneo.</p>
+<p>Una biblioteca (<em>library</em>) es un fragmento de software compartido por
+varios programas. Lo habitual es que estos hagan uso de las bibliotecas
+logrando un comportamiento homogéneo.</p>
 </blockquote>
 <h3 id="directorio-boot"><a class="header" href="#directorio-boot">Directorio /boot</a></h3>
 <p>Es un directorio que almacena todo el software necesario para arrancar el

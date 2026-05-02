@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="description" content="Linux en un Mac. Instalar sin romper nada">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -38,7 +38,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-e37f205e.js";
+            window.path_to_searchindex_js = "searchindex-31aaaf14.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-be74aea1.js"></script>
@@ -186,7 +186,8 @@ sistema.</p>
 que al ejecutarse, llenan la consola de texto que se va desplazando hacia arriba.
 En la siguiente imagen vemos un Terminal de comandos sobre otras ventanas del
 escritorio.</p>
-<p>El Terminal se puede configurar para cambiarle los colores. Pulsar en el icono
+<p>El Terminal se puede configurar. Por ejemplo, para cambiarle los colores,
+pulsar en el icono
 <span style="font-size: 2em;"><b>☰</b></span> que despliega el menú, opción
 <em>Preferencias</em>. Yo he escogido la paleta de colores de Gnome.</p>
 <p><img src="img/01008Terminal001.png" alt=""></p>
@@ -217,8 +218,11 @@ carpeta de trabajo. Finalmente se muestra el símbolo <code>$</code>.</p>
 <em>Gnome</em> se llama <em>gnome-text-editor</em>:</p>
 <pre><code>$ gnome-text-editor
 </code></pre>
-<p><strong>Nota</strong>: en el texto de estos ejemplos mostramos el <em>prompt</em> <code>$</code>, pero no es
-algo que tengamos que teclear.</p>
+<blockquote>
+<p><strong>Nota</strong>:
+<hr> En el texto de estos ejemplos mostramos el <em>prompt</em> <code>$</code>,
+pero no es algo que tengamos que teclear.</p>
+</blockquote>
 <p>Tras introducir el comando, se abre el editor en una nueva ventana, que
 convivirá con la del <em>Terminal</em>:</p>
 <p><img src="img/01008Terminal003.png" alt=""></p>
@@ -241,7 +245,13 @@ programa. Otro beneficio del terminal es que visualizaremos los posibles
 mensajes de error en la consola, que sin ella, no serían visibles.</p>
 <p>¿Como averiguar cual es el nombre de cada programa? Hay varias formas.
 Una de ellas es mantenerlo en ejecución y poner en marcha otro programa que se
-llama “Monitor del Sistema”. En la pestaña “procesos” tenemos los nombres de
+llama “Monitor del Sistema” y que nos permite visualizar el consumo de recursos
+y procesos que se están ejecutando.</p>
+<blockquote>
+<p><strong>Nota</strong>: A partir de <em>Ubuntu 26.4</em>, se sustituye el <em>Monitor del sistema</em> por
+un programa llamado <em>Resources</em>.</p>
+</blockquote>
+<p>En la pestaña “procesos” tenemos los nombres de
 los programas que están ejecutándose y su consumo de recursos:</p>
 <p><img src="img/01008Terminal004.png" alt=""></p>
 <h2 id="programas-de-consola"><a class="header" href="#programas-de-consola">Programas de consola</a></h2>
@@ -317,25 +327,21 @@ instalación:</p>
 apt install otro_programa
 apt install otro_programa_2
 </code></pre>
-<p>Guardamos este archivo con un nombre, por ejemplo “instalar”, y lo ejecutamos
+<p>Este tipo de archivos de texto, con comandos a ejecutar, se llaman <em>scripts</em>.
+Lo guardamos con un nombre, por ejemplo “instalar”, y lo ejecutamos
 con el comando:</p>
 <pre><code>$ sudo instalar
 </code></pre>
 <p>Ejecutando este script de comandos como si fuera un programa, todas las
 instalaciones se llevarán a cabo de forma automatizada.</p>
 <blockquote>
-<p><strong>Scripts</strong>
-<hr></p>
-<p>Este tipo de archivos de texto, con comandos a ejecutar, se llaman <em>scripts</em>.</p>
-</blockquote>
-<blockquote>
 <p><strong>Ejecutar scripts</strong>
 <hr></p>
 <p>En realidad, este comando no funcionaría por dos razones:</p>
 <ul>
 <li>
-<p>para ejecutar un script hay que especificar la carpeta donde lo hemos
-guardado:</p>
+<p>para ejecutar un script, su nombre ha de ir precedido por la carpeta
+donde lo hemos guardado:</p>
 <pre><code>$ sudo /home/usuario/instalar
 </code></pre>
 </li>
@@ -403,8 +409,9 @@ Para desplazarnos en la edición de un comando tenemos que utilizar las teclas
 <kbd>←</kbd> y <kbd>→</kbd>.</p>
 <h2 id="historial-de-comandos"><a class="header" href="#historial-de-comandos">Historial de comandos</a></h2>
 <p>Siempre que ejecutamos un comando, el terminal lo recuerda y mantiene un
-registro de los últimos comandos introducidos. Pulsando <kbd>↑</kbd> y <kbd>↓</kbd>,
-podemos recuperar comandos ejecutados, navegando hacia arriba y hacia abajo
+registro de los últimos comandos introducidos.
+Pulsando <kbd>↑</kbd> y <kbd>↓</kbd>,
+podemos recuperar comandos anteriores, navegando hacia arriba y hacia abajo
 en la lista, siendo el punto de partida el comando más reciente. Una vez que
 recuperemos el comando deseado, podemos editarlo y ejecutarlo de nuevo
 pulsando <kbd>enter</kbd>.</p>
@@ -452,7 +459,7 @@ ejemplo buscado en Internet, o de otras fuentes.</p>
 <p>Aunque en los terminales antiguos no había portapapeles, el programa de terminal
 implementa la posibilidad de seleccionar texto con el ratón y copiarlo  al
 portapapeles, así como pegar su contenido en la posición del cursor.</p>
-<p>Sin ambargo, la combinación de teclas <kbd>ctrl+c</kbd> que en otros programas se
+<p>Sin embargo, la combinación de teclas <kbd>ctrl+c</kbd> que en otros programas se
 utiliza para copiar, aquí no funciona. Ya hemos visto que se usa para
 interrumpir programas en ejecución. En su lugar, se usa:</p>
 <ul>

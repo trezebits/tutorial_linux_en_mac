@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Como instalar Linux en un Mac sin romper nada">
+        <meta name="description" content="Linux en un Mac. Instalar sin romper nada">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -38,7 +38,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-e37f205e.js";
+            window.path_to_searchindex_js = "searchindex-31aaaf14.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-be74aea1.js"></script>
@@ -280,7 +280,7 @@ usa para referirse a las carpetas compartidas.</li>
 </ul>
 <p>Típicamente, el directorio <code>/mnt</code> se usa para montar dispositivos externos,
 aunque para DVDs y cosas así se utiliza <code>/media</code>.</p>
-<p>Para que todo esto funcione, hay que reiniciar la máquina.
+<p>Para que todo esto funcione, hay que reiniciar la máquina virtual.
 El sistema resolverá estos puntos de montaje y,
 la primera vez, creará automáticamente una nueva carpeta <code>/mnt/compartidas</code>,
 donde tendremos acceso a las carpetas compartidas con la máquina física.</p>
@@ -343,7 +343,7 @@ del sistema, ir a la configuración de Ubuntu, apartado
 de inicio de sesión (automático o con contraseña). Para estas labores, ir a la
 configuración de Ubuntu, apartado <em>Sistema &gt; Usuarios</em>.</p>
 <p>Algunas de estas opciones estarán bloqueadas hasta que pulsemos en el botón
-[Desbloquear] e introduzcamos nuestra contraseña.</p>
+<kbd>Desbloquear</kbd> e introduzcamos nuestra contraseña.</p>
 <h2 id="cambios-en-el-terminal"><a class="header" href="#cambios-en-el-terminal">Cambios en el Terminal</a></h2>
 <p>Cada escritorio proporciona su propia emulación de Terminal. La de Ubuntu
 muestra una ventana en cuya barra superior se muestra un icono <big><b>☰</b></big>
@@ -505,7 +505,9 @@ códigos de color y muestra un <code>@</code> añadido:</p>
 <p>Uno de los motivos por los que prefiero VMWare sobre VirtualBox es por su mejor
 rendimiento. Pero en las versiones más recientes de Linux, el sonido falla en
 ambas opciones. Suena entrecortado.</p>
-<p>El caso es que, buscando en Internet he encontrado debates varios sobre el
+<p>Supongo que, en algún momento, tanto VMWare como VirtualBox proporcionarán
+alguna solución a este problema. Mientras tanto, vamos a ver como podemos
+arreglarlo. Buscando en Internet he encontrado debates varios sobre el
 tema y, supuestas soluciones que a mi no me funcionan. Aun así, descubrí
 una forma de resolver el problema.</p>
 <p>En resumen, parece que hay un software llamado
@@ -513,9 +515,8 @@ una forma de resolver el problema.</p>
 segundo plano, y que es el que da problemas. Nació en 2017 y ha ido sustituyendo
 a otro programa muy popular,
 <a href="https://en.wikipedia.org/wiki/PulseAudio">PulseAudio</a>.</p>
-<p>Así que, hasta que se solucione el problema, lo que podemos hacer, usando el
-terminal de comandos, es sustituir PipeWire y usar el viejo PulseAudio en su
-lugar:</p>
+<p>Lo que podemos hacer si tenemos problemas es sustituir <em>PipeWire</em> por el viejo
+<em>PulseAudio</em>. Vamos a usar el Terminal de comandos:</p>
 <ul>
 <li>
 <p>Paso 1: Descargar PulseAudio con el comando:</p>
@@ -568,7 +569,7 @@ archivo <code>.profile</code> (fichero oculto) que hay en la carpeta principal d
 Abrimos el editor de textos con el comando:</p>
 <pre><code>gnome-text-editor ~/.profile
 </code></pre>
-<p>y al texto le añadimos la siguiente línea:</p>
+<p>y al texto le añadimos el comando a ejecutar de forma automática:</p>
 <pre><code>systemctl --user start pulseaudio.service
 </code></pre>
 
